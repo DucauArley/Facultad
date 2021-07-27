@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Form</string>
+    <string name="textNom">Enter your name</string>
+    <string name="textAp">Enter your last name</string>
+    <string name="textDni">DNI:</string>
+    <string name="textSex">Sex:</string>
+    <string name="hombre">Man</string>
+    <string name="mujer">Woman</string>
+    <string name="guardar">Save</string>
+    <string name="hintNombre">John</string>
+    <string name="hintApellido">Rambo</string>
+
+
+</resources>

@@ -1,0 +1,34 @@
+https://twitchrss.appspot.com/ para tener rss de usuarios aparecen 3 lives
+en el xml cuando esta en vivo, asi puedo saber cuando ponerlos
+
+https://www.integromat.com/en/integrations/rss/twitch supuestamente es una
+app que te sincroniza varias cosas como twitch y demas
+
+https://dev.twitch.tv/docs/api Pagina oficial de desarrollo para twitch
+
+https://material.io/develop/android/components/cards Para hacer cardviews
+como en ionic
+
+How to Pull text from any website using Jsoup in Android
+Esto supuestamente te guarda todos los strings en la pagina web
+
+
+El profe dice que estaria bueno que pueda agregar los usuarios de twitch
+que yo quiera
+
+con el metodo get directamente te bajas la pagina html asique lo unico que
+tengo que hacer es reorrerlo como archivo de texto plano
+
+Con respecto a nimo pareciera que cuando no estan en vivo hay 12 lives, pero
+si dejan una grabacion tipo para decir que no estan en vivo tienen 18, si
+estan hay de 15 a 18 por lo que vi, pero puede que haya muchos mas ya que
+los mensajes del chat tambien se toman en cuenta
+
+Esto es lo que tienen diferente los streamers en vivo de los que no
+<link rel="preconnect" href="wss://wsapi-global.master.live" 
+crossorigin="anonymous"> 1
+nimo-icon-live-card-tag 1
+2 nimo-icon-live-game 1
+
+
+

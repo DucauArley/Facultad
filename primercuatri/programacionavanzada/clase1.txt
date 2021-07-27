@@ -1,0 +1,79 @@
+Parcial escrito con preguntas mas que nada teoricas
+Clase 6 caeria el parcial masomenos
+Java es uno de los lenguajes mas solicitados en Argentina
+
+Bitecode: lenguaje que interpreta java
+Bajar jdk
+Compilador java c que pasa todo el lenguaje a bitecode
+
+Jre Version de java que instalamos
+src se crean las clases, clickeamos en public static void main y te crea el
+main como en netbeans
+
+Todo en bin hay que excluirlo si bajamos un repositorio, es donde esta el 
+byte code y se va construyendo constantemente
+
+En java las clases son con la primera letra en mayuscula y los metodos en
+minuscula, por ej String en mayuscula porque es una clase, int en minuscula
+porque no es una clase, es un dato primitivo
+
+se usa el system.out.println, me recuerda a viejas epocas
+
+los tipos de datos primitivos, siempre van a tener un valor ej int 0, float
+0.00000, boolean false, siempre una clase va a ser o null o una posicion
+de memoria
+
+public String getNombre()
+public void setNombre(String nombre)
+
+Protected: es como si fuese privado pero se ve dentro del paquete, sino no 
+se puede ver
+con ctrl barra espaciadora, te hace el import
+Paquetes son como carpetas
+
+si no se pone nada en la visibilidad, pasa a default que es tipo protected
+
+public Persona() este es el Constructor, pero si no pones nada tiene uno 
+por defecto, cuando se crea un constructor, el por defecto deja de existir
+
+Todas las clases en java heredan de la clase object
+si mostras el objeto, te muestra el identificador del objeto y la ruta donde
+esta guardado osea clase1.Persona
+
+El == en objetos compara las posiciones en memoria, por ende dos objetos no
+van a ser iguales nunca con el ==, Se comparan los objetos con el equals
+p1.equals(p2), pero compara las posiciones de memoria asiue hay ue 
+sobreescribir el metodo euals en nuestra clase
+
+para sobreescribir el metodo equals hay que escribir @override
+se castea con los parentesis
+se puede poner ue pr vos ue tengn el mismo dni los convierte en igules
+el metodo get class dice de que clase es el objeto siempre que no sea nulo
+los niveles de visibilidad son para si se esta dentro o fuera de la clase
+toString tambien se tiene que sobreescribir
+el hashcode tambien, hay que lograr que si dos objetos con el metodo equals 
+da true, el metodo hashcode tiene que dar el mismo valor entero, si son 
+distintos, debe devolver numeros bastante distintos, se usan numeros primos
+para calcular el hashcode, se multiplica el primo por el dni y despues se 
+usa nombre.hashcode ya que lo tiene sobreescrito por que es una clase,
+mientras menos varie la diferencia, la dispersion tiene que ser mayor
+
+final se le puede dar a un atributo, un metodo o una clase, indica que no se
+puede heredar en la clase, en el metodo, no se puede sobreescribir y en el
+atributo hace que no se pueda modificar
+
+Pojo: objeto plano en java objeto con atributos privado, con constructor
+con y sin parametros, sobreescrito toString, equals y hashcode
+
+finaliZe dice que el objeto no se usa mas, es decir, se lo libera de memoria
+En java no se puede administrar la memoria ram, deja de existir cuando se
+sale del metodo donde se finaliso
+
+El metodo clone, clona el objeto, pero tiene diferentes posiciones de 
+memoria
+
+El wait detiene los hilos en ejecucion, el notify revive los hilos con wait
+y el notify all despierta a todos los hilos dentro del mismo objeto
+
+wraper es un patron de diseño que elimina los tipos de datos primitivos y 
+los transforma en objetos

@@ -1,0 +1,51 @@
+mongoimport -d db2 -c personas --jsonArray personas2.json
+mongorestore -d db2 aggregte.zip
+mongorestore -d db2 ./peliculas/text/dump
+
+Indices: Funcionan de la misma manera que en sql.
+Se hacen arboles binarios en los que no hacen falta recorrer todos los
+elementos
+Base de datos pesada es mas de 600GB
+
+var c = db.contribuyentes
+c.find({})
+
+db.collection.createIndex(<keys>, <options>)
+El objeto de configuracion es el options, se le pueden poner varias cosas
+background: Va a decir que el indice se va a crear en segundo plano, osea 
+que no va a bloquear la base de datos, es mas lento
+Unique: El indice va a ser unico, si queremos insertar un documento repetido
+va a saltar error
+Name: Es opcional pero es conveniente ponerle nombre, sino mongo le pone y
+son nombres largos
+ParcialFilterExpression: si se especifica el indice solo hace referencia a
+los documentos que coinciden con la expresion del filtro
+Sparse: Hace el indice solo a documentos con el campo especificado
+expireAfterSeconds: Indices ttl, se pone valor en segundos para controlar 
+cuanto se conservan los documentos
+storageEngine: Especifica la configuracion del motor de almacenamiento en
+una base por indice al crear un indice
+
+Se pueden crear indices compuestos
+explain(), se puede poner al final o despues de la db: En vez de devolver la
+consulta explica que esta haciendo la consulta. queryPlanner: Como piensa
+mongo hacer la consulta
+WinningPlan: Cual considera mongo que va a ser la manera mas rapida de hacer
+la consulta
+explain(true): Da un toque mas de info sobre la busqueda, con estadisticas
+de ejecucion y demas	
+Nunca hacer una consulta con un collscan escanea todo, siempre tiene que
+salir fetch
+
+c.createIndex({cuit: -1})
+
+c.getIndexes(): Muestra todos los indices que tenemos en la tabla
+
+Mongo utiliza indices de varias claves
+
+c.dropIndex(nombre del indice) Para borrar un indice
+dropIndexes borra todos los indices
+
+Indices geoespaciales permiten hacer busquedas con coordenadas geometricas
+
+Indices de texto para busquedas de texto tipo google

@@ -1,0 +1,38 @@
+Operaciones sobre arrays
+Hasta la version 4 no se podia hacer busqueda en arrays anidados, ahora si
+Con el operador:
+
+$each permite agregar varios elementos a un array
+
+$ identifica un elemento de una matriz, marca la posicion de un array que no
+es especifica. Ej, marca el primer elemento que cumple con tal cosa. Es una
+especie de comodin para indicar que se va a modificar algo en un indice que
+no se sabe cual es
+
+$addToSet: Agrega un valor a la matriz salvo que ya este. Las considera
+iguales si tiene los mismos campos y los mismos valores en la misma posicion
+
+$pop: elimina el primer o el ultimo elemento de una matriz. Si no es una
+matriz, va a fallar. -1 el primero 1 ultimo
+
+$pullAll: Borra todos los elementos que coinciden. Esta obsoleto
+
+$pull: Elimina el primer elemento que coincida
+
+$push: inserta un array a la matriz, si no existe el campo, se crea como
+array. Inserta un elemento completo en una posicion del array
+
+find(): En el ejemplo busca un array con los elementos red y blank en ese
+mismo orden
+
+$all: permite buscar sin que importe cuantos elementos tenga el array ni
+importar el orden
+
+$elemMatch: Es parecido al and. Se usa para usar dos condiciones, pero
+igual se puede usar si tiene una sola condicion
+
+Se puede buscar por tamaño de array o se puede consultar por elemento
+
+
+
+

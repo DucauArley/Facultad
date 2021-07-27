@@ -1,0 +1,23 @@
+Me parece que tiene que ponerse el valor del estado dentro del atributo 
+de la clase en los diagramas de colaboracion simple
+
+En diag de colaboraciones simples supuestamente tienen que estar todos las
+operaciones que aparecen en el de secuencia
+
+Los wachines usan bastantes imagenes, dentro de todo tienen bastante texto,
+los que aprobaron tenian 64 paginas de la presentacion
+Le pregunto algo evelina cuando le mostro la imagen
+
+Parece que le pregunta a los demas sobre las preguntas que hace ella
+
+Parece que ponen bastante informacion en las power point
+
+Tener en claro los artefactos, quien los construye, si menciono algo
+tengo que decir bien que es ese algo
+
+Analista de sistemas es responsable del modelo de casos de uso y este se
+concreta con el bloque de construccion de diagramas de casos de uso a nivel
+sistema-subsistema, los de actor, el glosario y demas
+
+Si o si estudiar bien los actores y artefactos de cada uno para comprender
+el grafico que nos dijo de poner

@@ -1,0 +1,368 @@
+Archivos
+
+File archivo = new File("archivo.txt");
+		//File archivo = new File("//imagenes"); Esto es para directorios
+		//File archivo = new File("//imagenes", "archivo.txt");
+		//archivo.mkdir() es el create new file de los directorios
+				
+		if(!archivo.exists()) 
+		{
+			try(BufferedWriter bw = new BufferedWriter(new FileWriter(archivo)))
+			{
+				//archivo.createNewFile();		
+				bw.write("Hola mundo");
+				bw.newLine();
+				bw.write("Hola mundo");
+				bw.flush();	
+				//Para leer el archivo	
+				/*FileReader fr = new FileReader(archivo);
+				BufferedReader br = new BufferedReader(fr);
+				String s = "";
+								
+				while((s=br.readLine()) != null) 
+				{
+					System.out.println(s);
+				}
+				
+				fr.close();*/
+				
+			}
+			catch(IOException e)
+			{
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		/*File file = new File("data", "archivo.txt"); Para serializar
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+		
+		try 
+		{
+			fos = new FileOutputStream(file);
+			oos = new ObjectOutputStream(fos);
+			oos.writeObject(objeto);
+		}
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			IOUtil.close(oos);
+		}*/
+		
+		/*Employee emp = null; Deserializar en un objeto
+		File file = new File("data", "archivo.txt");
+		FileInputStream	fis = null;
+		ObjectInputStream ois = null;
+		
+		try 
+		{
+			fis = new FileInputStream(file);
+			ois = new ObjectInputStream(fis);
+			emp = (Employee) ois.readObject();
+		}
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			IOUtil.close(ois);
+		}
+		*/
+
+
+Clase Generica
+
+public class Lista<T extends Object> {
+	
+	private T valor;
+
+	public void add(Object o)
+	{
+		
+	}
+	
+	public void addGenerico(T o) 
+	{
+		
+	}
+	
+}
+
+
+Collecciones
+
+Persona p = new Persona("Juan", "Perez");
+		Persona p2 = new Persona("Juan", "Perez");
+		Persona p3 = new Persona("Juan", "Perez");
+		Persona p4 = new Persona("Roberto", "Perez");
+		List<Persona> lista = new ArrayList<Persona>();
+		
+		lista.add(p);
+		lista.add(p2);
+		lista.add(p3);
+		lista.add(p4);
+		
+		Collections.sort(lista);
+
+		/*for(Persona s:lista) 
+		{
+			System.out.println(s);
+		}*/
+		
+		Set<Persona> setString = new TreeSet<>();
+		setString.add(p);
+		setString.add(p2);
+		setString.add(p3);
+		setString.add(p4);
+		
+		/*for(Persona s: setString) 
+		{
+			System.out.println(s);
+		}*/
+
+
+
+Equals hashcode y toString
+
+public boolean equals(Object obj) 
+	{
+		boolean retorno = false;
+		
+		if(obj != null) 
+		{
+			if(obj.getClass().equals(this.getClass())) 
+			{
+				Persona p = (Persona) obj;
+			
+				if(p.nombre == this.nombre && p.apellido == this.apellido) 
+				{
+					retorno = true;
+				}
+			}
+		}
+		
+		return retorno;
+	}
+	
+	@Override
+	public int hashCode() 
+	{
+		int retorno = 1;
+		retorno = retorno * 17 + this.nombre.hashCode();
+		retorno = retorno * 7 + this.apellido.hashCode();
+				
+		return retorno;
+	}
+	
+	
+	@Override
+	public String toString() 
+	{
+		return this.nombre + " " + this.apellido;
+	}
+	
+
+Manejo de strings
+
+System.out.println("Escribir algo");
+	        
+	        Scanner sc = new Scanner(System.in);
+	        String texto = sc.nextLine();
+	        String textoInvertido = "";
+	        String textoGuiones = "";
+	        
+	        if(texto != null)
+	        {
+	            System.out.println(texto.length());
+	
+	            System.out.println(texto.substring(0,texto.length() / 2));
+	
+	            System.out.println(texto.substring(texto.length()-1));
+	
+	
+	            for (int i=texto.length()-1;i>=0;i--)
+	            {
+	                textoInvertido = textoInvertido.concat(String.valueOf(texto.charAt(i)));
+	            }
+	
+	            System.out.println(textoInvertido);
+	
+	
+	            for (int i=0;i<= texto.length()-1;i++)
+	            {
+	                textoGuiones = textoGuiones.concat(String.valueOf(texto.charAt(i))).concat("-");
+	            }
+	
+	            System.out.println(textoGuiones);
+	            
+	            Compara(texto);
+	        
+	        }
+        
+		}
+        
+        private static void Compara(String s)
+        {
+            s = s.toLowerCase();
+            
+            if(s.contains("hola"))
+            {
+                System.out.println("Contiene hola");
+            }
+            else
+            {
+                System.out.println("No tiene hola");
+            }
+            
+        }
+
+
+Ejercicio del codigo a2b3c2
+
+System.out.println("Escribir algo");
+	        
+	        Scanner sc = new Scanner(System.in);
+	        String texto = sc.nextLine();
+	        String textoInvertido = "";
+	        String textoGuiones = "";
+	        
+	        if(texto != null)
+	        {
+	            System.out.println(texto.length());
+	
+	            System.out.println(texto.substring(0,texto.length() / 2));
+	
+	            System.out.println(texto.substring(texto.length()-1));
+	
+	
+	            for (int i=texto.length()-1;i>=0;i--)
+	            {
+	                textoInvertido = textoInvertido.concat(String.valueOf(texto.charAt(i)));
+	            }
+	
+	            System.out.println(textoInvertido);
+	
+	
+	            for (int i=0;i<= texto.length()-1;i++)
+	            {
+	                textoGuiones = textoGuiones.concat(String.valueOf(texto.charAt(i))).concat("-");
+	            }
+	
+	            System.out.println(textoGuiones);
+	            
+	            Compara(texto);
+	        
+	        }
+        
+		}
+        
+        private static void Compara(String s)
+        {
+            s = s.toLowerCase();
+            
+            if(s.contains("hola"))
+            {
+                System.out.println("Contiene hola");
+            }
+            else
+            {
+                System.out.println("No tiene hola");
+            }
+            
+        }
+
+Excepciones	
+
+public static void main(String[] args) throws MiException, Exception
+
+public Double Dividir(Number numUno, Number numDos) throws MiException, Exception {
+		
+		Double retorno;
+		
+		if(numDos.intValue() != 0) 
+		{
+			retorno = new Double(numUno.intValue() / numDos.intValue());
+		}
+		else 
+		{
+			throw new MiException();
+		}
+		
+		return retorno;
+	}
+
+Test unitarios
+
+@Test
+	public void dividirCorrecto()
+	{
+		calculadora cal = new calculadora();
+		
+		try 
+		{
+			Double cantidad = cal.Dividir(6, 2);
+			Double resultado = 3.0;
+			Assert.assertEquals(resultado, cantidad);
+		}
+		catch(Exception e)
+		{
+			Assert.fail();;
+		}
+	}
+	
+	
+	@Test
+	public void dividirPorCero()
+	{
+		calculadora cal = new calculadora();
+		
+		try 
+		{
+			cal.Dividir(5, 0);
+		}
+		catch(Exception e)
+		{
+			Assert.assertTrue(true);
+		}
+	}
+	
+	@Test
+	public void dividirPorNull()
+	{
+		calculadora cal = new calculadora();
+		
+		try 
+		{
+			cal.Dividir(5, null);
+		}
+		catch(Exception e)
+		{
+			Assert.assertTrue(true);
+		}
+	}
+	
+	
+	@Test
+	public void nullDividido()
+	{
+		calculadora cal = new calculadora();
+		
+		try 
+		{
+			cal.Dividir(null, 5);
+		}
+		catch(Exception e)
+		{
+			Assert.assertTrue(true);
+		}
+	}
+
+
+
+

@@ -1,0 +1,27 @@
+Intents explicitos para irnos de una activity a otra, es explicito porque
+se le dice desde donde hasta donde tiene que ir
+
+Intent inplicitos no se le dice que activity tiene que abrir, sino que le 
+dice que hacer, lo voy a usar para abrir twitch
+
+intent.actions son todas las acciones que se pueden lanzar, como el llamado,
+sacar una foto, acceder a archivos, mandar mails, etc
+
+Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel: 1550044511"))
+
+Hay que agregar en el manifest los permisos para usar el call_phone
+
+Hay que poner un if para los intents implicitos porque asi si los usuarios 
+aceptan el uso de ciertas cosas, puedo usar estos intents
+Da 0 si esta garantizado, y 1 si esta denegado. el unico que no es 
+obligatorio preguntar es el permiso de internet
+
+String[] permisosAPedir = new String[1]
+permisosAPedir[0] = Manifest.permission.CALL_PHONE
+ActivityCompat.requestPermissions(this//por el activity,permisosAPedir,0)
+
+Tendria que tener un intent filter twitch para que salga en la lista
+
+Parcial shared preferences, intents, dialogs, toolbar para hacer busqueda
+(searchview), parser xml 
+

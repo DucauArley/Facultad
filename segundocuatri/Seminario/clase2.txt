@@ -1,0 +1,58 @@
+Cada ciclo siempre se divide en 4 fases : inicio, elaboracion, construccion
+y transicion
+
+Empezamos a buscar lo requisitos
+
+Construir un dominio es reconocer los objetos semanticos. Los represento
+en clases y hago un diagrama de clase semantico
+
+Para conocer el negocio hay que elaborar los casos de uso del negocio
+
+Caso de uso del negocio: Aquellos que me planteo elaborar para conocer los
+pasos del negocio. No quiere establecer acciones atomicas.
+Discute y conoce los pasos del negocio.
+
+Acividad no es atomica y termina en una accion
+Accion es atomica
+
+Torbellino de ideas: reunion en la que todos son iguales y formular ideas.
+Las ideas se discuten de manera tal que si esta es aceptada, se incorpora
+a uno de los artefactos del proyecto
+
+Dar pequeños pasos, para tener pequeños problemas. Para conocer el negocio
+
+Se plantean los pasos del negocio, se enuncian indicando quien lo da y que
+hace ese paso en forma muy concreta. No se entra en detalles
+
+Mirar hasta 19:00*******
+19:01 Gestor del negocio*****
+
+Encontras requisitos planteandote conocer el negocio y los pasos que este da
+Colocar estas discusiones con por ej los clientes y los usuarios gerenciales
+donde indican que pasos de este newgocio forman parte del sistema y cuales
+no y el porque
+
+Se indican los pasos del negocio que se incluyen en el sistema, es decir
+que son requisitos
+Un paso no necesariamente es un caso de uso
+
+Analista de sistemas encuentra actores y casos de uso
+
+El que permite encontrar objetos
+
+Los casos de uso del negocio no permiten estudiar las relaciones
+
+Para el tp hay varios CEAMSES y como que se saca turno para llevar la 
+basura para tirar, otra cosa es cuando se retira el volquete del CEAMSE,
+ver a que playa pertenece de la empresa y llevarlo a limpiar
+
+
+
+
+
+
+
+
+
+
+

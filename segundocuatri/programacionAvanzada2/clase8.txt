@@ -1,0 +1,25 @@
+Seguimos con express
+Tiene una herramienta que se llama generador. Genera el esqueleto de la
+aplicacion
+
+-pug es un motor de plantilla, tenemos que utilizarlo
+express --view-pug nombreApp
+Para crear la estructura de la app
+
+Se inicia con un npm start
+
+18:46************** explica para que son todos los atributos que te trae
+
+Las plantillas permiten pasar datos de node a html, son los .pug
+
+Al final de el app.js esta lo que se usa para atrapar los errores
+
+En el bin se inicia el proyecto
+
+El render se utiliza cuando usemos plantillas
+En el render, le podemos pasar datos a los pugs
+
+https://medium.com/@tomasmalio/node-js-express-y-mysql-con-sequelize-ec0a7c0ae292
+https://www.tutofox.com/nodejs/rest-api-crud-node-js-express-react-js-mysql-part-2-model-sequelize/
+https://github.com/bezkoder/react-hooks-crud-web-api/blob/master/src/services/TutorialService.js
+https://github.com/bezkoder/react-express-mysql/tree/master/app

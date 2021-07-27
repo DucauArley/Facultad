@@ -1,0 +1,39 @@
+Armar modelo de casos de uso preliminar, osea un caso de uso simple
+lista de requerimientos
+edt preliminar
+Acta del proyecto tiene que tener bastante
+
+Volar lo de estudio de factibilidad
+Alcance es mas de la fase de inicio, esta dado por los requerimientos
+Definir objetivos tambien
+
+En analisis entro a definir lo de analizar el producto, por ahi entra el
+mod de caso de uso mas detallado o de entidad relacion
+
+Sacar interfaz porque hay que hacer el backend tambien
+Queda lo mismo pero sin interfaz
+
+En los transportista, cliente, etc cambiarlos por las funciones que hace
+Lo del home cambiarlo por alta cliente/transportista
+
+Fase de transicion medio que sobra, igual le gusto lo de faq asique lo
+dejamos
+
+Sacamos los tiempos en base a lo que entiendo que necesito, despues uso la
+Tecnica bazada en cantidad de entrevistas o la otra para estimar cuanto 
+tiempo lleva el proyecto aprox
+
+tecnica de puntos de caso de uso
+
+Ademas de tiempo en el edt hay que asignarle un recurso, osea el quien va a
+hacer que cosa, pero creo que eso es para el prox parcial
+
+Rol quien hace que y responsabilidad quien decide que
+
+Autoridad: Capacidad de influir en funcion del cargo
+
+Poder: Capacidad de influir por su accion o capacidad
+
+
+
+

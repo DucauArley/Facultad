@@ -1,0 +1,40 @@
+node index.js para que funcione
+local host lo cambiamos por la ip de la maquina osea localhost 192.168. etc
+es la ipv4 de ipconfig
+http://localhost:3000/personas
+personas es un json con {"nombre":"pedro","apellido":"Picapiedra",
+"telefono":"4666-6666","img":
+"http://www.lslutnfra.com/alumnos/practicas/pedro_pic.jpg"}
+acordate que devuelve un string y despues hay que convertirlo en json para
+eso
+JSONArray array = new JSONArray(msg.obj.toString())
+Luego se puede recorrer con un for
+for(int i = 0; i<array.length(); i++)
+{
+    JSONObject object = array.getJSONObject(i);
+    object.getString("nombre") devuelve el valor del campo nombre
+}
+
+Armar un recycle view con la lista de contactos
+Sacar la lista con un get al servidor
+
+Con una opcion del menu ir a otra activity con un alta de persona que va a
+ser un formulario de alta donde se ingresa nombre, apellido, telefono y
+link de imagen
+
+Para guardar se ejecuta un metodo post al servidor pasandole un objeto json
+http://localhost:3000/nuevaPersona con esto
+
+Dentro del hilo donde se ejecute la consulta en vez de pasar la respuesta al
+activity, guardamos la info en un array de json y ahi lo pasamos
+
+Lanzar el hilo cuando estamos recorriendo los arrays dentro del run del hilo
+de personas
+o sino en el handler message lanzas los hilos
+for(int i)
+{
+lanzar el hilo aca con la posicion(i) que hay que poner como parametro en
+el Hilohttp para pasarlo por arg2
+}
+con el message.arg2 seteamos la posicion
+persona va a tener 2 string uno para la url y otra para el bitmap

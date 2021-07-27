@@ -1,0 +1,277 @@
+Flujo de trabajo implementacion desaparece el ingeniero de casos de uso, 
+aparece otro puesto de trabajo que es el integrador del sistema
+
+El flujo de trabajo implementacion se comienza a trabajar con el resultado
+del flujo de trabajo diseño para implementar el nuevo sistema en terminos de
+componentes: es decir ficheros de codigo fuentes, ejecutables, scripts
+
+Los propositos del flujo de trabajo implementacion son:
+Planificar las integraciones necesarias en cada iteracion:
+Para ello se sigue el enfoque incremental que da lugar a que un sistema se
+implemente en pasos pequeños y manejables
+Distribuir el sistema asignando componentes ejecutables a nodos en el 
+diagrama de despliegue
+Implementar las clases y subsistemas encontrados durante el diseño
+Probar los componentes individualmente y a continuacion integrarlos 
+compilandolos y enlazandolos en uno o mas ejecutables, antes de ser enviados
+para ser integrados y llevar a cabo las comprobaciones del sistema
+
+Arquitecto es responsable del modelo de implementacion, modelo de 
+despliegue y descripcion de la arquitectura
+
+Integrador de sistema es responsable de la integracion del sistema
+
+El ingeniero de componentes es responsable de los componentes, la interfaz
+y la implementacion de subsistemas
+
+Muestra los flujos de trabajo 19:00**************************
+
+El modelo de implementacion es una jerarquia de subsistemas de 
+implementacion que contiene componentes e interfaces 19:05***********
+
+Artefacto componente
+Es el empaquetamiento fisico de los elementos de un modelo, como son la 
+clases en el modelo de diseño
+
+Algunos estereotipos estandar de componentes:
+<<Executable>> Es un programa que puede ser ejecuado en un nodo
+<<file>> es un fichero que contiene codigo fuente o datos
+<<library>> es una libreria estatica o dinamica
+<<table>> es una tabla de base de datos
+<<document>> es un documento
+
+Tienen relacion de traza con los elementos del modelo que implementa
+Es normal que un componente implemente varios elementos, sin embargo, la
+forma exacta en que se crea esta traza depende de como van a ser 
+estructurados y modularizados los ficheros de codigo fuente, dado el 
+lenguaje de programacion que se esta usando
+
+Hay dependencia de traza entre componentes y clases de diseño
+
+Los componentes proporcionan las mismas interfaces que los elementos del
+modelo que implementan
+
+Dependencias de compilacion entre componentes
+El componente <<file>> se compila a partir de un componente <<executable>>
+
+Puede haber dependencias de compilacion entre componentes denotando que 
+componentes son necesarios para compilar a otros
+
+Un subsistema de implementacion proporciona una forma de organizar los 
+artefactos del modelo de implmentacion en trozos mas manejables
+
+Un subsistema puede estar formado por componentes, interfaces y otros 
+subsistemas recursivamente. 
+Un subsistema puede implementar, y asi proporcionar, las interfaces que 
+representan la funcionalidad que exportan en forma de operaciones
+Se manifiesa a traves de un mecanismo de empaquetamiento concreto en un
+entorno de implementacion determinado como un paquete en java, un
+directorio de ficheros en un protecto de c, etc
+
+Debe proporcionar las mismas interfaces	que proporciona el sistema 
+19:16****************
+
+En el modelo de implementacion sigue la traza uno a uno a un subsistema de
+diseño(en el modelo de diseño)
+
+Plan de integracion de construcciones
+
+Es importante construir el software en forma incremental, en pasos 
+manejables, de forma que cada paso de lugar a pequeños problemas de 
+integracion o prueba
+
+El resultado de cada paso es llamado construccion que es una version 
+ejecutable del sistema, usualmente una parte especifica del sistema
+
+Cada construccion es sometida a pruebas de integracion antes de que se cree
+ninguna otra construccion
+
+19:24******************
+
+Para prepararse ante el fallo de una construccion se lleva un control de 
+versiones de forma que se pueda volver atras a una construccion anterior
+
+De esta manera se puede crear una version ejecutable del sistema muy pronto
+en lugar de tener que esperar una version mas completa
+
+Es mas facil localizar defectos durante las pruebas de integracion, porque
+solo se añade o refina en una contruccion existente una parte manejable del
+sistema. Incluso es mejor porque los defectos estan muy probablemente
+relacionados con la parte nueva o refinada
+
+Las pruebas de integracion tienden a ser mas minuciosas que las pruebas del
+sistema completo porque se centran en partes mas pequeñas y mas manejables
+
+La integracion incremental es para la integracion del sistema lo que el 
+desarrollo iterativo controlado es para el desarrollo de software en general
+
+Ambos se centran en un incremento bastante pequeño y manejale de la 
+funcionalidad
+
+Poniendo este concepto en el desarrollo iterativo cada iteracion resulta en
+al menos una construccion
+
+La funcionalidad a ser implementada en una iteracion determinada es a menudo
+demasiado compleja para ser integrada en una sola construccion
+
+En lugar de esto, puede que se cree una secuencia de construcciones dentro
+de una iteracion, cada una de las cuales representara un paso manejable en
+el que se hace un pequeño incremento del sistema
+
+Cada iteracion resultara entonces en un incremento mayor del sistema, 
+posiblemente acumulados	a lo largo de varias construcciones
+
+El plan de integracion de construcciones describe la secuencia de
+construcciones necesarias en una iteracion. Este describe
+
+La funcionalidad que se espera sea implementada en 19:31*****************
+
+
+Flujo de trabajo prueba
+
+En el flujo de trabajo prueba se verifica el resultado de la implementacion
+probando cada construccion incluyendo tanto construcciones internas como
+intermedias asi como versiones finales antes de ser entregadas a terceros
+
+Los objetivos del flujo pruba son:
+Planificar las pruebas necesarias en cada iteracion, incluyendo las pruebas
+de integracion como las pruebas de sistema
+Las pruebas de integracion son necesarias para cada construccion dentro de
+cada iteracion
+Las pruebas de sistema son necesarias solo al final de la iteracion
+
+Diseñar e implementar las pruebas creando los casos de prueba que 
+especifican como realizar las pruebas y creando si es posible componentes
+de prueba ejecutables para automatizar las pruebas
+
+Realizar las diferentes pruebas y manejar los resultados de cada pruebas
+sistematicamente
+
+Algo sobre los defectos 19:38***************************
+
+Las contrucciones en las que se detectan defectos son probados de nuevo y
+posiblemente devueltas a otro flujo de trabajo como diseño e implementacion
+de forma que los defectos importantes puedan ser arreglados
+
+La realzacion de prueba se centra en la fase de elaboracion cuando se prueba
+la linea base ejecutable de la arquitectura
+La fase de construccioncuando el grueso del sistema esta implementando
+La fas de transicion cuando la prueba se centra hacia la correccion de 
+defectos durante los primeros usos y a las pruebas de regresion que se 
+realizan fundamentalmente para comprobar que la antigua funcionalidad de
+construcciones antiguas aun siguen comportandose de manera correcta cuando
+se añade funcionalidad nueva en una construccion nueva
+
+Debido a la naturaleza iterativa del esfuerzo de desarrollo, algunos casos
+de prueba que especifican como probar las primeras construcciones pueden
+ser utilizadas tambien como casos de prueba de regresion
+
+Esto hace que el numero de pruebas de regresion necesarias crece por lo 
+tanto en forma estable a lo largo de la iteraciones, lo que significa que 
+las ultimas iteraciones requieren un gran esfuerzo de pruebas de regresion
+
+El modelo de prueba debe estar mantenido y actualizado durante todo el 
+19:50****************************
+
+Ingeniero de pruebas es responsable de modelo de pruebas, caso de prueba,
+procedimiento de prueba, evaluacion de prueba plan de prueba
+
+El ingeniero de componentes es responsable de el componente de prueba
+
+El ingeniero de prueba de integracion y el de sistemas son responsables de 
+los defectos
+
+El modelo de prueba describe principalmente como se prueba los componentes
+ejecutables como las construcciones en el modelo de implantacion con pruebas
+de integracion y pruebas de sistema
+
+El modelo de prueba puede tambien describir como se han probado aspectos
+especificos del sistema como: si la interfaz de usuario es utilizable y
+consistente, si el manual de usuario del sistema cumple con el objetivo, etc
+
+El caso de prueba especifica una forma de probar el sistema incluyendo la
+entrada o resultado con que se ha de probar y las condiciones bajo las que
+ha de aprobarse
+
+Un caso de prueba especifica como probar un casod e uso	o un escenario
+especificado de un caso de uso
+
+Un caso de prueba de este tipo incluye la verificacion del resultado de la
+interaccion entre los actores y el sistema, que satisfacen las 
+precondiciones y postcondiciones especificadas por el caso de uso y que 
+sigue la secuencia de acciones especificadas por el caso de uso
+Observese que en estas condiciones nos encontramos como una prueba de caja
+negra en decir una prueba del comportamiento observable externamente del
+sistema
+
+Un caso de prueba que especifica como probar una realizacion caso de uso-
+diseño o un escenario especifico de la realizacion
+
+Un caso de prueba de este tipo puede incluir la verificacion de la 
+interaccion entre los componentes que implementan dicho caso de uso
+Observece que en estas condiciones nos encontramos como una prueba de caja 
+blanca es decir una prueba de interaccion interna entre los componentes 
+del sistema
+
+Se pueden especificar otro caso de prueba para probar el sistema como un
+todo
+
+Pruebas de instalacion: que permiten verificar que el sistema puede ser
+instalado en la plataforma del cliente y que el sistema funcionara 
+correctamente cuando sea instalado
+
+Pruebas de configuracion: que permiten verificar que el sistema funciona
+correctamente en diferentes configuraciones de red por ejemplo
+
+Prubas negativas que intentan provocar que el sistema falle para poder
+20:10****************************
+
+Procedimiento de prueba especifica como realizar uno o varios casos de
+prueba o parte de estos. El como llevar a cabo un caso de prueba puede ser
+especificado por un procedimiento de prueba pero a veces se reutiliza un
+procedimiento de prueba para varios casos de prueba y se pueden reutilizar
+varios procedimientos de prueba para un caso de prueba
+
+Hay asociaciones muchos a muchos entre los procedimientos de prueba y los 
+casos de prueba
+
+Componente de prueba automatiza uno o varios procedimientos de prueba o
+partes de ellos
+
+se utilizan para probar los componentes en el modelo de implementacion,
+proporcionando entrada de prueba, controlando y monitorizando la ejecucion
+de los componentes que quiero probar y posiblemente informando de los 
+resultados de las pruebas
+
+Hay asociaciones muchos a muchos entre los componentes de prueba y los 
+procedimientos de prueba
+
+Plan de prueba describe las estrategias, recursos y planificacion de la 
+prueba
+Una estrategia de prueba incluye:
+La definicion del tipo de pruebas a realizar para cada iteracion y sus 
+objetivos
+El nivel de cobertura y de codigo necesario y el porcentaje de pruebas que
+deberian ejecutarse con un resultado especifico
+
+Defecto es una anomalia, como por ejemplo un sintoma de un fallo software o
+un problema descubierto en una revision. tambien puede ser utilizado para
+localizar cualquier cosa que los desarrolladores necesitan registrar como
+sintoma de una problema en el sistema que ellos necesitan controlar o 
+resolver
+
+Evaluacion de prueba es una evaluacion de los resultados de los esfuerzos de
+prueba, tales como la cobertura del caso de prueba, la cobertura del codigo,
+el estado de los defectos
+
+muestra otro diagrama de actividades 20:25**************************
+
+
+
+
+
+
+
+
+
+

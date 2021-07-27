@@ -1,0 +1,66 @@
+Agregar un nuevo subsistema para colocar los casos de uso abstractos
+Subsistema de administracion general de recursos
+
+Se tendrian que ver todos los casos de uso en una carpeta aparte
+
+Supuesto diag de actividad es un diag de colaboraciones simples. El que 
+hicieron en el subsistema atencion al cliente
+
+Invitacion de compra parece que tendria que tener una interfaz
+
+Documento entregado es el dominio que nos dio,
+Todos los casos de uso del negocio
+Diagrama de clases con clases candidatas
+
+Otra carpeta
+El esquema jerarquico del modelo de casos de uso
+
+Otra carpeta
+Maquina de estado separado por objeto
+
+Otra carpeta 
+con el glosario
+
+Otra carpeta llamada casos de uso
+con una carpeta para cada subsistema
+cada una con el o los diag de casos de uso. Por ej si tiene 5 casos de uso,
+hay que poner el caso de uso detallado y su diseño de interfaz
+
+
+Se pone en el glosario las cosas del cambio de año y de como se numeran
+las solicitudes de compra, no en la especificacion de los casos de uso.
+Es un atributo dentro de la clase solicitud de compra. Pongo atributo
+
+Arreglar bien lo de fecha limite para presentacion
+Lo de adjunto se vera en otro momento
+SolicitudCompra es un todo parte, por lo cual cada detalle va a tener una
+especificacion tecnica. El todo es muy concreto, las partes tienen las 
+particularidades
+
+Poner botones eliminar linea, eliminar todo, etc
+
+En cancelar se pierde el numero. El cancelar es cerrar absoultamente todo 
+de una
+
+Agregar boton agregar linea para poder elegir mas cosas
+
+Las validaciones por ahora no las ponemos
+
+En un equipo se trabaja siempre con una unica interfaz que es un caso de 
+uso abstracto para las confirmaciones y pop ups que se abran, por ahora no
+tocamos nada
+
+Una vez generada, puede pasar a anulada, otro es con invitacion a 
+proveedores, cuando cotizan los proveedores se llega a con todos los
+detalles asignados a proveedores o con eleccion automatica
+Creo que con detalleSolicitud tambien es otro objeto
+
+Parece que invitacionDeCompra no es un objeto, sino un estado de solicitud
+Compra
+
+Quiza se pueda crear una pagina a los proveedores para que estos cotizen
+Tienen que poder poner: Precio unitario y fecha de entrega
+
+
+
+

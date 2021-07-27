@@ -1,0 +1,76 @@
+Modelar todas las abstracciones
+
+Casos de uso: especificacion de un comportamiento por medio de una secuencia
+de acciones. Representa un requisito funcional del sistema
+Esa secuencia de acciones pueden variar por determinadas circunstancias,
+hay que graficar todas las variaciones
+Se basa en el que obtengo de esas variaciones de los caminos, no se mete en
+los detalles tecnicos
+Asi se puede comprender que hace un requisito del sistema
+Al estar en lenguaje narrativo permite el entendimiento a cualquier persona
+
+Permite validar arquitectura y poder verificar su desarrollo
+No es lo mismo que una clase preste un comportamiento definido en una 
+colaboracion como si no esta en colaboracion
+Colaboracion tiene todo lo necesario para llevar el comportamiento
+
+Los requisitos funcionales que se detectan denotan funcionalidades del
+sistema y deben estar bien estructurados
+
+A nivel teoria un caso de uso es: Un comportamiento de un sistema o una
+parte. Descripcion de un conjunto de secuencias de acciones incluyendo
+variantes que ejecuta un sistema para producir un resultado observable de
+valor para un actor
+
+Terminadores: Rol que cumple algo que esta fuera del sistema y que dentro de
+ese rol tiene determinadas interacciones con el sistema
+
+Los actores pueden ser otros sistemas
+
+Puedo tener casos de uso incluidos dentro de otros
+La factorizacion de comportamiento es organizar los requisitos del sistema
+
+Como nombrar procesos: Procesar compra, hacer tal cosa, actor es un monigote
+En el tp se puede tener un subsistema de gestion de turnos, de clinica y 
+pacientes, etc
+
+El nombre del caso de uso es igual al comportamiento, al requisito funcional
+una vez se reconoce hay que ver como se organiza ese comportamiento
+
+Una instancia de una actor representa una interaccion individual con el
+sistema de forma especifica osea que no hace lo mismo que el actor en si
+Se puede aplicar entre ellos la generalizacion solamente
+
+En uml se conectan al sistema por medio de asociaciones, cada uno va a poder
+enviar y recibir mensajes
+
+Hacer diagrama y especificacion de caso de uso
+
+Caminos escepcionales: no hacerlos para el tp
+Hay que poner cuando y como empiezan y terminan
+
+Escenario es la instancia de un caso de uso
+
+Colaboraciones: 
+casos de uso captura el comportamiento esperado del sistema
+
+Comportamiento se factoriza para reutilizarlo en otra parte del sistema
+Factorizar variantes identifica que hay casos de uso que hasta cierto 
+momento se comporte de cierta manera y despues cambia dependiendo 
+determinadas circunstancias
+
+Include lo incluye, extend puede o no incluirlo
+
+El incluido es el independiente, el otro es el dependiente, el mas fuerte
+es el que extiende el comportamiento
+
+La inclucion es que un caso de uso extiende el comportamiento de otro
+
+Todo actor que no incluya me como una interaccion con el sistema
+
+Todo lo de la izquierda son actores que van a generar el comportamiento
+
+Para el tp modelar desde que paciente solicita el turno hasta que asiste y
+va a recepcion y al consultorio
+
+

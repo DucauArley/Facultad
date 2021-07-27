@@ -1,0 +1,133 @@
+Elementos estructurales
+Una clase no es algo individual, define un conjunto de objetos, van a tener
+cierta cantidad de instancias osea los objetos. se pueden representar de 
+forma abreviada, se compone de nombre, atributos y operaciones
+uml no es una metodologia, es un lenguaje de modelado
+
+Una clase es una abstraccion de las cosas que forman parte del vocabulario,
+representa un conjunto de objetos
+
+Se le hace enfasis al que se hace que al como en metodologia
+
+Nombre de las clases se buscan que sean cortos, o con nomesclaturas cortas
+Primera letra de cada palabra en mayuscula, si el nombre aparece precedido
+por el de un paquete en el que se encuentra se denomina nombre en camino
+
+Paquete: Forma de organizar el sistema, agrupacion logica
+
+Atributo: Propiedad de la clase, la comparten todos los objetos. Cada 
+atributo, va a tener diferentes estados a lo largo de la ejecucion del 
+sistema
+Primero se coloca la visibilidad, luego el nombre, luego la multiplicidad,
+luego :(dos puntos) y luego el tipo de atributo que es (Int, string, etc)
+Se nombran igual que en programacion
+
+Operaciones: En uml no son lo mismo que el metodo. Es la especificacion de 
+un servicio que se puede requerir en una clase. Metodo es la implementacion
+de una operacion
+Todo lo que es el tipo de retorno, nombre de la operacion, nombre de 
+parametros, etc se conoce como firma
+Cada operacion va a tener un metodo correspondiente.
+Se escriben igual que en programacion
+Nombre de las operaciones es un texto representativo de lo que hace, es un
+verbo, se puede definir indicando todos los elementos que componen su
+signatura, osea lo mismo que programacion
+
+Se pueden usar estereotipos para agrupar atributos y operaciones
+
+Responsabilidad de las clases: es un contrato o una obligacion de una clase,
+esta responsabilidad se cumple a travez de los atributos y operaciones.
+Se ponen dentro de un glosario, con el nombre de la clase y la definicion
+de la responsabilidad de la clase. Osea que tiene que conocer esa clase, 
+relacionado con los atributos y que tiene que hacer, relacionado con las 
+operaciones. Para que todo lo que se defina tenga un porque
+
+Clase grande: Dificil de mantener Clase chica: Se van a tener demasiadas
+abstracciones haciendola dificil de manejar o entender
+
+Multiplicidad: Antes le deciamos cardinalidad. Es el numero de instancias
+que una clase puede tener
+
+Mecanismo de extensibilidad: Se pueden modelar cosas que no tiene un 
+software que los represente, como gente que emite facturas. En este caso, se
+toma un bloque de construccion primitivo por lo general clases por medio de 
+un estereotipo. En caso de que se modele un hardware, se usan los nodos ya
+que representan capacidad de almacenamiento y de procesamiento
+
+Las clases tienen jerarquias por medio de relaciones de generalizacion es
+decir por medio de la herencia
+Clase abstracta: esta en la cima de la jerarquia, se escribe su nombre en
+cursiva
+Clase hoja: Esta al final del arbol de jerarquia, no tiene hijos, se 
+especifica la propiedad leaf debajo del nombre de la clase
+Clase raiz: No puede tener padres, se especifica la propidad root debajo del
+nombre de la clase
+
+Clasificador es un mecanismo que describe caracteristicas estructurales y
+comportamiento, es un bloque de construccion que tiene o puede tener
+instancias, pueden modelar multiplicidad, visibilidad, singatura,
+polimorfismo, etc. Las clases, las interfaces, etc son clasificadores
+
+Señales: estimulos asincronicos enviados entre instancias
+Caso de uso: Descripcion de secuencia de acciones incluyendo variantes, que 
+ejecuta un sistema y produce un resultado observable para un actor
+Subsistema: Agrupacion de elementos, algunos de los cuales constituyen una
+especificacion del comportamiento de los otros elementos contenidos osea
+son los paquetes, bloques de construccion que suelen ser clasificadores	
+
+Visibilidad: Public = +, Protected = #, private = -, si no se pone nada
+quiere decir que es publica
+
+Subtipo es una superclase conceptual, una especializacion de otro tipo
+Superclase: Una clase a partir de la cual otras heredan atributos y metodos
+Supertipo: Una superclase conceptual. En una relacion generalizacion
+-especializacion, el tipo mas general. Un conjunto que tiene subtipos
+Subtipo: Una subclase conceptual. Una especializacion de otro tipo 
+(el supertipo) que es conforme con la intension y extension del supertipo
+Instancia no siempre significa lo mismo que los objetos. Las instancias
+pueden ser nodos y demas mientras que objetos siempre pertenecen a clases
+Objeto activo: objeto con su propio hilo de control
+
+Una relacion es una conexion entre elementos, se conectan de forma logica o
+fisica. Hay relaciones que se dan en el contexto dinamico del sistema
+Tres tipos de relaciones: de uso (dependencia): que es cuando un elemento 
+depende de otro el ej del control remoto y la pila
+Colocar el estereotipo de include dice que un caso de uso incorpora el
+comportamiento de otro caso de uso
+El estereotipo extend indica que un caso de uso extiende su comportamiento
+a otro caso de uso, es decir, incorpora el comportamiento del otro
+Generalizacion: Herencia
+Herencia multiple: Mas de un padre
+
+Asociacion: Especifica que los objetos de una clase estan conectados con los
+de otra clase, se puede dar en ambos sentidos sin ningun cambio semantico
+Se pueden tener elementos de una misma clase que se relacionan entre si
+ej 2 alumnos podrian tener la relacion de: Realiza trabajo practico con...
+Asociacion binaria: conecta dos clases
+Representan relaciones estructurales
+Se le puede aplicar adornos a las asociaciones:
+Nombre: Para entender que hace la relacion
+Direccion: Para entender a quien va dirigida la relacion
+Rol: ej persona: empleado - empresa: empleador
+Multiplicidad: Es igual que la cardinalidad
+Navegacion: Para cuando no quiero que la relacion sea bidireccional
+
+Agregacion:Representa una relacion de estructura entre clases al mismo nivel
+Representa una relacion del tipo "tiene un".
+La flecha siempre suele ir para el elemento mas fuerte del modelo
+
+Composicion o Agregacion compuesta: Añade una semantica a la agregacion.
+Si el todo no existe, las partes no tienen sentido. Siempre va a existir
+primero el todo, osea el todo crea y destruye las partes. Ej una ventana y
+los marcos. Osea si no existe la ventana, tampoco los marcos	
+
+Clase asociacion: En una asociacion entre dos clases, la propia asociacion
+puede tener propiedades. Se da en muchos a muchos
+
+Realizacion: Un clasificador especifica un contrato que otro clasificador
+garantiza que cumplira
+
+Interfaces permiten separar la especificacion de un contrato de su
+implementacion, incluyen partes logicas y fisicas de un sistema(Arquitectura)
+
+Relaciones estructurales y dinamicas

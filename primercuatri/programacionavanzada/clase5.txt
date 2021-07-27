@@ -1,0 +1,86 @@
+Colecciones
+**Ver el principio que explica la serializacion
+En el serializar data es el paquete, osea la carpeta
+
+Try con recursos
+No se llama al metodo close ya que se declara todo lo que hay que cerrar 
+dentro del try como parametro
+try(bw = new BufferedWriter(new FileWriter(f)))
+Cuando salga del try ya sea por excepcion o porque termino el try, va a 
+llamar al metodo close del objeto
+Te obliga a sobreescribir el metodo close
+
+Colecciones:
+Todas las listas son elementos con un indice
+Agrupaciones de elementos de tipo object y wrapers, mientras que arrays se 
+usan para los tipos primitivos
+ArrayList es el mas comun porque tiene el tipico funcionamiento de las
+colecciones, osea se van agregando objetos uno abajo del otro en la memoria
+ram. Se agregan y se recorren rapidamente. Cuando se borra uno, se reindexan
+todos los demas elementos
+
+si tenes que remover elementos u ordenarlos, conviene usar la linkedList que
+es una lista de elementos doblemente enlazadas
+Se guarda quien esta arriba y quien abajo, se calcula el indice cuando se
+guarda un objeto
+
+Es mejor hacer lista.remove("Chau") que remove(1);
+
+Vector es como el arraylist pero para multiprocesamientos, osea si dos
+hilos llegan al mismo tiempo a ejecutar el metodo add, el arraylist revienta
+
+Set Hereda de collection igual que list, por ende comparten la mayoria de 
+los metodos
+Set no tiene get(1) porque es un conjunto de elementos pero no de manera 
+secuencial, por ende no tiene indices
+La posicion depende del objeto en si, usa el hashcode para establecerla
+No admite valores duplicados, para saber si es duplicado, hay que 
+sobreescribir el hashcode y el equals de la clase de los valores que se
+quieren comparar
+Saca el hashcode antes de agregarlo, con el hashcode saca la posicion en ram
+en donde guardarlo, si en la misma posicion de memoria hay otro objeto, le 
+hace el equals, si da true lo sobreescribe, si le da false lo guarda abajo
+
+20:45 empieza a hablar del treeset
+TreeSet Posiciona a los elementos segun el tipo de elemento, ej los numeros
+de menor a mayor, los strings alfabeticamente y los objetos comunes los 
+decidimos nosotros sobreescribiendo el metodo compareTo, se tiene que
+implementar la interfaz compare. -1 menor, 0 igual, 1 mayor
+
+Map se le indican dos cosas, la clave y el valor, no hereda de collection
+las claves son unicas, si se hace un put con la misma clave piso los valores
+
+Si quiero leer el map, hago un keySet() que me devuelve un set para asi
+poder recorrer la informacion
+
+Se pueden crear clases genericas ej class Lista<T> la t se puede usar como
+tipo de dato. T es lo mismo que object, osea que no se le puede pasar un 
+valor primitivo
+
+Se puede hacer un metodo generico de la misma forma que con la clase
+
+Modificar clase de archivos con el try con recursos
+Probar el ejemplo del hashset con el setTree
+Ver como ordenar listas, para usar bien el treeset
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+Recycler view es el componente principal de las apps, ej en  gmail es cada
+item de los mails que le llegan, en wpp son los items de cada conversacion
+Es un widget: Componente de pantalla que tiene una funcionalidad en concreto
+Se usa algo que se llama adapter para poder usarlo
+Se tiene que incluir en el gradle porque no viene por defecto
+recycleview-v7 en el buscador de dependencias
+Hay que usarlo en la version 29
+Todos los componentes en pantalla heredan de view
+
+Hay que generar un xml del layout pero representamos el diseño de 1 solo
+item de como queremos que se vea
+
+Adapter traduce al recycleview como tiene que transmitir a travez de la 
+pantalla y cuando se va a transmitir
+Adapter es el adaptador entre el recycle view y la lista de las personas
+Es una clase propia extendiendo de la clase adapter
+
+El adapter recibe una lista de personas
+Tambien tiene objetos de view Holder
+Nunca llamar los metodos del adapter, las llama el recycle view
+get item count le dice al recylce view cuantos items tiene que representar
+onCreateViewHolder: Crea el elemento de la lista de personas********* crea
+el objeto de tipo view
+
+En el personaviewHolder se le pasa la view que se habia creado antes
+Propiedad inflate transforma un xml layout en un objeto de tipo view, osea
+los objetos xml los pasa a objetos de memoria ram
+
+parent.getcontext() devuelve quien es el padre de tal elemento
+ninguna activity puede destruir ni utilizar un objeto de otra activity
+
+onBindViewHolder: Bindea el elemento creado anteriormente, es decir que lo
+llena con informacion. Se setea con la info de la persona en la posicion
+que se le pasa por parametro
+
+Se pone el recyclerview en el main_activity con match_parent para que ocupe
+toda la pantalla y con un id para poder recuperarlo
+
+con el layout manager del recyclerView se pone con que orientacion se van a
+poner los elementos
+
+Todos los pasos osea el get, create, bind y demas lo hace por todos los
+elementos que se puedan ver por pantalla, es por esto que se hace de esta 
+forma, ya que es mas performante, cuando se escrollea, empieza a reutilizar
+los objetos que ya estaban
+
+El metodo onCreate no se va a volver a ejecutar, los unicos que se ejecutan 
+son los otros dos
+
+En el view holder se van a almacenr los texts views de los nombres y 
+apellidos. Almacena a la persona
+Asi no los hace en el Bind y no crea 16 objetos
+
+Se puede armar un objeto propio de layoutManager para presentar los 
+elementos como mejor nos parezca
+Si se agrega una persona, el recycler no se entera que se agrego, osea no se
+ve, y si se modifica algo, tampoco, se ejecuta recien cuando scrolleas, pero
+hay una opcion que llamando a un metodo del adapter, se puede forsar el bind
+el notifyDataSetChange() que le avisa al adapter que se cambio info de la
+lista o adapter.notifyItemChange(posicion del elemento) ejecuta el bind en
+el elemento especifico, el otro carga todos los elementos de cero.
+El adapter no tiene logica, solamente le avisa al recycler
+
+
+Tarea: Hacer que se ejecute 1 metodo cuando clickeo una persona en 
+especifico
+20:28 aparecen los juegos del profe
+
+
+

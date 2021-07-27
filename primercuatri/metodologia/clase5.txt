@@ -1,0 +1,63 @@
+Clase paciente relacionarlo todo lo que se puede
+Generalizaciones no tienen porque tener cardinalidad
+Casos de uso no entra al parcial
+Hay que hacer el diagrama de objetos para el tp como donde esta instancias 
+concretas
+
+Diagrama de objeto: Tiene en cuenta las relaciones entre objetos y que 
+valores tiene en determinados momentos
+Siempre que una clase tenga que comunicarse con otra, tienen que estar 
+relacionadas, solamente asi se pueden mandar mensajes
+
+Instancias: son manifestaciones concretas de una abstraccion
+
+El diagrama de objetos se hace luego del de clases. Un caso de uso, un nodo,
+etc pueden tener instancias pero no entran en este diagrama, solo entran los
+objetos de las clases
+
+Abstracion: Son todas las caracteristicas de las clases
+
+Asociasiones tienen instancias de asociasiones
+
+No omitir multiplicidad en el diagrama de clases, no se detalla en el 
+diagrama de objetos
+
+Instancias se representan subrayando sus nombres. No todas las instancias
+son objetos
+
+Nombre del elemento::Nombre del paquete
+Primero paquete luego clase	
+Objetos anonimos, se decide no darle nombre al objeto
+
+Para las operaciones es lo mismo que en codigo
+
+El estado es un objeto dinamico si se lo ve desde sus propiedades, ya que 
+estas van a cambiar
+
+Vista de procesos permite evaluar el rendimiento 
+Flujo de control esta relacionado con tener actividad en paralelo
+Si se resalta el contorno del recuadro, quiere decir que es un objeto con
+actividad en paralelo, osea tiene un hilo de ejecucion propio y puede
+iniciar una actividad
+Objeto pasivo: No puede iniciar una actividad
+
+InstanceOf: Especifica que el objeto origen es una instancia del 
+clasificador destino de la dependencia
+Instantiate: Especifica que la clase origen crea instancias de la clase
+destino de la dependencia
+
+Es suficiente que se diga que un objeto es instancia de un elemento por el
+nombre de la clase en este objeto
+
+Instancias prototipicas: No existen en el mundo real. Aparecen en lugares
+dinamicos.
+En el modelado tienen un aspecto estructural y dinamico
+
+Objetos concretos aparecen en lugares estaticos existen en el mundo real
+
+No se pueden modelar todos los momentos concretos del sistema, se elije uno
+en particular para modelar
+
+Hay que enfocarse en modelar los mecanismos que aporten valor
+
+Con el diagrama de objetos es como ver algo similiar a un debug paso a paso

@@ -1,0 +1,97 @@
+Parte en la memoria que se llama segmento de codigo. Cuando hacemos click
+en un punto exe, se carga ahi. Con todas las funciones de ese programa
+el .exe es como si compraramos un armario y que este venga con un 
+destornillador, un martillo, etc
+
+Busca la funcion main y la carga en el stack. Cuando encuentra una llamada
+a una funcion, hace que vaya al codigo y lo apila, arriba de el main, el 
+flujo del programa sala al codigo de la funcion, cuando termina, se libera
+esa funcion de la pila y el flujo del programa vuelve al main
+
+En programacion, hay lenguajes single thread y multithread. El primero
+tiene una sola pila, los otros tienen varias
+
+js es singlethread asincronico
+
+a su vez pueden ser procesos concurrentes o paralelos. El primero es como
+si hubiese dos filas y un solo procesador, va resolviendo uno por uno de
+cada fila, variando entre las dos o con prioridad en una fila en especifico
+En el segundo, hay varios procesadores y uno atiende una fila y el otro
+otra
+
+Un proceso no bloqueante es por ej un mozo en un restaurant. El mozo te
+levanta el pedido, otro se encarga de hacerlo. Atiende a todos los que
+puede y cuando se termina de hacer algo, avisa que termino. js esta pensado
+de esta manera. c y c# son bloqueantes. js es asi porque se penso para web
+y tiene mucha latencia si fuese bloqueante
+
+Cuando registras un evento a un boton en js, es un proceso asincrono. Sino
+si fuese bloqueante, tendrias que esperar hasta que se ejecute ese evento.
+Cuando se clickea, me avisa que se clickeo y cuando tenga tiempo ejecuta el
+codigo correspondiente
+
+Un callback es una funcion que se le pasa a otra funcion
+Cuando hacemos una peticion por ajax, tambien es asincronico
+
+Todo lo que esta pensado para el frontend, tambien es valido para el backend
+
+Latenflip loupe pagina para ver como funciona la pila y demas
+
+El await espera a que termine un procesos asincrono. Se ponen si dentro de
+una funcion se llama a una funcion asincrona
+
+funcion en js es un objeto ejecutable
+
+Estados de una promesa son pending(mientras este esperando, pendiente),
+fulfilled(que tuvo exito y se ejecuta el metodo then) o rejected(tuvo un
+error, lo devuelve el metodo catch)
+Basicamente es lo que esuvimos usando en angular
+
+Hay varios metodos para promesas, para crear una se usa el new Promise
+
+Promesas son dificiles de depurar o de hacer tests
+
+closures ********
+
+
+this cambia depende del contexto, o como se ejecute la funcion
+
+imprtaciones con nombre se hacen entre {}
+
+
+Para trabajar con react tenemos que tener node
+
+React es una libreria desarrollada por facebook, esta basado en la 
+performance, implementa un shadowdom, tiene el dom en memoria. Se basa en
+componentes como angular
+
+Framework dice como, donde y la manera de programar . Ej angular
+Libreria es mas flexible, se pueden utilizar en cualquier aplicacion
+
+De forma nativa, en html podemos generar nuestros propios elementos que a
+fin de cuentas son directivas
+
+Nosotros vamos a usar los componentes funcionales con estados
+
+npx create-react-app my-app, npx siempre va a estar actualizado, porque lo
+usa de manera remota
+
+npm start para iniciar la app
+
+jsx es el html de react, tiene algunas reglas nuevas
+
+Todos los componentes que creamos tienen que empezar con mayuscula para
+diferenciarlos de los nativos
+
+Cuando en el jsx se ponen llaves, se empieza a escribir js
+
+Todos los componentes tienen un estado. Cada vez que cambia algo del estado
+del componente, se vuelve a renderizar solo lo que cambio
+
+atributo key tiene que ser unico con respecto la de sus hermanos
+
+react utiliza el indice para ver si en el renderizado cambio algun elemento
+
+
+
+

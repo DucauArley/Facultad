@@ -1,0 +1,65 @@
+Parciales orales
+Seminario y meto 3 son un combo
+Metodologia 3 se ve el proceso unificado de desarrollo de software osea lo
+teorico, en seminario es la practica
+Se trabaja con el concepto de proyectos
+4pes en esto
+personas proyecto proceso producto
+Etapas del conocimiento
+saber-saber saber-hacer saber-decir
+
+No decir en el apunte dice tal cosa, no leer el apunte, sino el libro voy a
+tener que estudiar bastante
+
+Hay bastante trabajo en clase en seminario mas que nada, podemos hacerle 
+video llamadas
+
+Artefacto: pieza de informacion modificada o creada en un proceso
+ito: objetivo que quiero que se cumpla en determinado tiempo
+
+Punto de partida es de que se trata el dominio. ej una empresa nueva tiene
+distinto punto de partida que una que trabaja hace 10 años o una que
+tiene un sistema de gestion obsoleto. Es decir que empiezo de forma 
+distinta para cada caso
+
+Dominio es un area de conocimiento, tiene su propia semantica
+ej para una farmacia la semantica son clientes, laboratorios, medicamentos,
+recetas, etc
+
+Una herramienta es mas que nada draw.io y demas para construir todas las
+cosas
+
+Clase es la representacion de un conjunto de objetos que tiene la 
+particularidad de compartir los mismos atributos, operaciones, relaciones y 
+semantica. Es para categorizar y representar los objetos
+Objeto: Instancia de una clase
+
+Diagrama de clases semantico permite reconocer los objetos del dominio y
+representarlos en clases. Participan las clases de entidad
+
+Diagrama de clases como colaboracion simple tiene las clases que colaboran 
+en un caso de uso. Se llama realizacion
+
+Diagrama de clases como esquema logico de base de datos es el punto de 
+partida para el diseño de la base de datos
+
+Piramide de la informacion: Todo sistema tiene 3 tipos de informacion
+informacion de toma de decisiones, para gerenciar y la operativa
+ej caso de uso anotar examen es de operativa. info mas resumida ej cuantos
+sacaron 5 es para la gerencia y para la toma de decisiones cuantos alumos
+egresan, cuantos se reciben y demas
+
+Vamos a tener que profundizar requisitos
+
+Pensar una relacion de empresa-CEAMSE ya que el CEAMSE te dice que se deja
+en tal lado, se retiran en tal fecha, etc
+
+Info operativa es la mas facil de encontrar
+
+La profe dice varias cosas importantes sobre el tp, ver el video devuelta
+
+Higiene y limpieza es un estado del volquete, osea si esta limpio, si lo
+estan limpiando, si esta sucio, etc
+
+
+

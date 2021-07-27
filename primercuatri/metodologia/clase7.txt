@@ -1,0 +1,46 @@
+Envios de mensajes:
+Una interaccion no es mas que un comportamiento que incluye un envio de
+mensajes en un contexto para lograr un determinado proposito
+2 Diagramas: de secuencia y colaboracion, modelan aspectos dinamicos
+
+ej: En la clase turno esta el set del turno, para que paciente tenga
+asignado un turno
+
+Flujos de control, pueden tener recursiones y/o bifurcasiones, modelan solo
+aspectos dinamicos
+
+Flujos de envio de mensajes siguen una secuencia, siempre esta tenido en
+cuenta en un proceso o en un hilo
+Flujos son complejos, secuencias son sensillas
+
+El envio de mensajes implica una invocacion de una operacion, la creacion o
+destruccion de un objeto o el envio de una señal
+
+Mayormente se usan secuencias no anidadas, pero las anidadas no van 1,2,3..
+van 1,1.1,1.2....
+
+En los laboratorios no es necesario modelar estas interacciones
+
+Cuando se envia un mensaje entre objetos, se va a ejecutar una accion y va
+a empezar a suceder la ejecucion del comportamiento que tenga la operacion
+
+Casi nunca sucede que un objeto espere un retorno cuando envia una señal,
+Espera el retorno cuando llama a una operacion
+
+A partir que se envia el mensaje de create, aparece el objeto, no antes
+
+Quien recibe el mensaje es quien tiene la operacion, no al revez
+
+Objetos deben tener visibilidad ante cierta operacion
+
+Linea de vida representa la existencia de un objeto a lo lago de un periodo
+de tiempo
+
+Puede haber ciertos mensajes que se repitan en cierta condicion
+Para esto se les puede poner un recuadro y escribir un mientras suceda tal
+cosa, se cumple esta iteracion
+
+Hay mensajes que se mandan bajo cierto tipo de condiciones, se pone entre []
+
+Mismo desde hasta que en el de casos de uso, hay que tener en cuenta el
+escenario. El escenario es que asiste el paciente, no que fue cancelado

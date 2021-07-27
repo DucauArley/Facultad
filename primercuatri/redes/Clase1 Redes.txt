@@ -1,0 +1,172 @@
+Red es un conjunto de nodos conectados. 
+Nodo: Cualquier dispositivo de la red
+
+Topologia: mapa fisico o logico que sigue una red o conjunto de redes para 
+realizar el intercambio de datos entre dichos nodos
+Osea es la forma en que los dispositivos que conforman la red estan
+conectados entre si tanto logico como fisicamente
+
+Bus primeras formas de conectar la red. unico cable de red
+Terminadores en las puntas evitan rebotes de señal en la red
+Es sencillo y barato porque es un cable uno
+Falla evidente. Cualiquer parte que se corte la red, esta se divide en
+dos partes y no se van a poder comunicar los equipos de los dos lados
+
+Intentando solucionar el problema del bus surgio Anillo
+Todos los equipos se conectan por dos lados. Lo uso ibm en tokenring
+tienen que esperar para hablar los equipos
+no tiene terminadores
+los nodos analizan todos los paquetes
+
+Doble anillo es lo mismo que la anillo pero con doble cableado
+Tiene uno principal y otro secundario para cuando se cae el primero
+con unos dispositivos particulares se puede saber en donde se corto la fibra
+
+Estrella: dispositivos se conectan con la red pasando por un dispositivo
+intermedio, basicamente se conecta con unos cuantos dispositivos
+equipos buscan permanentemente rutas mas faciles para conectarse entre si
+se usa con los routers
+
+malla completamente conectada(Mesh), Todos los equipos estan conectados con 
+todos los equipos. Es el que menos taza de falla tiene pero es caro en wifi 
+se usa la malla completamente conectada
+
+Topologia estandar para redes lan es la estrella
+switch dispositivo de capa 2
+concentrador: concenctra la informacion de todos los dispositivos
+ahora lo hacen los switch, antes se usaba un replicador
+todos los equipos de la red tienen un nombre: direccion mac
+problema: cualquier dispositivo que queria hablar tenian que escucharlo 
+todos para despues deducir quien tenia que recibir el mensaje
+ahora se lo manda al concentrador y este sabe a quien se lo tiene que pasar
+
+Clasificacion de redes segun extencion:geografica o tecnologia utilizada
+Las 1)wan area amplia: internet, 2)man: Aparecen con las bandas anchas 3)lan: 
+red de area local y 4)pan: mas nueva: la hace una notebook con un mouse 
+inalambrico, impresora, perifericos, etc
+
+1)Cubre grandes extenciones, compuesta por routers, dedicada al transporte
+de datos, conecta diferentes lans
+
+2)Son las redes que cubren ciudades, pueblos, etc. Dispositivos que 
+administran paquetes son parte de la man, osea es el intermedio entre el 
+proveedor de internet con los usuarios finales, es la evolucion de las
+redes lan
+
+3)Conecta dos o mas dispositivos en un area pequeña, se usan protocolos
+enrutados: tienen direccion de origen y de destino y no sabe cuando llega 
+el mensaje, por ejemplo cuando se escribe una carta y se deja en un buzon 
+y magicamente llega el mensaje al destinatario
+protocolo de enrutameinto: se lo utiliza para crear rutas, es decir lleva
+el mensaje al destinatario
+se comunican a travez de gateways o puertas de enlace, ya sea router,
+telefono, pc, etc
+
+4)conecta host con dispositivos cercanos ya sea inalambricamente(blothoth)
+o alambrica(usb)
+
+Modelo osi(open system interconnect) tiene norma iso, es el modelo de
+interconexion de sistemas abiertos con 7 capas: fisica, enlace de datos
+(ethernet, 4g, wifi), red, transporte(tcp, udp), sesion, presentacion, 
+aplicacion(http, dns,etc) cada capa tiene la posibilidad de comunicarse 
+con las capas anterior y posteriores
+No tiene que ver con el dispositivo ni con el usuario final
+
+Capa fisica: Define las especificaciones electricas, mecanicas, de 
+procedimiento y funcinales para activar mantener y desactivar el enlace 
+fisico entre sistemas
+Maneja las señales electricas del medio de transmision, polaridades en un
+conector, etc. Garantiza la conexion aunque no la fiabilidad.
+Define si la transmision puede ser realizada en los dos sentidos 
+simultaneamente o no
+
+Capa de enlace de datos: Aparece la inteligencia. Se encarga de que llegue
+bien los 1 y 0 del origen al destino a travez de un enlace fisico
+Esta planeada dentro de una lan
+el transmisor tiene que darse cuenta de que se transmite o no
+Todos los datos se mandan en paquetes cortitos
+El switch opera en esta capa, es capas de entender direcciones mac
+Asegura que la transmision de datos a traves del vinculo fisico se realice
+sin errores.
+Se ocupa del direccionamiento fisico, del acceso al medio, de la deteccion
+de errores, de la distribucion ordenada de tramas, del control del flujo
+
+Capa de red provee medios funcionales y de procedimiento. Es la dueña de 
+internet, el protocolo por exelencia es ip, se encarga de armar los paquetes
+que se enviaron en la capa anterior. router y firewall fisico son los equipos
+por exelencia, operan a nivel de red(entienden las direcciones ip)
+Vincula dispositivos de diferentes redes, enruta paquetes de datos, rearma
+paquetes fragmentados, Tiene protocolos enrutados y de enrutamiento
+
+Capa de transporte: garantiza que los mensajes lleguen sin errores, en la 
+secuencia correcta y sin perdida de datos, tcp se encarga de ver que este el
+destinatario, el error 404 es cuando tcp dice que no se puede conectar al 
+servidor de la pagina, protocolo pesado.
+udp protocolo sin controles, se encarga de enviar y recibir mensajes
+Separa las capas de nivel de aplicacion(5 a 7) de las de nivel fisico (1 a 3)
+
+Capa de sesion:Mantiene y controla las sesiones entre un cliente y un 
+proveedor, el modelo de internet no utiliza esta capa
+En caso de interrupcion, se encarga de reanudar la sesion
+
+Capa de presentacion: Se encarga de traducir los mensajes si los equipos
+tienen diferentes representaciones de caracteres para las demas capas, ahora
+que todo el mundo usa ascii, esta capa se dejo de utilizar hasta que 
+aparecieron los telefonos, tablets, etc. Ahora hacen que los sitios web sean
+responsive para los telefonos
+
+Capa de aplicacion:Ofrece las posibilidades de acceder a las demas capas y 
+definir los protocolos que se utilizan, ej pop, smtp, http, ftp, dns
+
+El modelo de internet se quedo con 4 de las 7 capas:
+
+Capa de acceso: maneja los hardwares y el control de acceso a la red, capa
+fisica y enlace de datos
+
+Capa de internet: le da nombre a los equipos y determina las rutas osea capa
+de red
+
+Capa de transporte: Fiabilidad, multiprocesos, los puertos estan aca
+
+Capa de aplicacion: capa de presentacion, aplicacion y sesion, Representa
+datos para el usuario, control y codificacion
+
+Capa fisica determina cual va a ser el modo de comunicacion de la red, de
+tres formas: simplex: se transmite en un solo sentido, el receptor no puede
+contestar, no se utiliza en internet, por ejemplo: radio
+Half duplex: Se transmite en ambos sentidos, pero esta no se puede hacer al
+mismo tiempo, por ejemplo los walkie talkies
+Full Duplex, se transmite y se recibe al mismo tiempo, esta si utiliza
+internet
+Medios de comunicacion:Como viaja la info fisicamente: Medios no guiados: el
+aire, porque se transmite en todas las direcciones y en todos los sentidos
+En los guiados se utilizan medios fisicos como un cable
+
+En internet se utilizo durante mucho tiempo el cable coaxial el de cable
+conductor: central: transporta las cargas electricas que llevan informacion
+Dielectrico: aisla los dos conductores, brinda rigidez mecanica
+Malla exterior: transporta las cargas descargadas, inmuniza el ruido 
+electrico, es decir la lluvia de el cable o en las llamadas
+Cubierta: aisla electricamente la malla del ambiente
+
+El cable que se usa actualmente es el utp que estan trenzados de a pares 
+para inmunizar el ruido electrico, si lo destrenzas la red no funciona, 4 
+pares de cables, no tiene malla en los pares de 10t y 100t(100 millones de 
+bit/s) los pares verdes blanco verdes y naranjas blanco naranjas son para la
+transmision y recepcion de datos, azul blanco azul se utiliza para telefonia 
+y el marron blanco marron es para energia por ethernet se usa en camaras de 
+vigilancia para poder alimentarlas, cosas chicas, no se puede alimentar una 
+pc, 24 y 48 volts, no tienen positivo y negativo, osea que se pueden usar 
+de los dos lados
+Pueden transmitir hasta 250MBits por segundo, en Gigabit se utilizan los 4
+cables para transmitir y recibir, pero se hace en half duplex, pasa que es
+tan rapido que a nadie le importa
+Conectar pc a hub se usa T568A, se usa blanco verde, verde, blanco naranja,
+azul, blanco azul, naranja, blanco marron, marron, se llama cable recto
+Si quiero conectar 2 pcs se usa T568B, para esto se cambian el verde con el 
+naranja y el blanco verde con el blanco naranja, se llama cable cruzado
+
+La fibra optica es un hilo de vidrio o fibra parecida al vidrio, lo que se 
+hace es poner un luz en la punta de la fibra y en la otra un receptor,
+si hay luz es un 1 y sino es un 0, no es full duplex, asique como minimo
+necesita dos hilos de fibra

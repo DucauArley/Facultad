@@ -1,0 +1,42 @@
+El metodo de Puntos de caso de uso es un metodo de estimacion y calculo de
+tamaño del software basado en calculos sobre los casos de uso para un 
+sistema sofware
+
+Se mide el software en virtud de los elementos que incluyen el software o
+algo asi xd
+
+Se mide un proyecto en base a varias cosas, la cantidad de enrevistas, la 
+cantidad de codigo, etc
+
+Las tecnicas ajustan los datos
+
+EL metodo exige la existencia de un modelo de casos de uso, por lo que la 
+estimacion debera ser hecha cuando exista algun entendimiento del dominio
+del problema o cuando se este realizando la definicion de la arquitectura
+
+Armar listado de requisitos
+
+En termins simple, el metodo requiere que se revisen en detalle los casos 
+de uso seleccionados en la etapa del proyecto que se defina.
+Cuantificacion de caracterisitcas funcionales y no funcionales del sistema 
+
+Cuantificacion de caracteristicas funcionales
+Clasificacion de actores, obtencion del peso de actores sin ajustar(PASA)
+Clasificacion de los casos de uso, obtencion del peso de transacciones sin
+ajustar(PTSA)
+Obtencion del peso o puntos de casos de uso sin ajustar(PCUSA)
+
+Cuantificacion de caracteristicas no funcionales
+Clasificacion de factores de complejidad tecnica(FCT)
+Clasificacion de Factores ambientales(FA)
+Calculo de Puntos de casos de uso ajustados(PCU)
+
+Transacciones son interacciones con el sistema
+Se definen con la especificacion de casos de uso
+
+Puntos de caso de uso sirven para medir el proyecto
+
+
+Hacer el Edt
+
+

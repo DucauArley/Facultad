@@ -1,0 +1,156 @@
+Puds tiene muy definida 3 caracteristicas: Dirigido por los casos de uso,
+centralizado por la arquitectura, iterativo e incremental
+
+Por lo general el primer ciclo es algo inovador
+
+En la fase de elaboracion tengo la mayoria de los requisitos
+
+Las cuatro p del proceso de desarrollo proceso, proyecto, producto y 
+personas
+
+Personas: Usuarios, personas que financia el proyecto, tecnicos, etc
+Personas organizan proyecto y los puestos de trabajo que construyo el 
+proceso se ponen de acuerdo cuando van a dar como resultado a traves de 
+diferentes ciclos versiones del producto que le entregan al usuario
+
+Producto no es solamente el manual de usuario, el ejecutable y demas, sino
+que tambien tiene que ver con el concepto de artefacto
+
+Proceso esta relacionado con las herramientas, por ej el draw y demas. Es
+el software para realizar el proceso
+
+
+proyecto se acuerda con el usuario como ir entregando las versiones del
+producto, y para fijar la fecha de entrega, el proyecto le avisa al equipo
+de desarrollo y este cumple el proyecto. Es el elemento organizativo a
+traves del cual se gestiona el desarrollo de software. El resultado de un
+proyeco es una version de un producto
+
+Producto: artefactos que se crean durante la vida del proyecto
+
+proceso: conjunto de actividades necesarias para transformar los requisitos 
+del usuario en un producto
+
+Procesos afectan a las personas
+Viabilidad del proyecto el proyecto no debe parecer imposible para que no 
+le afecte a las personas
+
+Gestion de riesgo: Cuando las personas sienten que los riesgos han sido
+analizados y reducidos, se sienten incomodos
+
+Planificacion del proyecto: Cuando las personas creen que la planificacion
+de un proyecto no es realista, la moral se hunde
+
+Sensacion de cumplimiento: En un ciclo de vida iterativo las personas 
+reciben retroalimentacion frecuente, la cual lo lleva a conclusiones que le
+permiten tomar decisiones.
+Retroalimentacion frecuente + conclusiones aceleran el ritmo de trabajo
+
+Convirtiendo recursos en trabajadores:
+El recurso: Que personas van a trabajar en el equipo de desarrollo
+Trabajador es el concepto de puesto, se lo define y lo asocia con algun 
+flujo de trabajo, Ademas de que debe llevar adelante una actividad para 
+crear un determinado artefacto.
+
+Recurso se convierte en trabajadores porque la gente que ocupa el puesto 
+requiere formacion y entrenamiento preciso seguidos de una cuidadosa
+asignacion guiada por el analisis y una adecuada supervision
+
+Roles son los papeles que cumple un trabajador, estos pueden asumir varios 
+roles en relacion a otros trabajadores en los diferentes flujos de trabajo
+fundamentales
+Una persona puede ser muchos trabajadores en la vida de un proyecto
+
+Artefacto se construye en cada puesto, asociado a un flujo
+
+Flujo de trabajo requisito
+
+Se enfoca en dos etapas, la primera busco la vision que lleva a determinar
+que requisitos tiene mi sistema, una vez identificados, los veo como
+casos de uso
+
+Requisito candidato, se acepta y se les asocia un caso de uso
+
+Las condiciones y capacidades que el sistema debe cumplir para que pueda
+llegarse a un acuerdo entre el cliente, los usuarios y los desarrolladores
+sobre lo que debe hacer el sistema
+
+Captura de requisitos: Acto de descubrir lo que se debe construir en 
+circunstancias dificiles. Esto ultimo porque no es una tarea sensilla, o
+porque la informacion que le dan a uno no es completamente confiable
+
+En el ciclo de vida con las x como faces y las y como flujo de trabajo
+
+Cada punto de partida tiene diferentes riesgos que tengo que considerar.
+Los analistas deben elegir tecnicas para reducir estos riesgos
+
+El puds presenta un arquetipo En el flujo de trabajo requisito que se 
+cumple en Y. con el seguimiento de los siguientes pasos
+
+Enumerar los requisitos candidatos devuelve el artefacto Lista de 
+caracteristicas
+Comprender el contexto del sistema devuelve el artefacto Modelo de dominio 
+y/o negocio
+Capturar los requisitos funcionales devuelve el artefacto Modelo de casos 
+de uso
+Capturar los requisitos no funcionales. Casos de uso capturan estos ultimos
+dos devuelve el artefacto Requisitos adicionales no funcionales
+
+Casos de uso del negocio conozco los pasos del negocio en pequeños pasos
+para tener pequeños problemas
+Define a un alto grado de definicion, los pasos del negocio
+
+Durante la vida del sistema, clientes, usuarios, desarrolladores tienen
+ideas que podrian convertirse en requisitos, las ideas entran a una lista
+de caracterisiticas que crece cuando se añaden nuevos elementos y decrece
+cuando alguna se convierte en requisito y luego en uno o mas casos de uso
+o cuando esta caracteristica no entra al proyecto
+
+La lista de caracterisitcas se utiliza para la planificacion
+Cada caracteristica tiene un nombre corto y una breve descripcion, 
+definicion, informacion suficiente para poder hablar de ella en el proyecto
+
+cada caracterisita tiene un conjunto de valores de planificacion que puede
+incluir:
+Estado(propuesto-incluido-validado)
+Costo estimado de implementacion (recursos-horas personal)
+Prioridad (critico-significativo-secundario)
+Nivel de riesgo (critico-significativo-ordinario)
+
+Para capturar los requisitos correctos y construir el sistema correcto, los
+desarrolladores claves, el arquitecto, los analistas senior, requieren un
+firme conocimiento del contexto en el que se emplaza el sistema
+
+Las dos aproximaciones mas importantes para expresar el contexto del
+sistema utilizado por los desarrolladores de software son:
+Modelado del dominio con el diag de clases semantico. Describe los 
+conceptos importantes del contexto como los objetos del dominio y enlaza
+estos objetos unos con otros
+Modelado del negocio consiste en describir los procesos existentes u 
+observados con el objeto de comprenderlos
+
+Clases se relacionan, objetos se enlazan. Enlaces son instancias de 
+relaciones
+
+Modelado del negocio consiste en describir los procesos existentes u
+observables con el objeto de comprenderlos. Lleva a la construccion de los 
+casos de uso del negocio
+
+El modelo de dominio se concreta elaborando un diag de clases semantico que
+captura los conceptos mas importantes del contexto del sistema
+
+El modelo de negocio inicial se concreta elaborando casos de uso del
+negocio y luiego definir que pasos del mismo forman parte del sistema a
+desarrollar (Requisito) y para los cualse se formulan casos de uso
+
+El gestor son personas de la empresa gestionando el negocio.
+21:30**********
+Como construir un caso de uso del negocio
+Se enuncian los pasos del negocio indicando quien lo da y que hace ese paso
+
+Todo "quien?" es un actor, ej en el punto 4, atencion al cliente y 
+transporte son actores
+
+Hacer un caso de uso del negocio para el prox martes
+Que me gustaria conocer de el negocio basicamente
+

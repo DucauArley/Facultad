@@ -1,0 +1,25 @@
+Carpeta aparte para caso de uso por subsistema
+
+Objeto tal y su maquina de estado en una carpeta, lo mismo con modelo de 
+dominio y demas
+
+Cuando hablemos de que es un producto, No es solamente el ejecutable, el
+manual de usuario, etc. Es como proceder ante una accion
+
+Hacer las interfaces de usuario
+
+Modelo de dominio
+Hacer diagrama de clases semantico
+18:49********** habla de nuestro tp
+Solicitud es todo parte, parte es el detalle de cada uno de los productos
+
+19:14**************** habla mucho mas de nuestro tp
+
+Poner tipo de volquete
+
+
+Patron de responsabilidades ataca el que tiene que conocer la clase y que 
+tiene que hacer la clase, me lleva a sacar las operaciones y los atributos
+
+
+                                                                                                             

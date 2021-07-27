@@ -1,0 +1,196 @@
+Trama ethernet, payload son los datos, todo lo que no es encabezado ni 
+cabecera, los transmite sin saber de que se trata
+Tienen como destino y origen la direccion mac
+
+El encapsulamiento osi, cuando se quieren transmitir datos de un cliente
+hacia un servidor, entra a la capa de aplicacion, esta le agrega un header
+y se lo pasa a la capa de presentacion, y esta le agrega un header, y asi
+hasta que se hace un Manchester con 1 y 0
+Luego se van leyendo al revez, empezando desde la capa fisica hasta la de 
+aplicacion
+
+La capa de red tiene mucha comunicacion con la capa de enlace y con la de
+transporte
+Protocolo de capa de red esta pensado para que las comunicaciones sean entre
+hosts que pueden estar ubicados en red, osea servidores, routers, smartphone
+cualquier dispositivo que tenga ip basicamente
+Ip proporciona conectividad. Seleccion de ruta: Cuando un mensaje sale de
+origen, no tiene ni idea de que camino agarrar para llegar al destino, es
+decir, que van preguntando en el camino, te aclaran como llegar masomenos
+a quien se le pregunta es a los routers, que pueden modficar el mensaje
+que llego
+Las capas de red no estan conectadas a la conexion, es decir que el servidor
+no sabe que va a recibir un mensjae hasta que lo recibe, eso le saca
+fiabilidad a los protocolos de capa de red
+Utiliza las funciones de la capa de enlace
+
+Dos tipos de protocolos en internet
+De enrutamiento: Crean las rutas por las que circulan los paquetes de
+internet. Protocolos de uso exclusivo entre routers.
+Son protocolos que se encargan de buscar el camino mas corto, y mostrarselo
+a los paquetes para que lleguen a destino. Ej igrp, rip. ospf
+Enrutados: Administran la transmicion de los paquetes, gestion y control de
+errores, fragmentacion de los datos. Ej ipv4 e ipv6
+ipv4 y ipv6 no son compatibles, los nombres de los equipos tienen longitudes
+diferentes, ademas ipv6 tampoco integra a ipv4
+
+Cada router conecta una red con otra
+Ip se encarga de romper en pedasos el mensaje y controlar que lleguen sin
+errores
+Gateway, punto por donde el mensaje sale de la red
+
+Ethernet es plano, por lo tanto no se puede saber en que lugar del planeta,
+esta el destino de los mensajes que se manden osea que usan direcciones mac
+
+Uno que si esta orientado a la conexion sabe que del otro lado hay un 
+interlocutor y establece una comunicacion, se asegura que estan las dos 
+partes, por ej tcp
+
+Ipv4: No esta orientado a la conexion, justamente por esto no proporciona
+ninguna garantia de que el mensaje llegue, se aprovecha de tcp para
+asegurarse de que existe el destinatario y que el mensaje este bien, estan
+pensados para trabajar muchas veces juntos
+ipv4 tiene 32 bits, por ende tiene un maximo de 2 a la 32 bits, es decir
+4 mil millones de ips distintas, osea que son finitas
+Tiene un direccionamiento jerarquico, es decir que no solo depende del
+equipo en si, sino que tambien depende de el lugar en el mundo en donde te
+encontras, ya que hay distintas para cada lugar del mundo
+Tienen un tiempo de vida maximo gestionado por un porotcolo de capa 6. DHCP
+Posee Broadcast: Es un mensaje que envia equipo y que los otros equipos 
+dentro de cada red estan obligados a atender como si fuesen propios
+Fragmentacion de paquetes: Se encarga ip, en ipv4 los mtu de salida son 
+distintos, dependiendo de estos, el router tiene la potestad de fragmentar 
+los paquetes
+
+Las direcciones ip escritas en hexadecimal se escriben con : en el medio
+
+Los 32 bits estan divididos en 4 bytes escritas en decimales, llegan desde
+0 hasta 255 en teoria
+Jerarquia: direccion identifica al host y a la red a la que pertenece
+La parte que identfica a la red se la conoce como netID, el resto es host id
+Direccionamiento con claes, divide el espectro de direcciones en 5 clases,
+clase A,B,C,D,E, algunas tienen 1 byte de netId, otras, 2 bytes y otras 3
+Se divide en funcion del primer byte de la red. si el primer bit del byte 
+empieza en cero, es de la clase A osea del 00000000 = 0 hasta 01111111 = 127
+si empieza con 10 es clase B osea del 10000000 = 128 hasta 10111111 = 191
+si empiezan con 110 es clase C osea 11000000 = 192 hasta 11011111 = 223
+si empiezan con 110 es clase D osea 11100000 = 224 hasta 11101111 = 239
+si empiezan con 110 es clase E osea 11110000 = 240 hasta 11110111 = 255
+La clase A tiene 1 byte de netId y 3 de hostId, La clase B tiene 2 byte de 
+netId y 2 de hostId, La clase C tiene 3 byte de netId y 1 de hostId, La 
+clase D tien 3 byte de netId y 1 de hostId, La clase E tien 3 byte de netId 
+y 1 de hostId
+
+Unicast es una comunicacion de uno a uno la usan la A, B y C, multicast de 
+muchos a muchos, la usa la D, la clase E se reservo para usos futuros
+
+Las ip de base identifican a la red, no se pueden usar, en A seria 0.0.0.0,
+1.0.0.0, 2.0.0.0 y asi hasta 127.0.0.0 y las ip de broadcast son las 
+0.255.255.255, 1.255.255.255, 2.255.255.255 y asi hasta 127.255.255.255 
+Estas ips no las puede usar ninguna maquina, atienden todos los hosts
+ademas tienen una red privada que es las 10.0.0.0, la intencion de esta es
+que se use para una pc sin conexion, asi no se gasten ips de internet
+
+Para B las ip base serian 128.0.0.0 hasta 191.255.0.0, las redes privadas 
+son desde la 172.16.0.0 hasta las 172.31.0.0 y las ips de broadcast serian
+128.0.255.255 hasta la 191.255.255.255
+
+En la clase C las ip base serian 192.0.0.0 hasta 223.255.255.0 y las de 
+broadcast son 192.0.0.255 hasta 223.255.255.255 y las redes privadas son 
+desde la 192.168.0.0 hasta la 192.168.255.0, hoy en dia en las conexiones
+hogareñas se utilizan estas redes privadas en internet, gracias a un 
+protocolo llamado nap
+ipv4 tambien tiene una cabecera
+Mensaje lleva como cabecera ethernet la mac de origen y destino, como 
+cabecera ip la ip de origen y destino y los datos que incluye el header de 
+la capa 4
+
+La mascara de red: existe solo en ipv4, es un mecanismo que utilizan las
+redes para saber si dos host pertenecen a la misma red, si salen numeros
+distintos, no estan en la misma red 
+Con la mac llega a la puerta de enlace, osea el router y con el ip se llega
+a la maquina
+Para saber si son de la misma red, la mascara de la red usa un numero de 32
+bits, parece una direccion ip pero no lo es indica si la posicion que ocupa
+un bit en una ip corresponde a red o a host, la idea es comparar una ip con
+su mascara para descubrir una ip de base
+Un byte lleno de unos indica que el byte pertenece a red, uno lleno de ceros
+indica que el byte pertence a host. Ej la ip: 192.168.5.4, la mascara 
+seria 255.255.255.0 osea 255 = 11111111 y 0 = 00000000
+Si se hace una and de la mascara y de la id en binarios, te devuelve la ip
+de base, osea la primera ip de la red osea 192.168.5.0 en el ejemplo
+
+El A es 192.168.0 y el 10 es el numero que sigue que identifica al equipo en
+particular en el ejemplo que nos dio el profe
+
+puerta de enlace = gateway
+Cuando se configura la placa de red, se pone el ip de la gateway, pero se
+debe saber la direccion mac de la gateway, para eso existe el protocolo ARP
+conocida la direccion ip se encarga de preguntar la direccion mac a un
+equipo en la red o al gateway, envia un paquete ARP request, que a nivel de
+mac sale en broadcast, pero con la direccion ip de la que corresponde, esa
+maquina responde el mensaje ARP reply con la direccion ethernet 
+correspondiente, guarda en la ram las direcciones mac para no hacerlo
+constantemente para las mismas macs
+
+Cabecera ipv4
+version: va a salir un 4, en ipv6 un 6 en binario
+
+Tamaño cabecera, se pone en palabras de 32 bits en renglones, como minimo 
+hay un 5 y como maximo un 15, por lo tanto las opciones no pueden ocupar 
+mas de 10 renglones, longitud maxima de la cabecera son 60 bytes, eso seria
+con todas las opciones completas y el minimo de longitud son 20 bytes porque
+son 5 renglones de 4 bytes cada uno. Tiene longitud variable en funcion al
+campo opciones
+Tipo de servicio: Tiene que ver con la capa de orden superior. Indica 
+carecteristicas propias de como tratar el paquete en red local, no se usa en
+internet. 000 minima prioridad, 111 maxima prioridad en los bits del 0 al 2,
+en el 3 retardo normal 0 o bajo 1, 4 rendimiento y 5 fiabilidad, se les da
+mejores posibilidades de rendimiento, 6 y 7 reservados para uso futuro
+
+Longitud total: del paquete desde el bit 0 hasta el ultimo de los datos,
+Ocupa 2 bytes cuando el paquete esta fragmentado, devuelve el tamaño del 
+fragmento, Tamaño total del paquete incluyendo la cabecera
+
+Identificador: Es un numero que establece a todas las partes de un mensaje
+fragmentado, Campo de 2 bytes identificador unico del datagrama
+
+Flags: Tienen todo que ver con la fragmentacion, 3 bits, el primero no se
+usa, reservado para el futuro, segundo es Df, si es 0 el datagrama se puede
+fragmentar, si es 1 no se puede, tercero es Mf indica que hay mas fragmentos
+si esta en 1 y si no esta en 0
+
+Posicion de Fragmento: Tiene que ver con el offset desde el inicio de la
+trama total. Puntero a la posicion que ocupa el fragmento en paquetes de 8
+bytes. La posicion indica a cuantos multiplos de 8 esta el fragmento, es 
+decir que salta de a 8 bytes respecto de la anterior
+
+Time to live: tiempo de vida de un mensaje, es un byte, indica el numero
+maximo de routers que un paquete puede atravezar, cuando llegue a 0 se 
+descarta el paquete
+
+Protocolo: Indica si es tcp o udp
+
+Suma de Control de cabecera: Algo parecido al crc que traia la capa ethernet
+Es una cuenta que se hace para controlar que la cabecera esta bien, se 
+dividen toda la cabecera en palabras de 16 bits en complemento a1 osea 
+dando vuelta todos los numeros
+se debe hacer nuevamente cada vez que atraviesa un router por el time to 
+live, ya que se modifica el mensaje
+
+Opciones: Modifican el funcionamiento original del protocolo, tiene un
+multiplicador para poder mandar mas informacion en un datagrama, masomenos
+unos 4gb, tiene el timestamp, que es el numero de segundos que pasaron desde
+el 1 de enero de 1970, se puede agregar un timestamp en cada uno de los 
+nodos que atravieza el paquete
+
+Campo de relleno, busca que la cabecera llene un renglon, se completa con
+ceros hasta obtener un multiplo de 4 bytes, puede o no existir
+
+
+
+
+
+
+
+

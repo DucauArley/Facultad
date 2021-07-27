@@ -1,0 +1,98 @@
+Look up desactualizado, de la ppt
+
+Hay que hacer lo de mostrar el cursor para que se vea todo de una, y no haya
+que ir poniendo it
+
+lookup tiene foreignField, from, as, localFields acordate que el lookup 
+emula un join
+
+unwind para que cada resultado sea un documento nuevo
+
+pipeline: Pasa un agregate a la coleccion que quiero unir
+let: Permite generar variables con valores de la coleccion original, es un
+objeto parece
+
+Ejercicio 1 del agregation framework 3
+lookup = 
+{
+  $lookup:
+  {
+    from:'containers'
+    as:'containers'
+    let:{ship: "$Name"}
+    pipeline:
+    [
+      $match:
+      {
+        $expr:
+        {
+          $and:
+          [
+          {
+            $eq: ["shipName", "$$ship"]
+          },
+          {
+            $gte:["$Tons", 38]
+          }
+          ]
+        }
+      }
+      {$project: {Tons: 1, location: 1, cargo: 1}}
+    ]
+  }
+}
+
+$$ Hace referencia a las variables
+
+Esquema, las bases no sql no los tienen, habria que hacer una validacion en
+estas antes de modificar algo
+Schema validation nos permite crear reglas de validacion ya sea para
+insertar o para modificar, son por coleccion y sobre los documentos que ya
+existen o solamente los nuevos, para usarla hay que crear una coleccion con
+db.createCollection() donde se le pasan multiples propiedades como el schema
+validation. Permite 2 opciones: validation level que tan estricta aplica la
+validacion mongo y validation action si mongo debe generar errores y 
+rechazar los documentos que no la pasan o simplemente tira warnings
+
+$jsonSchema: Se pueden poner tipos determinados para validar mas palabras
+claves como bsonType, enum, type, etc
+
+db.createCollection("validate",
+{
+  validator:
+  {
+    $jsonSchema: 
+    {
+      bsonType: "object"
+      requiered: ['name', 'age']
+      properties:
+      {
+        name:
+        {
+          bsonType: 'string'
+          description: "Descripcion"
+        },
+        age:
+        { 
+          bsonType: "int"
+          minimum: 18
+          maximum: 100
+        },
+        email:
+        {
+          bsonType: 'string'
+        }
+      }
+    }
+  }
+})
+
+NumberInt() para comvertir un string en numero entero, asi lo toma el 
+validate, sino te lo toma como string
+
+db.runCommand() Para agregar reglas de validacion a colecciones existentes
+
+
+
+
+

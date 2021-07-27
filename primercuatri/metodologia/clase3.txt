@@ -1,0 +1,95 @@
+Vocabulario del sistema parte desde el momento que empiezo a identificar
+las cosas importantes dentro del dominio
+
+Interfaces es un bloque de construccion estructural, permite hacer una linea
+de separacion entre la abstraccion del comportamiento y la implementacion
+osea especificacion e implementacion. Es una coleccion de operaciones para
+tener en claro cual es el servicio que ofrece un componente o una clase
+Se usa para mostrar las lineas de separacion del sistema
+Son un conjunto de operaciones
+
+Los tipos y los roles se utilizan para modelar la conformidad de una 
+abstraccion con una interfaz
+Se accede a una caracteristica por medio de una interfaz
+
+Interfaces son realizadas por clases y componentes, clases muestran el mundo
+logico, esta se convierte en algo fisico que deriva en un componente
+
+Construir sistemas con una clara separacion de intereses para que cuando el
+sistema evoluciones, los cambios no se propaguen por todas partes.
+
+Nombre de la interfaz precedido con :: significa que la interfaz esta dentro
+de un paquete ej Sensores::IDestino interfaz IDestino en el paquete sensores
+Lo mismo para las clases
+
+Interfaces no tienen estructura porque especifican comportamiento
+
+Relaciones en interfaces: puede participar en todos los tipos de relacion
+pero tiene una mas que las clases:
+Realizacion es una relacion: Es una relacion semantica que especifica que un
+clasificador garantiza que va a llevar a cabo un contrato 
+
+Componente puede tener varias interfaces
+
+Hay dos formas de representar una interfaz: Sensilla circulito con la 
+relacion y forma expandida en donde se tiene mucho mas nivel de detalle
+
+Dentro de una relacion, la flecha apunta al elemento mas fuerte
+
+Lineas de separacion del sistema: Las utilizan las interfaces para marcar
+las separaciones de un sistema compuesto de componentes que se reutilizan de
+otros sistemas o se compartan de terceros. Otras se crean de cero.
+Identificarlas implica indentificar lineas de demarcacion en la arquitectura
+
+Para agrupar las clases y componentes, hay que tener en cuenta las que 
+tienen a acoplarse con otro conjunto de clases y componentes
+Empaquetar el conjunto logicamente relacionado de esas operaciones como
+interfaces.
+Para cada colaboracion del sistema hay que identificar las interfaces en las
+que se basa y las que subministra a otros
+Documentar la dinamica de las interfacescon pre y post condiciones para cada
+operacion, casos de uso y maquinas de estado
+
+Roles: Cada interfaz representa el rol que juega un objeto 
+Un Rol denota un comportamiento de una entidad que participa en un contexto 
+particular. ej un obj persona en determinado momento puede ser un empleado,
+un gerente, un jefe, etc
+
+Un objeto puede ganar y perder tipos a lo largo de su vida, ya que jugara 
+diferentes roles a lo largo del tiempo. Los clientes que lo usen 
+interactuaran con el por medio de diferentes interfaces
+
+Modelar tipos: con una relacion de generalizacion
+(Tipos y roles no son muy importantes)
+
+Adornos y mecanismos: Notas son adornos, son para clarificar el modelo
+Mecanismos de extensibilidad extienden el lenguaje de forma controlada. La
+naturaleza del lenguaje no se pierde, se extiende siguiendo los parametros
+de lo que ya existe en el lenguaje
+Estereotipo: crea nuevos bloques de construccion derivados de los existentes
+
+Valores etiquetados: agregan propiedades a un elemento, añaden informacion,
+como propiedades etiquetas para elementos existentes y para estereotipos.
+No es lo mismo que el atributo de la clase, aplica sobre el elemento
+
+Restricciones: agregan reglas a un modelo, se puede añadir nueva semantica o
+modificar reglas que ya existen
+
+Modelado de comentarios: Se pueden ocultar los elementos a voluntad, se
+puede conectar la nota al elemento con una relacion de dependencia*****
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

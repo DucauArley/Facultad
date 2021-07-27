@@ -1,0 +1,199 @@
+La guia es todo lo que nos va a explicar y voy a tener que encontrar en el
+libro para leer bien que onda. Es decir que tengo que responder las dudas
+de la guia + un tema que nos dice ella que preparemos
+
+No quiere definiciones, quiere el entendimiento de lo que proponen los
+autores, osea que lo tengo que entender bien
+
+
+Proceso unificado de desarrollo de software (puds)
+La programacion se organiza mas cuando hay armonia entre un equipo
+No desarrollas software por la inteligencia, capacidad y demas de una sola
+persona, necesitan una direccion organizativa para trabajar mejor
+
+El puds establece quien esta haciendo que, cuando y como.
+Permanentemente nos manejamos con el concepto de trabajador en ese puesto,
+artefacto y actividades
+
+En la ingenieria de Software el objetivo es construir o mejorar un software
+Proceso proporciona normas para el desarrollo eficiente. captura y presenta
+las mejores practicas que permite la tecnologia actual. Tambien reduce el
+riesgo y hace el proyecto mas predecible, se puede tener situaciones de 
+emergencia por las dudas.
+Sirven como guia para todos los participantes ya sea, clientes, usuarios,
+desarrolladores, etc.
+Normas: Reglas que hay que seguir
+
+personas procesos proyecto y producto
+
+producto en desarrollo de software es: la version del sistema software que
+le entrego al usuario para que la use. creo que se tienen que actualizar
+o algo asi. Todo artefacto de ingenieria que entrego al usuario. No es
+solamente el codigo fuente, los ejecutables y el manual de usuario, sino
+que tambien todos los otros modelos que desarrollo, como el de casos de uso,
+el de analisis, etc. Los artefactos que me permiten formar el producto que
+le entrego al usuario tienen que estar permanentemente actualizados
+
+Artefacto: Es toda pieza de informacion que es usada creada o modificada 
+durante el proceso de desarrollo de software. Un diag de clases o de 
+secuencia forman parte del modelo de diseño, que es un artefacto que lo
+construllo con los bloques de construccion de uml y estos tambien son 
+artefactos
+
+Artefacto de ingenieria: Tiene que ser actualizado independientemente de que 
+se haya terminado el proyecto o no, forma parte del producto que le entrego 
+al usuario. Creados en los fluhos de trabajo fundamentales y debem 
+permanecer constantemente actualizados
+Artefacto de gestion:Lo creo durante el proceso de desarrollo de software
+pero no forma parte del producto que le entrego al usuario. Duran lo que
+dura el proyecto
+
+Puds
+Proporciona una guia para ordenar las actividades de un equipo. Dirije las
+tareas de cada desarrollador por separado y del equipo como un todo. 
+Especifica los artefactos que deben desarrollarse. Crea normas y criterios
+para el control de los productos y actividades del proyecto
+
+Incremento: en las versiones del producto que le entrego al usuario
+
+Da un marco de trabajo generico es decir que tal empleado hace tal 
+artefacto, es decir que se usa para todos los proyectos el mismo marco. Ej
+el analista siempre hace los modelos y demas
+
+puds esta basado en una arquitectura basada en componentes
+
+Arquitectura: La forma que le voy a dar al sistema. Se representa con
+vistas. de caso de uso, de diseño, etc
+
+arquitecto fija la linea base de la arquitectura y esta la va a hacer
+crecer hasta llegar a la linea de ejecucion de esa arquitectura
+
+Caso de uso: Sucesion de acciones y sus variantes de manera tal que cuando
+este se ejecute le de resultado de valor observable al actor con el cual 
+esta asociado.
+Escenario en el caso de uso es una instancia del caso de uso
+flujo principal es la sucesion de acciones de la situacion de exito y las 
+variantes son los flujos alternativos
+
+Componente: Pieza de construccion. es reemplazable. ofrece interfaces y
+garantiza la realizacion de esas interfaces 
+Elemento fisico de uml que agrupa elementos logicos.
+Elemento fisico porque se puede alojar en un nodo
+3 tipos de componentes: de despliegue, de ejecucion y hombre
+
+puds esta basado en 3 caracterisitcas
+
+1) Dirigido por los casos de uso 2) Centrado en la arquitectura 3) Iterativo
+e incremental
+
+Iterativo: forma de trabaja en la que voy haciendo iteraciones en la que
+cada una representa un tiempo corto ej 1 semana en los que me propongo 
+objetivos a cumplir. pasado el tiempo si este no se cumplio, analizo el
+porque y obtengo una retroalimentacion para el poder solucionarlo	
+
+1) casos de uso proporcionan el hilo conductor que permite avanzar sobre
+los flujos de trabajo fundamentales como requisitos, analisis, diseño, 
+implementacion y prueba. Guian el proceso de desarrollo. Se desarrollan a
+la vez que la arquitectura del sistema
+
+2) Arquitectura maneja los aspectos estaticos y dinamicos. Les da forma a
+traves del arquitecto. Surge de las necesidades de la empresa tal como lo
+persiven los usuarios, los inversores, etc. Se ve influenciada por factores
+como la plataforma en la que funciona el sistema. ej la arquitectura del 
+hard, el sistema operativo, etc. LLeva implicitos aspectos de implantacion,
+los requisitos no funcionales(tiempo, rendimiento, fiablidad, etc), los 
+sistemas heredados. 
+
+Cuando se plantea la arquitectura, se debe diseñar para que el sistema 
+evolucione a partir de las siguientes versiones que voy a sacar
+
+El arquitecto selecciona un 5% o 10% de casos de uso para poder dar los 
+lineamientos para los otros puestos de trabajo. Son los casos de uso
+significativos es decir los que tienen reglas de negocio particulares
+
+3) Enfoque en cascada: Actividad no comienza hasta que otra actividad no 
+este terminada. Ej: Hasta que no tengo todo el diseño, no programo
+
+Enfoque radical: Yo entrego el sistema pero no todo de golpe, sino que en
+versiones, cada version que sale le agrego funciones nuevas.
+Cada incremento es una nueva construccion y cada construccion la asocia a 
+una version que le entrego al usuario
+cada iteracion es como un mini proyecto
+
+Hito: Tiene una fecha determinada de cuando se tiene que cumplir un 
+determinado objetivo. Establecer una determinada fecha el estado de avance
+en el que uno quiere que se encuentren	 los artefactos
+
+Iteraciones deben ser controladas colocando hitos intermedios para saber
+donde se esta parado
+Cada una trata un conjunto de casos de uso que juntos amplian la utilidad
+del producto desarrollado hasta el momento
+A esta tambien le preocupan los clientes
+
+el puds esta dirigido por los casos de uso
+
+Un incremento no siempre es aditivo
+
+el puds propone un ciclo de vida que tiene un nacimiento y una muerte
+
+Cada proceso se divide en uno o mas ciclos de manera que cada ciclo termina
+con una version que le entrego al usuario y se pasa al proximo ciclo y asi
+En el ultimo ciclo, le entrego la ultima version que es el sistema software
+ya terminado. Osea los ciclos se construyen con cada version
+
+21:30 Habla sobre el TP
+
+Todos los ciclos tienen la misma estructura: Inicio, elaboracion, 
+construccion y transicion
+
+Ciclo en el eje de x son las faces osea inicio, elaboracion,etc
+Ciclo en el eje de y tiene los flujos fundamentales osea requisitos, 
+analisis, diseño, implementacion y prueba
+Las montañitas dicen el flujo de actividades en cada fase para cada trabajo
+
+Cada fase termina en un hito
+
+Hito: es aquel que determina la disponibilidad de un conjunto de artefactos
+Ayudan a los directores a tomar ciertas decisiones cruciales antes de que 
+el trabajo pueda continuar con la siguiente fase. Permite controlar el
+progreso del trabajo. Los datos que aportan, son utiles en la estimacion
+del tiempo y de los recursos humanos para otros proyectos. En la asignacion
+de los recursos humanos durante el tiempo que dura el proyecto y en el 
+control del progreso constractado con las planificaciones
+
+Diferentes tipos de hitos
+Principal: puntos de sincronizacion en el que coinciden una serie de
+objetivos bien definidos, se completan artefactos, se toman decisiones de
+pasar o no a las fases siguientes y en los que las esferas tecnicas y de
+gestion
+Secundario: Es un hito intermedio entre dos hitos principales
+
+ayudan al area de decision a tomar decisiones cruciales antes de empezar
+el proximo ciclo o la proxima fase
+
+Producto: Representa el conjunto de artefactos que se crean durante la vida
+del proyecto como los diferentes modelos, codigo fuente, ejecutables, etc
+y que se entregan asociados a una version a los clientes. Este conjunto de
+artefactos que conforman el producto es lo que le permite a los usuarios
+utilizar y modificar el sistema de generacion en generacion
+
+Artefacto: Pieza de informacion tangible que es creada, modificada y usada
+por los trabajadores al realizar actividades. Representa un area de 
+responsabilidad.
+
+Fase de inicio: Se desarrolla una descripcion del producto final a partir
+de "Buenas ideas" y se presenta el analisis del negocio para el producto
+
+Fase elaboracion: se especifican en detalle la mayoria de los casos de uso
+del producto y se diseña la arquitectura del sistema hasta llegar a la
+linea base de la arquitectura.
+
+Fase construccion: se crea el producto la linea base de la arquitectura
+crece hasta convertirse en el sistema colmpleto
+
+Fase transicion: cubre el periodo durante el cual el producto se convierte
+en version beta
+
+https://www.academia.edu/40905912/El_lenguaje_Unificado_de_Modelado_2da_Edicion_libro_ 
+
+https://es.scribd.com/doc/50327385/El-Proceso-Unificado-de-Desarrollo-de-Software-Jacobson-Booch-Rumbaugh#download

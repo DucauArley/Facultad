@@ -1,0 +1,39 @@
+Rss para el tp, tambien puede servir para ya sabes que
+Mejor es hacer objetos mas chicos estaticos
+
+ejecutar metodo get de toda la url
+
+Parsear xml
+Tres tipos de parser:
+El dom, que se usa para html y js, sax y xml pull
+
+Los parser de pull son mas parecidos a un iterador, por eso lo usamos
+XmlPullParser parser = Xml.newPullParser() Es un singleton
+parser.setInput(new StringReader(xmlTxt))
+
+event = parser.getEventType()
+while(event != XmlPullParser.END_DOCUMENT) while hasta el final del document
+{
+   switch(event)
+   {
+      case XmlpullParser.START_DOCUMENT
+      
+      case
+
+   }
+
+}
+
+START_TAG indica el inicio de un tag
+esta todo en el manual
+Cada vez que tenemos el tag de item generamos un objeto noticia que tiene 
+que tener titulo, descripcion, link, fecha y url de la imagen
+en el enclosure esta la imagen de la noticia
+
+next text para sacar lo de adentro y el value para sacar el valor del 
+atributo
+
+
+
+
+

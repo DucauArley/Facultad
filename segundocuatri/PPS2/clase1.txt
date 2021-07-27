@@ -1,0 +1,18 @@
+Engloba los conocimientos de todas las carreras, se tiene que demostrar
+todo lo que vimos. Hay que hacer un sitio web, no vemos nada de 
+programacion, vemos las cosas funcionales
+
+No una pagina estatica, un sitio web de e-comerce con un carrito, agregar
+articulos a este, con usuarios, se puede hacer el pago y se registra la 
+entrega del mismo
+Se pueden hacer intranets, tipo para clinicas
+
+Se tiene que hacer en un hosting publico, pero para el segundo parcial
+
+
+
+
+
+
+
+

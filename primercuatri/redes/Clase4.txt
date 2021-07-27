@@ -1,0 +1,24 @@
+Subdireccionamiento en capa de red (subneting)
+Se trata de dividir una red en redes mas chicas para tratarlas como redes
+distintas independientes entre si. Para controlar el trafico del 
+broadcasting y para reducir el trafico general de la red y mejorar el
+rendimiento de esta. No se duplican las redes, se usa la misma para hacer
+esta division
+Se necesita un router que pueda hacer esto, cada interfaz del router osea
+switches debe tener una direccion de host ipv4 que perteneca a la subred a
+la cual se conecta la interfaz del router
+Se le debe poner el gateway de los switches a las pc
+
+como se hace? se crea el dominio de subred, la idea es salir del 
+direccionamiento con clase de ipv4, es decir, que las redes que salen de la
+principal no van a ser de ninguna clase (A,B,C,D,E), se transforma en 1 uno
+o mas ceros de la mascara respetando el orden, se divide la mascara de red
+literalmente, ej 111111111.10000000 va a tener la mitad de 
+111111111.00000000
+
+como se explica? en la jerarquia de clase se usa el prefijo de red y el 
+numero de equipo, pero en la de subredes, se usa el prefijo de red, la
+subred y en numero de equipo
+Cuando se dividen las redes, todas las redes son del mismo tamaño
+al dividir las redes, la ip de broadcast y o la base de la red cambian para
+estas redes

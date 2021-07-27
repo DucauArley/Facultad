@@ -1,0 +1,214 @@
+Se crean dos capas, la especifica de la aplicacion. Tiene clases que no
+comparte con otros paquetes y la general de la aplicacion que tiene 
+paquetes con clases y estas se comparten con los demas paquetes, la otra
+capa tambien tiene paquetes
+
+18:40********************************************
+Muestra todas las actividades que hacen los trabajadores
+Clases de analisis: Solamente tienen atributos
+
+Paquete: Mecanismo de proposito general que permite organizar elementos, es 
+decir, casos de uso, clases, componentes, etc
+En este caso organizamos los casos de uso analisis y las clases entidad
+
+
+Paquetes de analisis: Organizan los atefactos del modelo de analisis en
+piezas manejables
+Puede constar de clases analisis, realizaciones de caso de uso analisis y 
+de otros paquetes analisis(recursivamente)
+Tienen dos caracteristicas: Ser cohesivos: sus contenidos deben estar 
+relacionados y debilmente acoplados, osea que tienen que minimizar sus 
+dependencias unos de otros
+
+Pueden representar una separacion de intereses de analisis
+Deben crearse basandose en los requisitos funcionales y en el dominio del
+problema y deberian ser reconocibles por las PERSONAS con conocimiento del
+dominio
+
+Los paquetes de analisis probablemente se convertiran en subsistemas en las
+dos capas de aplicacion superiores del modelo de diseño o se distribuiran
+entre ellos
+
+Los paquetes de analisis se desarrollan en la actividad analisis de paquetes
+la cual se lleva adelante en las ultimas iteraciones de la fase
+
+Aparte de proporcionar caso de uso a sus actores, todo sistema tambien 
+proporciona un conjunto servicios a sus clientes
+
+Un cliente adquiere una combinacion adecuada de servicios para ofrecer a sus
+usuarios, los casos de uso necesarios para llevar a cabo su negocio
+
+Un caso de uso especifica una secuenccia de acciones, un actor inicia un 
+hilo seguido de iteracciones entre el actor y el sistema, que termina tras 
+haber devuelto un valor al actor. Son paquetes de funcionalidad
+
+Un servicio representa un conjunto coherente de acciones relacionadas 
+funcionalmente que se utiliza en varios casos de uso
+
+casos de uso son para usuarios y los servicios son para clientes
+
+Los casos de uso atraviesan los servicios, es decir, un caso de uso 
+requiere acciones de varios servicios
+
+En el puds el concepto de servicio esta soportado por los paquetes de 
+servicios
+
+Los paquetes de analisis usan el estereotipo <<analiysis package>>
+y los paquetes de servicio <<Service package>>
+
+
+Un paquete de servicio contiene un conjunto de clases relacionadas 
+funcionalmente, es indivisible, cuando se lleva a cabo un caso de uso puede
+que sean participantes uno o mas paquetes de servicio. Por lo tanto es 
+correcto pensar que un paquete de servicio participe en varias realizaciones
+de casos de uso - analisis diferentes. Depende a menudo de otros paquetes
+de servicio. Pueden ser mutuamente excluyentes o pueden representar 
+diferentes aspectos o variantes de un mismo servicio. Son reutilizables
+
+Paquete de analisis y sub sistema de diseño son lo mismo, el segundo esta
+mas especificado
+19:14******
+
+Paso 1 identificar paquetes de analisis a partir de crear paquetes cohesivos
+Paso 2 Lo mismo que el anterior pero en vez de colocar el caso de uso 
+completo, tomo la calle de las clases entidad y digo que este paquete tiene
+las clases de entidad del caso de uso que esta contenido en este paquete.
+Identifica los paquetes de analisis generales a partir de las clases de 
+dominio
+Paso 3 Reordena los paquetes dejando algunos en la especifica y otros en la
+general. Ej las clases que estan en varios paquetes van a la general, los
+otros a la capa especifica
+
+Hasta aca entra el parcialito
+
+19:30 Muestra algo que va a tomar tipo exposicion
+
+Modelo de analisis:
+1) Es conceptual porque es una abstraccion del sistema y permite aspectos de
+la implementacion
+2) Generico respecto al diseño(aplicable a varios diseños)
+3) Tres estereotipos conceptuales para las clases (control, entidad, 
+interfaz)
+4) Menos formal
+5) Menos caro para desarrolar
+6) Menos capas
+7) Dianmico(no muy centrado en la secuencia)
+8) Bosquejo del diseño del sistema induyendo su arquitectura
+9) Creado principalmente como trabajo de a pie en talleres o similares
+10) Puede no estar mantenido durante todoe el ciclo de vida del software
+11) Define una estructura que es una entrada esencial para modelar el 
+sistema, inclutendo la creacion del modelo de diseño
+
+Modelo de diseño
+1) Modelo fisico porque es un plano de la implementacion
+2) No generico, especifico para una implementacion
+3) Cualquier numero de estereotipos (fisicos) sobre lasclases dependiendo 
+del lenguaje de implementacion
+4) Mas formal
+5) Mas caro de desarrollar
+6) Mas capas
+7) Dinamico(muy centrado en la secuencia)
+8) Manifiesto del diseño del sistema, incluyendo su arquitectura (una de sus 
+vistas)
+9) Creado principalemente como programacion visual
+10) Debe estar mantenido durante todo el ciclo de vida del software
+11) Da forma al sistema , mientras que intenta preservar la estructura 
+definida por el modelo de analisis lo mas posble
+
+19:47 Foco de control**************
+
+19:50 Metodo******************************
+
+Los trabajadores son los mismos
+Arquitecto responsable del modelo de diseño que tiene todos los artefactos 
+del flujo de trabajo-diseño, modelo de despliegue y decripcion de la 
+arquitectura que es la vista desde el modelo de diseño
+
+ingeniero de casos de uso responsable de realizacion de casos de uso diseño
+que contiene los bloques de construccion uml: Diagrama de secuencia, 
+diagrama de clases como colaboracion simple y flujo textual
+
+Ingeniero de componentes responsable de clase de diseño, interfaz, 
+subsistema de diseño
+
+19:50*********************************************Explica bien lo de arriba
+
+Diagrama de despliegue tiene nodos, que estos pueden ser partes fisicas,
+como servidores o hardware
+
+Modelo de diseño se representa mediante un sistema de diseño que denota el
+subsistema de nivel mas alto del modelo
+
+La utilizacion de otros subsistemas es por lo tanto una forma de organizar 
+el modelo de diseño en proporciones mas manejables
+
+Los subsistemas de diseño y clases de diseño representan abstracciones del
+subsistema y componentes de la implementacion del sistema
+
+Estas abstracciones son directas y representan una sencilla correspondencia
+entre el diseño y la implementacion
+
+Definicion de componente 20:18 ******************************
+Es un elemento fisico que existe en tiempo de ejecucion
+
+
+El proposito de diseñar una clase es crear una clase de diseño que cumpla
+su papel en las realizaciones caso de uso-diseño y los requisitos no
+funcionales que se aplican a estos
+
+Esto incluye el mantenimiento del diseño de clases en si mismo y los 
+siguientes aspectos de este
+Sus operaciones, atributos, las relaciones en que participa, sus metodos 
+(que realizan operaciones), los requisitos relevantes a su implementacion,
+la correcta realizacion de cualquier interfaz requerida
+
+El primer paso es esbozar uno o varias clases del diseño, cada entrada en
+terminos de clases de analisis y/o interfaces
+Cuando tomamos una interfaz como entrada, suele ser simple y directo asignar
+a una clase de diseño para que proporcione esa interfaz
+
+Diseñar clases de interfaz es dependiente de tecnologia de interfaz 
+especifica que se utilice. Hay que considerar que tenemos herramientas de
+diseño de interfaces de usuario, lo cual quiere decir que las interfaces de
+usuarios creadas en forma visual directamente sobre la pantalla implica la
+correspondiente clase de diseño (de interfaz)
+
+Diseñar clases de entidad que represetan informacion persistente implica el
+uso de tecnologia de bases de datos especificas
+En el caso de las bases de datos relacionales, es un error pensar en clase-
+tabla pues el diseñador para solucionar este error debe aplicar estrategias
+de persistencia
+
+puede haber muchos aspectos de diseño involucrados en la adopcion de una 
+estrategia, especialmente a la hora de hacer corresponder el modelo de 
+diseño con el modelo de datos relacional
+
+Diseñar clases de control es una tarea delciada porque las clases de control
+encapsulan secuencias, coordinacion de otros objetos o algunas veces pura
+logica del negocio, po eso es necesario realizar la clase de control
+
+aspectos de transaccion: Las clases de control a menudo encapsulan 
+transacciones y en sus correspondientes diseños deben incorporar cualquier
+tecnologia de manejo de transacciones existentes que se este utilizando
+
+20:42****************************Da una definicion de algo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

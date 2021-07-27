@@ -1,0 +1,76 @@
+Clase String: No hay ningun tipo de dato que sea string, es una clase,
+declarmos un array de chart cuando hacemos un String, tiene varios metodos
+que ninguno altera al objeto, osea no alteran al string
+
+String s = "hola" siempre va a tener esta posicion en memoria con el hola
+osea que si le hago un toUpperCase, no se va a modificar, solamente va a 
+devolver el string en mayuscula, todos los metodos de string devuelven
+strings ya que el original no se puede modificar
+
+La unica forma de cambiar un string es que el otro tenga exactamente los
+mismos caracteres
+
+s = s.toUpperCase() Va a reemplazar el "hola" por el "HOLA", osea se pisa
+
+substring acorta el string, incluye el numero de inicio y excluye el del 
+final ej Matias substring(2,5) queda tia, si no se le pasa el numero del
+fin te corta la primera letra hasta el final
+
+startsWith("Ma")devuelve un booleano, en este caso da true, lo mismo para
+el endsWith()
+
+if(s.isEmpty()) Para saber si tiene algo el array
+No usar el lenght para esto ya que recorre todo el array, pero el isEmpty ni
+bien encuentra algo devuelve true y no tiene que recorrer todo el caracter
+
+Hay que usar s!=null, si no nos va a tirar error en la comparacion
+
+Para comparar strings usamos equals por ej "Matias".equals(s) y asi nos 
+salteamos el != null, ya que en el equals ya tiene el if
+
+isEmpty tambien se usa para colecciones, array list y demas
+
+s.concat("otro") es mas performante que s + "otro"
+
+Para ingresar info desde la consola se usa el Scanner sc = new 
+Scanner(system.in)
+Para tomar la info hacemos String texto = sc.nextLine()	
+
+En atributos de clase no se deberian usar tipos de datos primitivos, en
+cambio se usan los Wrapers que tienen el mismo nombre pero con una letra en
+mayuscula salvo en int que pasa a Integer. Conviene usarlo asi ya que el 
+valor por defecto de todos es null ya que son clases. char se llama 
+Character
+
+el por ej intValue() devuelve el dato primitivo
+Integer.valueOf(int primitivo) asi lo pasas a Integer
+
+Para castear se puede usar (Integer) o directamente se le pone la letra de
+el wraper atras de lo que se quiere castear, ej 10i para castear a Integer
+o con el valueOf()
+
+Hacer ejercicio 4 y 5 menos lo de dividir
+
+Anotaciones, con /** genera el java doc
+Donde se pone que hace el metodo
+Los parametros que usa
+el retorno
+
+Arriba de la clase se explica para que se creo la clase, osea la funcion
+el autor @author
+la version @version
+
+Deprecate es que esta obsoleto
+Exception dice si devuelve excepciones y en que caso las tiraria 
+see para linkear con la documentacion de otros metodos
+
+en project se pone generate javadoc que hay que configurarlo, para pasar la 
+documentacion en formato de pagina web
+La carpeta doc tiene toda la documentacion generada por el java doc
+Como esto despues se pasa a html, se pueden usar etiquetas html como <br>
+y demas porque despues lo va a interpretar
+
+//TODO: es cuando falta terminar algo, con javadoc podes sacar un listado de
+todos los que tengan la notacion TODO
+
+//FIXME Cuando no funciona bien el metodo o algo

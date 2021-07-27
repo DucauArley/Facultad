@@ -1,0 +1,102 @@
+para manejar estados globales se pueden pasar datos por contexto pero es un
+poco limitado
+
+Redux para manejar el estado. Sirve para cualquier aplicacion porque es mas
+una arquitectura que un framework
+
+El estado se guarda en un unico store que es un objeto global, todo lo que 
+tenemos lo buscamos ahi
+
+Hay que escribir mucho codigo para hacer una aplicacion pequeña.
+Se crea una carpeta reducers con actions.js, actionTypes.js, selectors.js
+y store.js 
+Se puede poner la libreria redux en el package.json para poder usarla
+
+en el index.js se envuelve la app
+<Provider store={store}>
+ <app>
+</Provider>,
+
+En el store.js
+export default createStore(rootReducer)
+
+Un reducer es una funcion que devuelve un valor. En este caso lo unico que
+va a hacer es recibir un estado y una accion. La accion se encarga de
+modificar el estado. Lo cambia dentro del reducer. La accion devuelve un
+Type que dice a que atributo/accion nos estamos refiriendo y un payload que 
+van a ser los datos
+EL reducer devuelve una funcion
+
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+para habilitar las tools de react en chrome que sirve para ver el estado
+
+En el metodo connect hay que envolver el componente
+
+Redux duck, propone que en cada funcion hagamos todo junto, tener los tipos
+primero, despues el reducer y las acciones todo en el mismo archivo
+
+npm install react-redux redux
+
+En la carpeta redux hace una carpeta ducks y pone un index.js donde poner
+Un appDucks.js
+Un pokeDucks.js
+const LOADING_APP = 'LOADING_APP'
+const LOADED_APP = 'LOADED_APP'
+const defaultState=
+{
+ loading: false,
+ error: false,
+ errorMsg:""
+}
+export default function reducer(state = defaultState, action)
+{
+ const{type, payload} = action;
+
+ switch(type)
+ {
+   case LOADING_APP:
+      return{
+       state,
+       loading: true,
+       error: false,
+       errorMsg:""}
+   case LOADESD_APP:
+      return{
+       state,
+       loading: payload.loading,
+       error: payload.error,
+       errorMsg:payload.errorMsg}
+
+   default:
+      return state;
+ }
+ 
+}
+
+addDebugConfiguration
+export function loadingApp()
+{
+ return
+ {
+  type:LOADING_APP
+ }
+}
+
+addDebugConfiguration
+export function loadedApp(loading, error, errorMsg)
+{
+ return
+ {
+  type:LOADED_APP
+  payload:19:54*******
+ }
+}
+
+Se pueden usar hooks para pasar cosas, por ejemplo un selector con el use
+selector, se importa en app.js
+
+20:56************ Termina el recreo
+Para trabajar con asincronismo hay que hacer un middleware
+Hace un re quilombo en pokemons.jsx
+Habria que hacer algo similar a lo del profe pero que guarde todos los 
+datos en los estados o algo asi

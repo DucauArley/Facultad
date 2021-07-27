@@ -1,0 +1,35 @@
+Aggregation Framework
+Es un motor analitico nativo, dos tipos de BBDD analiticas
+OLTP: Se puede calcular y escribir en tiempo real
+OLAP: Solamente leemos datos, no escribimos. Spark y Hadoop son las 
+tecnologias que dominan en este area
+
+El agregate esta hecho con un pipe de unix, la salida de una etapa se pasa
+a la entrada de la siguiente etapa, cada etapa realiza un trabajo y se 
+pueden repetir, la entrda es una sola coleccion
+
+$match: Filtrar documentos
+$project: Para crear un nuevo campo
+$group: Es como un group by podemos hacer calculos
+$out: Hace una coleccion con la consulta que hicimos
+$sample: Le decis cuantos elementos queres que te muestre te los trae de 
+manera aleatoria
+$sort: Ordenar documentos
+$limit: Limita los archivos a pasar dependiendo de alguna condicion
+$lookup: Permite hacer los joins como en sql con mas de una coleccion
+$unwind: Toma el array que se le indica y por cada elemento va a crear un
+documento nuevo
+$geonear: Es una busqueda geoespacial
+$skip: Le pasas la cantidad de elementos que queres que saltee
+
+explain(true).aggregate: Te da mucha mas info sobre como se hizo la busqueda
+cuanto tardo en buscarse y demas
+
+$lookup:{from:"containers", as: "cargo", localField: "Name"
+, foreignField:"shipName"}
+
+Todos los containers se van a gurdar en el array cargo
+para saber cuantos containers tienen cantidad mayor a 10000 usamos un match
+
+$unwind: "$cargo"
+

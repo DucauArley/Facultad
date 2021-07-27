@@ -1,0 +1,14 @@
+Clase que viene parcialito oral
+Temas: 1-10 pero no 4 y 5 Guia para la preparacion de los parciales
+y despues todo el punto 1 referente al flujo de trabajo de requisitos
+
+Las maquinas de estado de los objetos se contruyen entre todos
+
+Hacer especificacion de caso de uso
+
+No hace falta especificar el logueo
+
+Cada volquete corresponde a alguna playa de estacionamiento
+
+
+

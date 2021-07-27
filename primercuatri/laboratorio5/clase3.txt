@@ -1,0 +1,81 @@
+Lo normal no es chechaear sobre el componente, sino ponerselo al radio
+group para que aparezca seleccionado el radio button que queres
+
+En vez del margin, se pude hacer un padding para el contenedor, para no 
+tener que escribir margin en todos los componentes
+
+con el gravity center podemos mover algo dentro de un contenedor directo al
+centro de el contenedor
+
+4 tipos de aplicaciones: Activity, que tienen interfaz grafica y permiten la
+interaccion con el usuario
+Service: se ejecutan por atras, no tienen interfaz grafica
+BroadcastReceiver: escucha eventos del telefono y realiza determinada accion
+por ej, cuando te llaman por telefono, te hace determinada cosa
+ContentProvider: expone datos para que una aplicacion la pueda consumir, ej
+la aplicacion contactos tiene la suya para que wpp los pueda usar
+
+Views: objetos en pantalla. Elementos que se pueden hacer click
+Layouts: xml que describen como se ubican las views en la pantalla
+Resources:Archivos de imagen, xml con definiciones de textos, etc que pueden
+utilizar la aplicacion
+Manifest: xml donde esta la configuracion de toda la app
+Intents: Forma de comunicar/ ejecutar activities y aplicaciones. Es como
+decir quiero sacar una foto, android busca que aplicaciones pueden hacer
+esto y te las muestra para que puedas sacar la foto, esta es de forma 
+implicita, de forma explicita es que diga que quiero que se abra tal app
+
+Estructurar apps en android con el patron mvc que permite separar la app en
+3 partes. Es un patron de diseño
+Modelo: Van a ser las clases en donde almacenamos los datos de la app, es 
+decir los pojos
+Vista: Todo lo que hagamos con respecto a las pantallas. Habria que hacer
+otra clase para las vistas, ej btn.super.findViewById en otra clase, no en
+el main activity, los textview, edittext y demas tambien
+Controlador: Le da la logica a la app, en el formulario es cuando se hace 
+click al boton, se cargen los datos
+Para cada una de estas partes se tiene que crear una clase nueva y en el
+main activity habria que generar estos tres para asi usarlos, conectandolos
+
+Para mostrar por consola habria que sobrecargar el metodo toString en
+personaModel Log.d("Persona cargada", model.toString())
+
+Aplicarle el patron mvc al formulario
+
+Manifest: tiene una lista de todas las activities, y ademas tiene los 
+permisos que necesita la app, se ponen antes del tag de application
+intent-filter van las acciones que va a usar la app, ej si quiero sacar 
+fotos, es action: take picture o algo asi
+
+Drawable: imagenes
+mipmap: iconos
+Values: styles son los estilos como en css, pero se estructura en xmls,
+strings: son las constantes que por lo general hardcodeamos, para acceder a
+strings es @string/nombre de la constante. Todas las constantes deben esta
+en strings, por ejemplo los textos de las textViews deben estar en strings
+R.string.constante devuelve la constante que se quiere usar.
+Es importante tener las constantes setteadas ahi asi se puedan cargar
+distintos archivos de strings dependiendo en que pais o en que idioma 
+hable el usuario, asi se pueden tener varios idiomas en la app. Se puede
+usar para varias cosas, como si el celu esta horizontal, o si tiene pantalla
+chica y demas
+
+new-values resources-location-seleccionar idioma/pais
+
+En el formulario habria que hacer 2 archivos strings, uno en general y otro
+en español
+
+Se puede hacer lo mismo con el layout, esto serviria si el celular esta en
+horizontal o en vertical	
+
+Los dps se calculan cantidad de dps * (cantidad de pixeles que entran en una
+pulgada(dpi) / 160)
+Se crea un problema con las imagenes, ya que si se pasan a un televisor,
+se tienen que agrandar mucho las imagenes y se va a romper, por eso cuando
+agregamos una imagen hay que agregarla en diferentes tamaños, multiplicar
+las resoluciones por 1.5 para ver cual es la optima
+
+
+
+
+

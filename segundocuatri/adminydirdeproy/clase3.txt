@@ -1,0 +1,23 @@
+El cliente somos nosotros ya que hacemos la app para ganar guita
+Sponsors somos nosotros y alguna empresa que se quiera sumar luego
+
+Necesidad: Abastecer el mercado de transporte de objetos online. Es decir
+que no se necesita el transporte en si, sino que se necesita que se haga
+de forma sensilla online
+
+Descripcion del producto es igual a lo que le mandamos
+
+Funcion: Conectar gente
+Solicitud de pedido, recepcion de ofertas, puntuacion de los transportistas
+seleccion de ofertas, plazos de entrega(quiza)
+
+Proyect leader: Nosotros. Puede ser gerente de marketing u otra persona
+
+Definicion de las actividades
+Establecimiento de la secuencia de las actividades
+Estimacion de recursos de las actividades
+Estimacion de la duracion de las actividades
+Desarrollo del cronograma
+Control del cronograma
+
+Tener 3 primeros renglones del acta, 

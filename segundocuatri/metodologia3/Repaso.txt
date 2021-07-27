@@ -1,0 +1,366 @@
+----------Definicion del proceso unificado de desarrollo de software
+
+Un proceso establece quien esta haciendo que, cuando y como. 
+El como son las actividades, el que es el artefacto, el cuando por los 
+ciclos. El proceso unificado de desarrollo proporciona una guia para ordenar 
+las actividades de un equipo. Dirije las tareas de cada desarrollador por 
+separado y del equipo como un todo. 
+
+Especifica los artefactos que deben desarrollarse. 
+Crea normas y criterios para el control de los productos y actividades del 
+proyecto.
+
+Esta dirigido por los casos de uso, centrado en la arquitectura, iterativo
+e incremental. Utiliza uml. Basa gran parte del proyecto de desarrollo en
+componentes reutilizables
+Marco de trabajo
+
+Conjunto de actividades necesarias para que a partir de los requisitos 
+obtener no solamente el producto sino tambien el sistema software que 
+desee el usuario
+
+Arquitectura: La forma que le voy a dar al sistema. Se representa con
+vistas. de caso de uso, de diseño, etc
+
+Caso de uso: Sucesion de acciones y sus variantes de manera tal que cuando
+este se ejecute le de resultado de valor observable al actor con el cual 
+esta asociado.
+Escenario en el caso de uso es una instancia del caso de uso
+flujo principal es la sucesion de acciones de la situacion de exito y las 
+variantes son los flujos alternativos
+
+Componente: Pieza de construccion. es reemplazable. ofrece interfaces y
+garantiza la realizacion de esas interfaces 
+Elemento fisico de uml que agrupa elementos logicos.
+Elemento fisico porque se puede alojar en un nodo
+3 tipos de componentes: de despliegue, de ejecucion y hombre
+
+-------------------------Explicar las tres caracteristicas del puds
+
+Las 3 caracteristicas son: 1) Dirigido por los casos de uso 2) Centrado en 
+la arquitectura 3) Iterativo e incremental	
+
+1) casos de uso proporcionan el hilo conductor que permite avanzar sobre
+los flujos de trabajo fundamentales como requisitos, analisis, diseño, 
+implementacion y prueba. Guian el proceso de desarrollo. Se desarrollan a
+la vez que la arquitectura del sistema
+
+2) Arquitectura maneja los aspectos estaticos y dinamicos. Les da forma a
+traves del arquitecto. Surge de las necesidades de la empresa tal como lo
+persiven los usuarios, los inversores, etc. Se ve influenciada por factores
+como la plataforma en la que funciona el sistema. ej la arquitectura del 
+hard, el sistema operativo, etc. LLeva implicitos aspectos de implantacion,
+los requisitos no funcionales(tiempo, rendimiento, fiablidad, etc), los 
+sistemas heredados. 
+	
+Cuando se plantea la arquitectura, se debe diseñar para que el sistema 
+evolucione a partir de las siguientes versiones que voy a sacar
+
+El arquitecto selecciona un 5% o 10% de casos de uso para poder dar los 
+lineamientos para los otros puestos de trabajo. Son los casos de uso
+significativos es decir los que tienen reglas de negocio particulares
+
+3) Iterativo: forma de trabaja en la que voy haciendo iteraciones en la que
+cada una representa un tiempo corto ej 1 semana en los que me propongo 
+objetivos a cumplir. pasado el tiempo si este no se cumplio, analizo el
+porque y obtengo una retroalimentacion para poder solucionarlo
+Cada incremento es una nueva construccion y cada construccion la asocia a 
+una version que le entrego al usuario
+A travez de los incrementos obtengo versiones del producto que le entrego
+al usuario
+cada iteracion es como un mini proyecto. Tiene dos enfoques:
+
+Enfoque en cascada: Actividad no comienza hasta que otra actividad no 
+este terminada. Ej: Hasta que no tengo todo el diseño, no programo
+
+Enfoque radical: Yo entrego el sistema pero no todo de golpe, sino que en
+versiones, cada version que sale le agrego funciones nuevas.
+
+
+--------------------Explicar concepto de ciclo, fases, iteracciones e hitos
+
+El puds propone un ciclo de vida que tiene un nacimiento y una muerte
+
+Cada proceso se divide en uno o mas ciclos de manera que cada ciclo termina
+con una version que le entrego al usuario y se pasa al proximo ciclo y asi
+En el ultimo ciclo, le entrego la ultima version que es el sistema software
+ya terminado. Osea los ciclos se construyen con cada version
+
+Todos los ciclos tienen la misma estructura: Inicio, elaboracion, 
+construccion y transicion
+
+Ciclo en el eje de x son las faces:
+Fase de inicio: Se desarrolla una descripcion del producto final a partir
+de "Buenas ideas" y se presenta el analisis del negocio para el producto
+
+Fase elaboracion: se especifican en detalle la mayoria de los casos de uso
+del producto y se diseña la arquitectura del sistema hasta llegar a la
+linea base de la arquitectura.
+
+Fase construccion: se crea el producto la linea base de la arquitectura
+crece hasta convertirse en el sistema completo
+
+Fase transicion: cubre el periodo durante el cual el producto se convierte
+en version beta
+
+Ciclo en el eje de y tiene los flujos fundamentales osea requisitos, 
+analisis, diseño, implementacion y prueba
+Las montañitas dicen el flujo de actividades en cada fase para cada trabajo
+
+Cada fase termina en un hito
+
+Hito: es aquel que determina la disponibilidad de un conjunto de artefactos
+Ayudan a los directores a tomar ciertas decisiones cruciales antes de que 
+el trabajo pueda continuar con la siguiente fase. Permite controlar el
+progreso del trabajo. Los datos que aportan, son utiles en la estimacion
+del tiempo y de los recursos humanos para otros proyectos. En la asignacion
+de los recursos humanos durante el tiempo que dura el proyecto y en el 
+control del progreso constractado con las planificaciones
+ayudan al area de decision a tomar decisiones cruciales antes de empezar
+el proximo ciclo o la proxima fase
+Es un acuerdo para entregar cierta cantidad de artefactos en un determinado
+tiempo
+
+Diferentes tipos de hitos
+Principal: puntos de sincronizacion en el que coinciden una serie de
+objetivos bien definidos, se completan artefactos, se toman decisiones de
+pasar o no a las fases siguientes y en los que las esferas tecnicas y de
+gestion entran en conjuncion
+Intermedio: Es un hito intermedio entre dos hitos principales
+
+El ultimo hito es una version del producto que contiene la funcionalidad
+comprometida
+
+Iteraciones deben ser controladas colocando hitos intermedios para saber
+donde se esta parado
+Cada una trata un conjunto de casos de uso que juntos amplian la utilidad
+del producto desarrollado hasta el momento
+A esta tambien le preocupan los clientes
+
+----------------------------------Explicar las 4p de desarrollo de software
+
+Personas: Usuarios, personas que financia el proyecto, tecnicos, etc
+Personas organizan proyecto y los puestos de trabajo que construyo el 
+proceso. Son seres humanos. Todo aquel que participa en el proyecto
+
+Producto no es solamente el manual de usuario, el ejecutable y demas, sino
+que son todos los artefactos que se crean durante la vida del proyecto
+
+Proceso: Conjunto de actividades necesarias para transformar los requisitos 
+del usuario en un producto. Tiene que ver con  dividir en ciclos y demas
+Procesos afectan a las personas:
+Viabilidad del proyecto el proyecto no debe parecer imposible para que no 
+le afecte a las personas
+Gestion de riesgo: cuando las personas sienten que los riesgos no han sido
+analizados ni reducidos, les comienza a afectar
+Planificacion del proyecto: Cuando las personas creen que la planificacion
+de un proyecto no es realista
+Deben tener sensacion de cumplimiento, para esto se necesita retro
+alimentacion frecuente que los lleva a tener conclusiones para poder tomar
+mejores decisiones
+Un proceso define Quién debe hacer Qué, Cuándo y Cómo para alcanzar una 
+cierta meta
+
+Proyecto: Es el elemento organizativo a traves del cual se gestiona el 
+desarrollo de software. El resultado de un proyecto es una version de un 
+producto. Se acuerda con el usuario como ir entregando las versiones del
+producto, y para fijar la fecha de entrega, el proyecto le avisa al equipo
+de desarrollo y este cumple el proyecto.
+
+
+----------------------Explicar como se convierten recursos en trabajadores
+
+Convirtiendo recursos en trabajadores:
+El recurso: Que personas van a trabajar en el equipo de desarrollo
+Trabajador es el concepto de puesto, se lo define y lo asocia con algun 
+flujo de trabajo, Ademas de que debe llevar adelante una actividad para 
+crear un determinado artefacto.
+
+Trabajadores son puestos de cada flujo de trabajo.
+Se entrevistan a los recursos y cuando dan el si las dos partes, es decir
+el ser humano y la empresa, ahi se convierte el recurso en trabajador.
+El recurso tiene estudios, experiencias etc, por eso se le llama asi.
+A lo mejor el recurso entro en un puesto pero luego puede estar en otro
+
+Recurso se convierte en trabajadores porque la gente que ocupa el puesto 
+requiere formacion y entrenamiento preciso seguidos de una cuidadosa
+asignacion guiada por el analisis y una adecuada supervision
+
+Roles son los papeles que cumple un trabajador, estos pueden asumir varios 
+roles en relacion a otros trabajadores en los diferentes flujos de trabajo
+fundamentales
+Una persona puede ser muchos trabajadores en la vida de un proyecto
+
+Artefacto se construye en cada puesto, asociado a un flujo
+
+----------------------------Explicar las caracteristicas de un trabajador
+Trabajador es el concepto de puesto a los cuales se pueden asignar personas
+y a los cuales esas personas aceptan. Se lo define y lo asocia con algun 
+flujo de trabajo, Ademas de que debe llevar adelante una actividad para 
+crear un determinado artefacto.
+Conoce los que necesita como input para construir su output.
+Es decir que conoce que tiene que conocer y hacer en cada puesto, ademas de
+que cada recurso puede cambiar de puesto en el transcurso del proyecto
+Conocen los roles basicamente
+
+
+----------------------Explicar que es un producto y de que consta el mismo
+Producto no es solamente el manual de usuario, el ejecutable y demas, sino
+que son todos los artefactos que se crean durante la vida del proyecto
+
+El producto consta de una serie de cambios y los artefactos
+
+Es el producto entregable al usuario
+
+-------------Explicar que es un artefacto, diferencias entre artefactos de 
+ingenieria y de gestion
+
+Artefacto: Es toda pieza de informacion que es usada creada o modificada 
+durante el proceso de desarrollo de software. Un diag de clases o de 
+secuencia forman parte del modelo de diseño, que es un artefacto que lo
+construllo con los bloques de construccion de uml y estos tambien son 
+artefactos
+
+Artefacto de ingenieria: Tiene que ser actualizado independientemente de que 
+se haya terminado el proyecto o no, forma parte del producto que le entrego 
+al usuario. Creados en los flujos de trabajo fundamentales y deben 
+permanecer constantemente actualizados
+
+La principal diferencia entre ambos es la actualizacion
+
+Artefacto de gestion: Lo creo durante el proceso de desarrollo de software
+pero no forma parte del producto que le entrego al usuario. Duran lo que
+dura el proyecto
+
+---Explicar captura de requisitos y como se estructura ese flujo de trabajo
+
+Es el proceso de averiguar lo que se debe construir
+Es el acto de investigar, observar, capturar y hasta proponer que es lo que
+se espera construir, casi siempre en circunstancias dificiles
+
+Enumerar requisitos candidatos devuelve la lista de caracteristicas
+Comprender el contexto del sistema devuelve el modelo de dominio y/o negocio
+Estos se hacen con la vision a los requisitos 
+
+Capturar los requisitos funcionales devuelve el modelo de casos de uso
+Capturar los requisitos no funcionales devuelve los requistos adicionales no
+funcionales
+Estos se hacen con los casos de uso
+
+Se capturan requisitos con las entrevistas a los usuarios o cuando se crean 
+los casos de uso
+
+Se estructura este flujo de trabajo con la vision y los requisitos como
+caso de uso
+
+Unico caso de trabajo que primero tengo que llegar de la vision a los 
+requisitos, primero esta la vision, luego los requisitos como casos de uso
+En los primero ciclos uno trabaja con o el dominio por ende hago el modelo
+de dominio representado en un diagrama de clases semantico o conozco el 
+negocio, ergo hago los casos de uso del negocio. Tambien se trabaja con la
+lista de caracteristicas
+
+Cuando tengo el requisito veo que casos de uso necesito
+
+Casos de uso del negocio: Son los pasos del negocio de un punto hasta otro
+punto. Digo en este negocio se da este paso y este y este de manera que 
+termina diciendo que el paso tal tal y tal forma parte del sistema, es decir
+se transforma en un requisito candidato. Y si este esta en la vision y 
+dentro de un requisito que va a formar parte del sistema de informacion
+planteate este requisito como caso de uso
+
+La vision es aquella que nos permite detectar que pasos del negocio forma 
+parte del sistema a desarrollar que son requisitos candidatos
+
+-----------------------Explicar como se enumeran los requisitos candidatos
+-Explicar como se comprende el contexto del sistema explicando el modelo de
+dominio y modelo de negocio
+------Explicar como se capturan los requisitos funcionales y no funcionales
+
+Enumerar los requisitos candidatos: La lista de características deseadas del
+sistema constituyen los requisitos candidatos. Con la vision y los 
+requisitos como caso de uso tambien se utilizan para esto.
+Basicamente son ideas que ingresan a esta lista y pueden llegar a
+convertirse en requisitos y por ende transformarse en uno o mas casos de uso
+
+Estos valores se utilizan para estimar el tamaño del proyecto y decidir cómo 
+dividirlo en secuencia de iteraciones. La prioridad y nivel de riesgo 
+asociados por ejemplo, se utiliza para decidir en que iteración se 
+implementará la característica.
+
+Comprender el contexto del sistema:
+Hay por lo menos dos aproximaciones para expresar el contexto de un sistema:
+Modelo del dominio: describe los conceptos importantes del contexto como 
+objetos del dominio relacionados entre sí.
+
+Modelo del negocio: es más amplio. Describe los procesos con el objetivo de
+comprenderlos. Especifica que procesos de negocio soportará el sistema.
+
+Capturar requisitos funcionales:
+Los requisitos funcionales son capturados por medio de casos de uso, que 
+conforman el modelo de casos de uso. Los casos de uso tambien capturan 
+requisitos no funcionales específicos de un caso de uso determinado. 
+
+Capturar requisitos no funcionales:
+Los requisitos no funcionales especifican propiedades del sistema, como 
+restricciones del entorno o de la implementación, rendimientos, etc.
+Hay requisitos no funcionales específicos para un caso de uso y otros 
+genéricos para la aplicación. Los que son específicos para un caso de uso, 
+pueden documentarse junto con el caso de uso correspondiente. Los que son 
+más genéricos se documentan por medio de una lista de requisitos adicionales
+
+
+------------------------En la captura de requisitos como casos de uso saber:
+Que trabajadores intervienen y de que artefactos es responsable cada uno.
+Saber explicar y graficar cada uno de los artefactos indicados 
+precedentemente
+A traves de un diagrama de actividades, indicar y explicar las actividades
+que realiza cada trabajador en este flujo de trabajo
+
+
+Los requisitos funcionales se estructuran de forma natural mediante casos de
+uso que constituyen el Modelo de Casos de Uso. 
+
+Es responsable de la descripcion de la arquitectura
+El arquitecto para priorizar los casos de uso mira el modelo de casos de uso
+esbozado, requisitos adicionales y el glosario y produce la descripcion de
+la arquitectura es decir la vista del modelo de casos de uso
+
+Es responsable del caso de uso detallado
+El especificador de casos de uso para detallar un caso de uso, necesita el 
+modelo de casos de uso esbozado, requisitos adicionales y el glosario y 
+produce un caso de uso detallado
+
+Es responsable del prototipo de interfaz de usuario
+El diseñador de interfaz para prototipar la interfaz de usuario mira el 
+modelo de casos de uso esbozado, requisitos adicionales y el glosario y el
+caso de uso detallado y produce el prototipo de interfaz de usuario
+
+Es responsable de el modelo de casos de uso, los actores y el glosario
+El analista de sistemas construye esto con los bloques de construccion de
+uml, el diagrama de Caso de uso por sistema/subsistema, el diagrama de caso
+de uso por actor, el diagrama de clases semantico. Tambien forman parte los
+prototipos de interfaz
+
+Modelo de casos de uso es el todo, cuya parte es el sistema y al sistema lo
+divido en varios subsistemas, para cada subsistema hago un diagrama de caso
+de uso para cada sistema/subsistema
+
+Glosario: Artefacto en el que el analista describe todas las cosas con 
+respecto al sistema
+es un artefacto ordenado que permite alcanzar consenso entre los
+desarrolladores, relativo a la definicion de los diversos conceptos y
+nociones, y para reducir en general el riesgo a confusiones. Esta mas
+centrado en el sistema en que se va a construir que en el lugar de su 
+contexto
+
+Diagrama de actividades: Sirven para modelar un flujo de trabajo, 
+estableciendo calles con nombre y colocando actividades bajo responsabilidad
+del que tiene el nombre de la calle. O para modelar una operacion
+
+Modelo de casos de uso esbozado: Es el diagrama de caso de uso de toda la
+vida
+
+Estructurar el modelo de casos de uso es factorizar acciones repetitivas que
+encuentra en varios y diferentes casos de uso y las saca de un lugar, crea
+el caso de uso abstracto y coloca el include y extend y demas

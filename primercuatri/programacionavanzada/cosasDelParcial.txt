@@ -1,0 +1,43 @@
+Acordate que ninguna modificacion sobre los strings se hace al string, sino
+que se tiene que guardar lo que devuelve en una variable
+
+El profe se conecta 6:30 para explicar dudas del parcial
+
+Mapas no se pueden recorrer, se traen todas las claves y despues se recorren
+con un for
+
+Entra hasta la pagina 36 inclusive del parcial, introduccion de java no 
+importa, entra herramientas de desarrollo, la jdk, la jre, recomendaciones
+y palabras claves no
+
+La clase object, saber los metodos disponibles, como sobreescribir el 
+equals, el hashcode y el toString
+
+Clase string saber como funcionan los metodos y que una referencia de un
+objeto string nunca se cambia, todos los metodos generan una nueva
+referencia
+
+Wrapers y sus metodos. Como generarlos y como volver a su dato primitivo
+
+Las excepciones si va a nivel de clase, e metodo, para que sirven los throws
+y demas, como funcionan las excepciones checked y unchecked que diferencias 
+hay
+
+Lo de los try con recursos
+Test unitarios, que son con sus caracterisiticas, como se usa junit @test
+Como se usan los asserts, como se testean los metodos, osea con el valor de
+retorno o con una excepcion
+
+Input y output de escritura de archivo, lectura escritura binaria tambien,
+serializacion, como se hace, como serializar un objeto y como deserializar
+un objeto, la clase que serializemos tiene que implementar la interfaz 
+serializable
+
+Colecciones diferencias entre set list y map, diferencias entre arraylist,
+vector y linked list, con el set la diferencia del hashset y el treeset
+Hay que saber los metodos basicos que son bastante intuitivos
+El ordenamiento de array que se usa con la clase collection.sort
+Hay que implementar la interfaz comparable y sobreescribir el metodo compare
+to sobre la clase que queremos ordenar
+
+Tipos de datos genericos para que sirven y como se pueden usar

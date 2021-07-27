@@ -1,0 +1,65 @@
+Parcial 14 de julio, defensa del tp el 21
+En el tp punto b y c me tengo que fijar que exista el atributo
+
+Anotations
+Son las etiquetas que van con el caracter @, son para agregar informacion
+ej @Override, @Test, etc
+
+Basicamente reconocen algun comportamiento al tener esta notacion
+por ejemplo en @Test, sabe que metodos tiene que correr cuando se ejecuta
+
+Method[] metodos = c.getDeclaredMethods(); Para guardar los metodos
+
+Object obj = c.getConstructors()[0].newInstance();
+
+for(Method m: metodos)
+{
+  m.getAnnotation(Test.class); Hay que ver que sea la org.junit.test
+  m.invoke(obj, new Object[0]);
+}
+
+Para ejecutar los metodos que tengan la anotacion test
+
+Cuando se compila el coidgo se guardan que anotaciones tiene
+
+Annotations[] anotations = m.getAnnotations() Para tener las anotaciones
+
+Se pueden crear anotaciones, esta la opcion cuando pones new, es igual que
+una interfaz pero con un @ adelante public @interface Prueba
+Las notaciones tienen ciclos de vida que dicen cuanto tiempo va a guardar
+java esta informacion. Hay 3 niveles, el class que usamos aca que una vez
+que la clase se creo, desaparece esta info, osea cuando se compila, para
+esto se le pone arriba de la firma de la clase
+@Retention(RetentionPolicy.RUNTIME) Que indica que se va a guardar cuando se
+este corriendo el programa.
+
+Por ejemplo el @override esta a nivel de source, osea que cuando compila, se
+borra esta anotacion
+
+Otra anotacion que se le puede poner es el target
+@Target({ElementType.METHOD, ElementType.FIELD})
+Que especifica a quien le puedo settear esta anotacion, puede ser a un
+metodo, a un atributo, una clase, otra anotacion, etc
+El valor por defecto es a todos
+
+a las anotaciones se le pueden agregar parametros
+public int cantidad(); Se escriben asi
+despues
+@Prueba(cantidad = 3)
+Asi con esto se puede por ej ejecutar el metodo la cantidad de veces que
+cantidad me lo indique o que solo se ejecuten los prueba con cantidad = 3
+Para usarlo es la instancia de la anotacion y un punto ej t.cantidad
+
+Para poner valor por defecto
+public string nombreTest() default "Algo" y asi no es necesario que lo 
+escriba cada vez que uso la anotacion en algun lado
+
+
+En el tp la entidad que nos va a llegar va a tener que usar las anotaciones
+que hicimos
+
+Quiere que hagamos una entidad auto que sea un pojo constructores con y 
+sin parametros
+
+
+

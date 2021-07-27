@@ -1,0 +1,52 @@
+Quiero transportar, pide papeles pertinentes como la vtv, registro de
+conduccion, etc
+Quiero enviar, Todos los usuarios que se registren pueden hacerlo, pero no
+todos pueden transportar
+
+Gestionar las altas de los transportistas
+
+La pagina principal puede mostrar las localidades que mas viajes necesitan
+o los viajes que se pueden realizar, tambien una pag que te diga quienes
+somos, que hacemos, etc
+
+Que el cliente pueda ver los pedidos y con estos, los posbiles 
+transportistas, que a estos los pueda filtrar por puntuacion o por precio
+
+Que el cliente especifique si necesita ayuda para cargarlo y/o para bajar
+el envio, asi los transportistas saben cuanto cobrar en base a eso, tambien
+las medidas de las cosas
+
+Transportista ve los posibles viajes y puede ver el perfil del cliente, 
+y tocando un boton o algo puede ofertar por el pedido
+
+Se podria en un futuro poner las direcciones de origen/destino con el maps
+Se podria poner fotos pero por ahi da mucho laburo
+
+Se puede cancelar un viaje pero tienen que estar las dos partes de acuerdo
+Que cuando el cliente acepta a un transportista, que salga una ventana
+preguntando si de verdad acepta a dicho transportista
+
+
+Regla de negocio para lo de que las dos partes tienen que dar el 
+concentimiento, por ejemplo, que se le ponga tipo strikes para que traten
+de no cancelar las cosas. 
+Cuando aceptan los terminos y condiciones, si uno cancela y el otro no 
+contesta, se le puede meter un strike o algo y a determinada cantidad te
+cancelan la cuenta, creo que uber se maneja con algo asi
+
+Encuestas deben ser obligatorias para calificar a los usuarios
+
+Flujo de trabajo es como hacer el recorrido del cliente a traves de la app
+
+
+
+
+Los dibujos se tienen que ir reemplazando por las pantallas posta
+Hacer todas las pantallas y definir bien que tecnologias usar y en base a 
+eso hacer el diagrama y demas
+
+Utilizamos esta tecnologia por este motivo y demas
+
+
+https://bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/
+Aca te explica como hostear api y mysql a heroku

@@ -1,0 +1,23 @@
+Bueno, vamos a usar secualize para mysql
+
+npm install --save sequelize
+
+Buscar que hay otro npm pero de mysql2 o algo asi
+
+const {Squelize} = require('sequelize')
+
+Tiene un metodo try que es para probar las conexiones me parece
+
+En la carpeta models creo los modelos, es decir las clases a guardar
+
+Primero se declaran los campos en el primer {} y luego los valores dentro de
+otro {}
+
+Se puede poner valor por defecto, data types y demas
+
+Todo los modelos vienen con el modelo sync que crea la tabla en la db
+
+Los timeStamps no entendi bien para que es pero creo que es algo de manejo 
+de tiempos o algo asi
+
+19:30 termina la clase aprox

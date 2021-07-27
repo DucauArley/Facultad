@@ -1,0 +1,30 @@
+Tecnologia presente en internet vlsm permite dividir a una red en subredes
+pero que todas sean de tamaño distino, no todas iguales. Todas las subredes
+deben cumplir con 2 a la n
+Los equipos y los protocolos lo soportan para poder difundir las mascaras de
+cada una, no alcanza con la base de la red
+vlsm obliga a que las mascaras de cada sub red sea distinta
+Se tiene que ser cuidadoso al dividir las redes para que estas no se solapen
+osea que 2 pueden tener la misma mascara
+
+No te deja elegir que ips queres, te las arma el sistema
+Divido en dos partes el total, despues divido una de las mitades y asi
+No hace falta dividir de la 28 a la 29 en el ejemplo, es lo mismo
+La que esta en azul es la de 16 ips que no se va a usar
+
+Particularidades del vlsm
+La division de las subredes tiene que seguir el orden natural de las 
+divisiones. Cada division debe ser la mitad de otra. No se pueden elegir las
+ips.
+Si se elijen, al usar las mascaras, puede que las ip base no te den las que
+vos elegiste
+
+Direccionamiento de super redes o CIDR(Enrutamiento entre dominios sin clase)
+Tabla de enrutamiento es una relacion entre la red y la interfaz
+Red mas la mascara corresponde a tal interfaz
+Mientras mas redes tenga el router, mas tarda porque las tiene que buscar
+
+El direccionamiento achica las redes, le saca unos a la mascara para 
+simplificar las tablas de enrutamiento. Se utiliza vlsm para la creacion de
+mascaras. Permite hacer super redes
+ej las redes /24 las puedo agrupar en una /22

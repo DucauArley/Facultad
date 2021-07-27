@@ -1,0 +1,30 @@
+Si se pone en una interfaz un boton, en algun momento el actor hace click
+en este
+
+Lo que se marca en rojo es porque esta faltando algo quiza
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+Hacer la tecnica de casos de uso en horas hombre 
+La tecnica de entrevistas en teoria ya la hicimos asique no se que onda
+Hacer una conclusion de las 2 tecnicas aplicadas
+Explicamos las cosas despues
+
+4 tecnicas: El proceso y resultado de la tecnica de entrevistas.
+El otro es el proceso de la tecnica de edt, otro es el de puntos de casos
+de uso, ultimo la conclusion
+
+Hacer los puntos de caso de uso con los valores que nos dio ella
+
+El estandar da 20 horas, para ajustar utiliza las tablas de complejidad
+de factores tecnicos
+cocomo no va
+
+Tarea para la proxima para ajustar las estimaciones, nosotros, hacer lo
+de las entrevistas, acordate que las horas de las entrevistas, son el 10%
+de las horas totales del proyecto.
+Bajar el proyect del link del class

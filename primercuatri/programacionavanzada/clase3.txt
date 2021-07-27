@@ -1,0 +1,75 @@
+Throwable es de donde todas las excepciones herendan, hay 2 tipos de
+excepciones: de tipo chequed, que el programa avisa que pueden lanzar, y las
+unchecked que pueden pasar en cualquier momento
+El codigo va a tirar exceptions, java va a tirar excepciones de tipo errores
+son de la java virtual machine
+Podemos crear excepciones de todos los tipos
+
+Se pueden lanzar varias excepciones en la declaracion de un metodo con la
+palabra throws, dentro del metodo se puede lanzar una con throw new 
+MiException()
+El main tambien se le puede poner que lanza las excepciones para arriba
+el printStackTrace() imprime todo desde donde vino la excepcion hasta que 
+se lanzo por la consola
+
+se deben poner las excepciones de la mas especifica a la mas generica. El
+bloque finally siempre se ejecuta
+
+Las uncheckeds exceptions no son obligatorias declararlas en la firma del
+metodo, ademas en el programa no hace falta poner un try catch para que te
+tire las excepciones.
+Esto porque sino cada linea de codigo deberia estar encerrado en un bloque
+try catch, lo que es una locura
+null pointer exception esta en la rama de las runtimeexception
+
+getCause te dice porque surge la excepcion, getMessage te devuelve un
+mensaje completo de la excepcion que ocurrio
+
+Test unitario: Es una forma de probar el correcto funcionamiento de un
+modulo de codigo
+Son automaticas para que constantemente se ejecuten las pruebas
+Deben cubrir la mayor cantidad de codigo posible
+Repetibles o reutilizables osea, tienen que poder ejecutarse muchas veces
+Independientes, osea que no debe afectar a la ejecucion de otra prueba
+Deben ser lo mas profesionales posible
+
+Fomentan el cambio y el orden, simplifica la integracion y division de 
+tareas, documenta el codigo y los errores estan mas acotados y son mas
+faciles de localizar
+
+junit es el framework que permite hacer las pruebas unitarias
+Lo que hace es a travez de parametros de entrada, evalua el retorno esperado
+Funciona con los asserts
+
+add jars es para incluir de dos proyectos separados, desde internet con add
+external jar
+
+Se deberia hacer el testeo en otro package
+Se testean los metodos de la clase. La clase de test se llama igual que la
+clase a testear pero con un test al final, todos los metodos de esta clase
+deben ser publicos, sin parametros y sin retorno. Ademas debe tener el @test
+arriba como el @override
+
+Assert es la clase encargada de validar los tests
+Assert.equals compara si el valor que nosotros esperamos es igual al que le
+pasamos
+Con lo rojo quiere decir que hay algo mal en el codigo
+Hay que hacer test para todas las posibilidades de lo que se le puede pasar
+al metodo, uno por si se le pasa un number, uno por si se le pasa un string
+vacio, uno por si se le pasa una excepcion, etc
+
+Assert.fail() Hace fallar el test
+Siempre hay que tener 2 asserts, uno con la excepcion y otro sin la 
+excepcion
+
+
+
+
+
+
+
+
+
+
+
+

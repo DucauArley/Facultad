@@ -1,0 +1,57 @@
+Java toma casi toda la sintaxis de c y c++, no tiene herramientas de bajo
+nivel, no es un lenguaje ni compilado ni interpretado, es los dos al mismo
+tiempo, tiene una fase de compilacion en un lenguaje que se llama bytecode
+este se interpreta despues por un programa nativo para el sistema operativo
+osea que se puede programar para cualquier sistema operativo
+
+Java runtime enviroment tiene la virtual machine
+Java development kit son las herramientas para desarrollar
+J2SE para programacion avanzada usamos Eclipse pero se puede usar Netbeans
+
+Android esta basado en java porque es multiplataforma y en linux por el
+kerner, que es de codigo abierto. Los de android hicieron su java virtual 
+machine para traducir el java al android
+Maquina virtual de android actual se llama art, antes de lollypop se llamaba
+Dalvik virtual machine, el nuevo tiene un bytecode diferente
+
+Arquitectura de android: Aplicaciones: es donde desarrollamos, esta toda
+basada en java, esta el home, los contactos, etc
+Aplicaciones de Framework: todo lo que se usan en las aplicaciones, window
+Manager
+Bibliotecas: las usan los frameworks, SGL SSL
+Kerner de Linux: Lo que usan las librerias, Drivers de la camara, driver
+del bluetooth
+
+La ART agrega el ahead of time que compila en tiempo de instalacion el 
+bytecode, se guardan rutinas para que las aplicaciones funcionen mas rapido,
+agrega un garbage collector, soporta 64bits y se puede debuggear
+
+Empezamos con la empty activity, el package name tiene que ser unico para
+poder subirlo al google market android minimo el 4.4
+
+En app: En res estan los recursos: layout: Esta como se ven las activities
+osea es como se ven las paginas que son tipo html, aca hay 2 cosas, un
+contenedor osea un div, adentro un text view que es un label
+
+Todo lo que esta en layout va a llevar una parte de java, por cada xml,
+vamos a tener una clase java que esta en app/java. El metodo on create es
+lo que se ejecuta primero, osea hace lo que le decis primero y despues 
+ejecuta el xml en el contentview, el codigo va abajo de este
+
+En el manifiest va toda la informacion de la app
+en las activityes hay que escribir todos los formularios y las acciones que
+van a tener estas
+Tambien se ponen los permisos que usan las activities como internet, o la
+lista de contactos, etc
+
+El Gradle es para decirle que configuraciones se van a usar en la app, 
+tambien estan las librerias que se quieren usar
+
+Descargar Nougat y la kit kat para el dispositivo virtual para tener una
+version nueva y una vieja
+
+wrap_content es una constante que simboliza el minimo posible de algo
+
+Tarea, hacer lo mismo que hizo el profe pero al apretar el boton
+el texto tiene que cambiar
+

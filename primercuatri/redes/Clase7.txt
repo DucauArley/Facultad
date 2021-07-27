@@ -1,0 +1,159 @@
+Dhcp Configuracion de hosts dinamicos
+Los configura de manera automatica
+Dns transforma los nombres de los dominios en ips
+Dhcp es un protocolo de tipo cliente-servidor
+Cliente hace las consultas de las direcciones ip
+Dhcp de manera automatica tiene que configurar a un cliente
+Asignan direccion ip de host, mascara de red, ip de gateway, ip de los dns
+servers y la configuracion del proxy
+
+3 Formas de utilizar el protocolo
+Manual: El servidor asigna manualmente los pedidos de configuracion de los 
+clientes desde una lista blanca	de mac addresses(Es decir que tenes que 
+estar en esta lista para poder acceder a lo que queres ver), Por lo general
+se lo usa en seguridad. Ej el formulario que habia que llenar para tener el 
+wifi de la facultad, despues el albino te daba una ip
+Automatica: El servidor asinga automaticamente la configuracion a pedido sin
+restricciones, tiene un rango de ips que puede entregar, una vez que las 
+asigno todas, deja de asignar
+Dinamica: Es igual al automatico pero le agrega la duracion de la validez de
+la oferta Dhcp, osea te da la ip por 1 hora por lo general pero se puede 
+configurar el tiempo
+
+Mecanismo de asignacion de Dhcp:
+Flechas para abajo es el tiempo que es 0 arriba y aumenta para abajo
+Cuando sale, el cliente no sabes su ip ni quien es ni a quien le habla, 
+envia un mensaje dhcp discover en broadcast a la 255.255.255.255 desde la 
+0.0.0.0 buscando un servidor dhcp. Como no conoce su ip manda el broadcast a
+desde esa ip a la 0 ya que es no se usa
+El servidor contesta con un mensaje de dhcp offer con una ip libre a la mac
+del cliente, osea una que no existe en la red. La ip libre se pone como 
+destino para que el que este buscando una ip lo reciba y los que ya tienen
+una ip no lo reciban. Cuando reciban el mensaje todavia no se puede adueñar
+de esa ip, por eso el cliente envia un mensaje dhcp request en broadcast al
+servidor solicitando la ip ofrecida
+El servidor contesta el request con un dhcpack, el cliente puede empezar a 
+usar la ip o con un dhcpnak, el cliente no puede usar la ip, en ese caso
+debe volver a mandar un dicover y hacer todos los pasos
+
+Si es dhcp dinamica, el cliente le vuelve hacer un request en unicast, para
+que le vuelvan a dar esa ip
+
+Capa 4, capa de transporte
+Se encarga de la transferencia de la informacion libre de errores, no los 
+corrige, sino que los informan
+Tcp tiene mayor influencia en internet desde el punto de vista de la 
+fiabilidad de la informacion
+Transporte se comunica con la capa de aplicacion.
+Si el mensaje se perdio o algo transporte trata de solucionar el problema y
+si no puede te lo informa osea si mando un mail y no llega, me avisa que 
+este no llego
+
+2 Tipos de servicios
+Orientado a la conexion. TCP: Establece conexion entre origen y destino.
+Consume bastantes recursos, ya que por cada conexion hay una instancia de 
+TCP. La transferencia de informacion viaja tipo por un tunel, para el origen
+y el destino, no existen otros usuarios, Conexion punto a punto se la llama.
+Libera la conexion de forma concensuada por ambas partes
+No orientado a la conexion. UDP: Trata a cada paquete de manera individual
+Escucha todos los mensajes del servidor y contesta todo
+
+Direccionamiento de transporte(para capa de red ip)
+Los puertos que identifican al proceso/servicio/aplicacion que origina al
+que se dirige el mensaje. Es absolutamente logico
+Son las direcciones logicas de cada servicio, etc que esta utilizando el 
+dispositivo
+
+TCP: Asegura la recepcion en destino ordenada y sin errores, liberando al
+usuario, permite el multiplexeado de mensajes, es decir que puede recibir
+varios mensajes a la vez y direccionarlos a sus respectivos destinos dentro
+del mismo equipo, esto gracias a los puertos, ya que usan diferentes puertos
+para cada cosa, asi no se mezcla
+Es decir que no te preocupas que caigan los paquetes ordenados ya que tcp
+los ordena
+
+La cabezera de Tcp es de tamaño variable
+Puerto de origen: Numero que identifica al ente que esta generando el 
+mensaje, ocupa 16 bits del 0 hasta el 65 mil y pico, para el public son 
+arriba del 40 mil y pico
+Puerto de destino: Se debe saber a que puerto se va. Hay tres tipos, los
+bien conocidos, los reservados y los de uso publico. Los bien conocidos son
+los que estan asignados para protocolos y aplicaciones, reservados van 
+desde el 1024 hasta el 49151 Estan asignados igual que los bien conocidos,
+la diferencia con los bien conocidos es que tenes que tener privilegios de
+super usuario o administrador para poder cambiarlos
+
+Numero de secuencia: Es un numero que identifica al primer byte dentro del
+fragmento tcp. El primer numero de secuencia lo define el que transmite
+Esto es para que no se mezclen los paquetes, ya que con ellos se rearma el
+mensaje que recibis
+
+Numero de ack: Es un numero a la proxima secuencia que espero recibir pero
+ordenado y sin faltantes
+
+Longitud de la cabecera: Tiene tamaño variable, permite saber donde empieza
+el payload
+
+Flags: Controlan el flujo de la informacion, segmentos y los fragmentos
+
+Tamaño de la ventana: Indica el tamaño maximo del buffer de recepcion. En 
+cada uno de los mensajes el cliente y el servidor informan el tamaño 
+disponible que tiene en ram para los mensajes, por lo tanto saben cuanta
+info mandar antes de esperar la recepcion
+
+Checksum: Controla la integridad de los datos calculando un crc previo a la
+transmision y corroborandolo en la recepcion
+
+Puntero a urgente: Es para los datos urgentes, osea cosas de configuracion
+Apunta al ultimo byte a tratar como tal dentro del payload
+
+Opciones TCP: Donde se declaran las opciones
+
+Relleno: El mismo que tiene la capa de red, para que todas las cabeceras
+tengan un multiplo de 32
+
+6 Flags:
+Urgente: Si esta en 1 tiene sentido el puntero a urgente
+Ack: Si esta en 1 le da bola al numero de ack, siempre tiene sentido excepto
+en el primer mensaje durante el establecimiento de la conexion, ya que no 
+tiene el proximo numero de secuencia al recibir
+Psh: Si esta en 1 es mas urgente que urgente, se usa por lo general para 
+streaming, se pasa directamente a la aplicacion de usuario sin retenerse en
+el buffer
+Rst: Se usa cuando se quiere cerrar la comunicacion
+Syn: Indica que el segmento es de sincronizacion, se utiliza durante el
+establecimiento de la conexion e indica que el mensaje no trae info 
+importante
+Fin: igual que syn pero para el cierre de la conexion
+
+En Tcp cada mensaje genera un mensaje de respuesta, esta respuesta trae
+asociado el proximo numero de secuencia esperado
+
+Se sabe que un mensaje se perdio por el numero de acks que se reciben
+
+Siempre comienza el cliente la comunicacion
+
+Mensaje de establecimiento de la conexion
+El primer mensaje es syn 1 ack 0 seq x ack? Indicando que no hubo mensajes
+anteriores y que no importa el valor ack, por eso el ? El numero de
+secuencia lo decide el cliente, puede ser cualquier numero
+El servidor contesta syn 1 ack 1 seq y ack x+1 para esperar el proximo
+mensaje con seq x+1
+El cliente responde syn 1 ack 1 seq x+1 ack y+1
+Ahi se establecio la conexion y luego se envian los datos ya sea del cliente
+al sevidor y viceversa
+
+Cierre de la conexion
+Primer mensaje fin 1 ack 1 Diciendo que quiere cerrar conexion
+Segundo mensaje fin 1 ack 1 diciendole que va a cerrar el enlace
+Tercer mensaje fin 0 ack 1 informando que recibio el cierre del enlace
+
+En 4 pasos
+Primer mensaje fin 1 ack 1 Diciendo que quiere cerrar conexion
+Segundo mensaje fin 0 ack 1 Diciendo que todavia no puede cerrar ya que 
+todavia tiene datos para enviarle, el cliente esta obligado luego a no
+enviar mas datos
+Tercer mensaje el servidor manda fin 1 ack 1 diciendole que va a cerrar 
+comunicacion
+Ultimo mensaje fin 1 ack 1 informando que recibio el cierre del enlace
+

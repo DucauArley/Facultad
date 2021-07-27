@@ -1,0 +1,170 @@
+Requisitos fundamentales modelo del dominio y requisitos del negocio
+
+Template entre proyecto y proceso, indica que trabajadores producen 
+determinado artefacto
+
+Captura de los requisitos como casos de uso
+
+Trabajadores = puestos de trabajo
+
+Especificador de casos de uso responsable de hacer los casos de uso
+
+Diseñador de interfaz de usuario se encarga de hacer el prototipo interfaz
+humano-maquina
+
+Arquitecto Da ideas rectoras sobre como quiere que sea la forma que se le 
+de a los casos de uso. Forma y funciones son dos aspectos del sistema que 
+tienen que ir creciendo de forma simultanea. Inicia el artefacto de la 
+arquitectura a traves de la descripcion de la arquitecura 18:42****
+
+Artefactos creados con bloques de construccion
+
+Modelo de casos de uso es una estructura jerarquica permite ver los actores
+y los casos de uso que intervienen en el sistema
+
+2 tipos de diagrama de caso de uso. Uno a nivel de sistema y subsistema,
+es el que toda la vida vimos, y los diag de caso de uso por actor en los 
+que se ve en que momento el actor cumple el rol de iniciador en N casos 
+de uso
+
+Realizacion: Comportamiento corporativo que indica que el comportamiento es 
+superior al individual de quienes colaboran. Es una colaboracion
+
+Analista del sistema encuentra actores y casos de uso y los plasma en 
+el diag de casos de uso.
+Glosario: Artefacto en el que el analista describe todas las cosas con 
+respecto al sistema
+
+Modelo de casos de uso es el todo, cuya parte es el sistema
+Se puede dividir al sistema en subsistemas donde para cada subsistema voy a
+decir que casos de uso le corresponden a cada uno
+
+Modelo de casos de uso sirve como un acuerdo entre clientes y 
+desarrolladores
+
+Diagrama de actividades: Sirven para modelar un flujo de trabajo, 
+estableciendo calles con nombre y colocando actividades bajo responsabilidad
+del que tiene el nombre de la calle. O para modelar una operacion
+
+Estructurar el modelo de caso de uso es juntar acciones repetitivas de
+varios casos de uso. A esto se le llama reutilizacion. El caso de uso que
+se crea para juntarlas se llama abstracto. Hay que ver si se juntan estas
+acciones por inclusion, extencion u otra
+
+Para encontrar actores y casos de uso, hay que tener el modelo de dominio
+y los casos de uso del negocio, ademas de requisitos adicionales si es que
+hay y la lista de caracteristicas que se crea en el torbellino de ideas.
+Esto en la columna input, despues en la columna output que es lo que sale
+del encontrar actores y casos de uso son el modelo de casos de uso esbozado
+y el glosario
+
+Modelo de casos de uso esbozado: Es el diagrama de caso de uso de toda la
+vida
+
+El arquitecto para priorizar los casos de uso mira el modelo de casos de uso
+esbozado, requisitos adicionales y el glosario y produce la descripcion de
+la arquitectura es decir la vista del modelo de casos de uso
+
+El especificador de casos de uso para detallar un caso de uso, necesita el 
+modelo de casos de uso esbozado, requisitos adicionales y el glosario y 
+produce un caso de uso detallado
+
+El diseñador de interfaz para prototipar la interfaz de usuario mira el 
+modelo de casos de uso esbozado, requisitos adicionales y el glosario y el
+caso de uso detallado y produce el prototipo de interfaz de usuario
+
+El analista de sistemas para estructurar el modelo de casos de uso necesita
+el modelo de casos de uso esbozado, requisitos adicionales y el glosario y 
+el caso de uso detallado y produce el modelo de casos de uso estructurado 
+
+Caso de uso concreto es el de toda la vida.
+Caso de uso abstracto no lo instancia un actor, sino que lo instancia otro 
+caso de uso
+caso de uso real es tal como lo ve el actor
+
+
+Glosario es un artefacto ordenado que permite alcanzar consenso entre los
+desarrolladores, relativo a la definicion de los diversos conceptos y
+nociones, y para reducir en general el riesgo a confusiones. Esta mas
+centrado en el sistema en que se va a construir que en el lugar de su 
+contexto
+
+Tabla con 3 columnas elemento, tipo y descripcion. Elemento es lo que es:
+Registrar venta, cliente, etc, tipo: caso de uso, clase, etc y la 
+descripcion es abreviada
+
+Responsabilidad de una clase responde a dos preguntas: que tiene que conocer
+esta clase? atributos y que tiene que hacer esta clase? Operaciones
+Se detalla en lenguaje corriente en un cuarto lugar
+
+En un caso de uso la descripcion debe definir el estado inicial como 
+precondicion, como y cuando comienza el caso de uso, el orden requerido en
+el que las acciones se deben ejecutar, cuando y como termina el caso de uso
+y la descripcion de los posibles estados finales como postcondicion
+
+Se incluye en una descripcion de un caso de uso los caminos de ejecucion
+no permitidos, la descripcion de caminos alternativos, la interaccion del 
+sistema con los actores y que cambios producen, la utilizacion de objetos, 
+valores y recursos del sistema, desciribir explicitamente que hace el 
+sistema(las acciones que ejecuta) y las secuencias de acciones repetitivas
+(inicio-bucle y fin-bucle)
+
+Formalizacion adicional en la descripcion de un caso de uso con 
+uml-diagrama de estados(Maquina de estado por objeto)
+uml-diagrama de actividades(flujo de trabajo)
+Interfaz de usuario
+
+Actividad estructurar el modelo de caso de uso
+El mod de casos de uso se estructura para extraer descripciones de 
+funcionalidad (de caso de uso) generales y compartidas que pueden ser 
+utilizadas por descripciones(de caso de uso) mas especificas
+
+Extraer descripciones de funcionalidad (de caso de uso) adicionales u 
+opcionales que pueden extender descripciones (de caso de uso) mas 
+especificas
+
+Esto lleva a que el analista de sistema estudie e identifique las 
+descripciones de funcionalidades compartidas en la actividad "Estructurar 
+el modelo de caso de uso"
+
+Identificacion de descripciones de funcionalidades compartidas:
+A medida que identificamos y esbozamos las acciones de cada caso de uso,
+debemos tambien ir buscando acciones comunes u compartidas por varios casos
+de uso asi poder reducir la redundancia, una comparacion puede extraerse y
+describirse en un caso de uso separado que puede despues ser reutilizado
+por el caso de uso original
+
+Mostramos la relacion de reutilizacion mediante una generalizacion, llamada
+relacion de uso
+
+La generalizacion entre casos de uso es una clase de herencia, en la que
+las instancias de los casos de uso generalizados pueden ejecutar todo el 
+comportamiento descripto en el caso de uso generalizador
+
+Extend: Si se cumple una condicion entonces se extiende el comportamiento
+del caso de uso a tal cosa
+Include: Siempre se incluye el comportamiento del caso de uso a algo. 
+Tambien son casos de uso abstractos. La secuencia de comportamientos y los 
+atributos del caso de uso incluido se encapsula y no pueden modificarse o
+accederse, solamente puede utilizarse el resultado de un caso incluido
+Basicamente el origen incorpora de forma explicita, el comportamiento de
+otro caso de uso en la localizacion especificada por el origen
+
+Una relacion de dependencia es tambien de uso
+
+Caso de uso tiene que tener en claro como comienzan y como terminan
+
+Casos de uso son el hilo conductor que permite avanzar por los flujos de
+trabajo
+
+
+2da parte del video explica el template que nos paso*****************
+
+En poscondicion se colocan todas las posibles pos condiciones de los 
+diferentes escenarios, en cada escenario coloco las propias
+
+En requisito funcional, si no tiene, escribo que no tiene
+
+
+
+Leer cap 7 del libro sobre casos de uso

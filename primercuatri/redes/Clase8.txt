@@ -1,0 +1,91 @@
+Como se maneja la comunicacion en TCP y como resuelve un problema si un
+mensaje se pierde o se retrasa
+NAT es de capa 3 pero se aprovecha de los puertos
+
+Transmision de tramas en TCP
+El transmisor necesita conocer lo mas fehacientemente posible las tramas 
+recibidas desde le lado receptor
+El receptor debe poder recibir los segmentos y ordenarlos antes de enviarlos
+al servicio de la capa superior que lo solicite
+El metodo debe permitir la retransmision de segmentos fallidos o perdidos
+
+TCP es un protocolo full duplex
+
+En el ejemplo se esta haciendo un upload, osea el cliente esta subiendo
+
+La ventana de recepcion es un buffer, en cabecera TCP esta. Que capacidad de
+memoria ram deja disponible el receptor para que la info que llega se vaya
+almacenando antes de que pase a la capa superior(de aplicacion)
+
+Todas las cosas que dice en el ejemplo se hicieron en la etapa de
+reconocimiento
+
+200mlsegundos desde que llega el mensaje hasta que salga la respuesta	
+
+Desde que llega el mensaje 1 hasta que recibe A va en contra de la 
+operatoria de TCP y hace que se pierdan algunos mensajes
+
+Ninguna respuesta del server llevan datos inteligentes, por eso el numero de 
+secuencia va aumentando de a 1
+
+Recien cuando llega H el cliente se da cuenta que el servidor recibio toda
+la info
+
+En la primera transmision quiere decir que es la primera vez que se 
+transmitio ese mensaje, ya que lo va a volver a transmitir
+
+No se vacia el buffer cuando los mensajes no estan ordenados
+Una vez se retransmite el mensaje 2 se vacia el buffer
+
+Tienen que venir 3 mensajes con el mismo ack para volver a transmitir (creo
+que tiene que ver con la ventana pero no estoy seguro) o si para un 
+determinado mensaje se vence el timer
+
+quien transmite TCP hace que cada vez que se transmite un mensaje se dispara
+un timer. Es un algoritmo que es el doble del tiempo promedio de 3 mensajes 
+y sus ACKs llamado roundtrip
+
+Se intentan hasta 3 retransmisiones, sino se piensa que se perdio la 
+conexion y se inicia nuevamente
+
+UDP: tiene todo lo que no tiene TCP, el unico control que tiene es CRC
+No tiene secuencia, ni ACK, ni conexion previa ni nada pero tiene una
+cabercera muy sencilla por lo que puede establecer muchos servicios en la 
+misma ip
+
+Es muy sencillo, por ende no se pierde tiempo con retransmisiones y demas
+
+Puerto origen y destino
+Longitud de Datagrama no puede tener mas de 16 bits
+Suma de verificacion: Permite conocer la integridad de los datos
+Datos
+
+Lo utilizan servicios muy frecuentes o cuando no tiene sentido la 
+recuperacion de paquetes, por ejemplo DNS, DHCP, Streaming, FTP, NTP
+
+meet esta montado en tcp
+
+las empresas de seguro de autos tipo el cosito de lojack esta montado en
+UDP, lo mismo la sube y demas cosas
+
+NAT: Cualquier cosa que haga nat es un router. Consiste en la traduccion
+de direcciones ip. Esconde ips por el nombre de otra. Traduce una ip privada
+en una publica, osea se le da acceso a internet a las maquinas con ip 
+privada, ya que estos no podrian comunicarse con internet
+
+La ip de origen nateados tienen como ip de origen la del router.
+
+El router se guarda en una tabla todos los intentos de comunicacion de los
+equipos con ip privada con internet
+
+PAT: Es para resolver el tener dos consultas al mismo servidor al mismo 
+tiempo, ya que no sabe para quien es la respuesta
+Basicamente mete los puertos y los cambia como le parece
+
+El hecho de que el router tenga que hacer nat genera latencias, es decir le
+hace gastar mas tiempo y recursos, tambien tiene que recalcular el 
+checksum por lo tanto tiene que volver a generar todos los mensajes
+Mensaje ICMP envia mensajes de error e informacion operativa indicando, por 
+ejemplo, que un host no puede ser localizado o que un servicio que se ha 
+solicitado no está disponible
+

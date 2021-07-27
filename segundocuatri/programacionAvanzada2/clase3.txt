@@ -1,0 +1,105 @@
+Para crear un componente nuevo, se puede hacer con una clase o los 
+componentes funcionales con estado
+Para la clase primero se importa react de react y se extiende en la firma
+de la clase Component
+Esta clase si o si debe tener el metodo render
+Este metodo es el que va a renderizar
+con un return(<div>
+<h1>Clase</h1>
+</div>)
+
+Tambien se tiene el constructor que es el que va a recibir las propiedades,
+hay que llamar al constructor de Component con super(prop)
+Primero se ejecuta el constructor y despues el renderizadod
+
+ComponentDidMount() se ejecuta despues de renderizar
+
+componentWillUnMount() Se ejecuta cuando desaparesca el componente
+
+Didcatch() Metodo que se ejecuta cuando tenias un error
+
+Todo esto se depreco con la nueva version de react, con la llegada de los
+hooks que nos permiten tener estado en el componente como poder manejar el
+ciclo de vida del componente
+
+hooks son funciones que devuelven un array, ej el useState()
+Para pasar variables del useState() es let [num, setNum]=useState(0)
+
+useEffect() renderiza cada vez que ocurre un efecto secundario en el 
+componente, recibe un callback
+
+Se le puede pasar como segundo argumento un array vacio, esto permite hacer
+peticiones asincronas al servidor, cargarlas y cambiar el componente una
+sola vez
+
+Con estos dos metodos, podemos masomenos emular el comportamiento del
+ciclo de vida de los componentes
+
+No se pueden usar los hooks en componentes de clases, solamente en
+componentes de funciones
+
+Peticiones para api 19:52
+
+const url ="htps://google"
+
+Export default function clase()
+{
+ Para tener la info hay que guardar todo en el estado del componente
+ let [count, setCount] = React.useState(0);
+ let [previus, setPrevius]= useState(null);
+ let [next, setNext] = useState(null)
+ let [results, setResults] = useState([]) Para que no de error cuando renderiza
+ React.useEffect(()=>{
+ para hacer la peticion
+ fetch(url).then(function(response)
+ {
+  return response.json
+ }).then(function(cosas)
+ {
+  const{count, next, previous, results} = cosas;
+  setCount(count)
+  setNext(next)
+  setPrevious(previous)
+  setResults(results ?? [])
+  console.log(cosas)
+ }).catch(e=>
+ {
+  setError("Error");
+  console.log(e);
+ });
+
+},[]);
+
+  return
+{
+ <div>
+ {error ? <label>error<label>: null} Si error existe, lo muestro, sino no
+ 
+  <div>
+   <h4>cantidad: {count}</h4>
+   {
+    results.map(cosa=>{
+     return <div key={cosa.url}>{cosa.name?.toUpperCase()}</div>
+    })
+   }
+
+   {previous?<span>Previous</span>:null}{next?<span>Next</span>:null}
+  </div>
+ </div>
+}
+
+}
+
+Separar el codigo en componentes y hacer la paginacion, es decir que cuando
+toque el next o el previus, que me traiga nuevos pokemones o los anteriores
+y otro boton que nos muestre algun detalle
+
+Mirar la repeticion a partir de 21:00
+
+
+
+
+
+
+
+

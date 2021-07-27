@@ -1,0 +1,28 @@
+Para parsear nos interesan los items, por lo menos en la de noticias
+
+Transformar el string de noticias dentro del hilo para que no se trabe el
+cel al hacerlo en el main activity, las pasamos a List
+
+Tendria que hacer un pojo streamer, en el caso de noticias uso titulo, 
+descripcion, linkImagen, Imagen en array de bytes
+
+Crear clase parserxml creo un metodo statico que retorna lista de noticias
+recibe un string osea el xml
+Este metodo se ejecuta en el hilo para transformar la lista
+
+Se leen eventos, una vez que se avanza no se puede volver, el primer evento
+es el inicio de xml, y el ultimo es de fin de xml, adentro hay de inicio 
+y fin de cada uno de los tags
+
+Cuando encontras un item es que encontras una noticia
+
+20:02 el profe arregla el problema
+
+Hay que ir poniendo todos los else if con todas las cosas que llevan las
+noticias
+
+cuando encontremos el end tag agregamos el objeto
+
+
+Usuario pueda cargar streamers todos los que quiera, se pueden guardar los
+datos en el celu

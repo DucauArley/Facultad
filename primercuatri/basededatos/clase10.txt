@@ -1,0 +1,62 @@
+Seguridad de base de datos
+Checklist de seguridad: Control de acceso y seguridad, control de
+acceso y roles, encriptacion de la comunicacion, cifrar y proteger datos,
+limitar exposicion de red, auditar la actividad del sistema
+
+Usuarios pueden usar varios roles, para que no todos sean admins
+
+mongod --auth para reiniciar la instancia
+
+Conectarse con el usuario desde la consola
+mongo -u 'usuario' -p'Contraseña' --authenticationDatabase 'La db a usar'
+
+Hay que habilitar la autenticacion
+
+Se puede restringir a leer y escribir, osea que no va a poder borrar
+colecciones ni nada
+
+Mongo puede crear roles definidos por el usuario
+
+donde dice rearAnyDatabase es readAnyDatabase
+
+Con el crear rol, podes elegir que cosas queres que pueda hacer el usuario
+y que nombre va a tener este rol
+
+use admin
+db.createRole(
+   {
+     role: "mongostatRole",
+     privileges: [
+       { resource: { cluster: true }, actions: [ "serverStatus" ] }
+     ],
+     roles: []
+   }
+)
+
+
+use reporting
+db.getUser("reportsUser")
+
+use accounts
+db.getRole( "readWrite", { showPrivileges: true } )
+
+use reporting
+db.revokeRolesFromUser(
+    "reportsUser",
+    [
+      { role: "readWrite", db: "accounts" }
+    ]
+)
+
+
+use reporting
+db.grantRolesToUser(
+    "reportsUser",
+    [
+      { role: "read", db: "accounts" }
+    ]
+)
+
+
+db.changeUserPassword("reporting", "SOh3TbYhxuLiW8ypJPxmt1oOfL")
+

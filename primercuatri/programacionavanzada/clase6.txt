@@ -1,0 +1,39 @@
+Patrones de diseño:
+Es un tema mas de orientacion de objetos
+El singleton es uno
+El software que nosotros desarrollemos debe ser lo suficientemente robusto
+y seguro para que se le puedan meter modificaciones sin que pierda la 
+funcionalidad que diseñamos. Tiene que ser reutilizable
+Hay que diseñar pensando en que se puede modificar
+
+Patron es la solucion a un problema en un contexto particular
+Facilitan la reutilizacion de diseño y la arquitectura de software
+Estan orientados al cambio
+
+Hay 3 tipos de patrones:
+Los arquitecturales: El mvc porque define la arquitectura de software, otro
+seria el de programacion en capas modelo, acceso a datos y servicio
+Los elementales: Son especificos del lenguaje, ej en android es la 
+programacion orientada a eventos, en java es orientada a objetos
+Los de diseño: Son como los arquitecturales pero mas chicos, osea que van a 
+resoler problemas chicos. Hace que sea escalable y orientado al cambio
+Dentro de los de diseño:
+Patrones de creacion: Trata de la inicializacion y configuracion de clases
+y objetos. ej singleton
+estructurales: Tratan de desacoplar interfaz e implementacion de clases y 
+objetos se basa en el como se componen clases y objetos. Dividen logica
+compleja en varias clases para poder reutilizarlo o agregarle funcionalidad
+De comportamiento: Tratan de las interacciones dinamicas entre sociedades de
+clases y objetos, es parecido a los estructurales
+
+
+El singleton resuelve un problema en concreto. Su proposito es tener una
+clase que solamente pueda tener 1 objeto y que este se pueda acceder de 
+cualquier lado.
+
+La logica del suscribe de angular es un patron que se llama observer
+
+
+
+
+

@@ -1,0 +1,6 @@
+Discutir cosas del esquema logico de bases de datos
+
+Tomar criterio de orden para el glosario, por lo menos tres tablas, una
+para los casos de uso, otra para las clases y asi
+
+Tenemos que arreglar las maquinas de estado con julio

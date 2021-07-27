@@ -1,0 +1,114 @@
+Trabajamos con java script con el cliente y el servidor, vemos React
+del lado del servidor vemos node.js
+
+Vamos a hacer un servidor y una api.
+Hay que instalar node.js que creo que ya lo tengo
+
+Node tiene una consola poniendo node que es como la de desarrollador en la
+que se puede poner codigo de javascript
+
+Volvemos a usar todo lo de npm
+
+Package.json tiene toda la info del proyecto
+
+npm init -y No hace preguntas como en el npm init solo. Crea el archivo
+con todos los valores por defecto
+
+keywords es para el motor de busquedas de npm, para que se lo busque en la
+pagina de npm
+
+homepage: Hay comandos que acceden directo a la pagina en npm
+
+Campos con la info que trabaja el proyecto
+
+bin: archivos ejecutables
+
+man: archivos para que pueda encontrar el codigo
+
+repositorio: puede ser de github o de cualquiera
+
+scripts: Diccionario con los comandos que se pueden ejecutar en los 
+programas
+
+Config: son los parametros de configuracion
+
+todo lo de dependencias se guardan las dependencias de desarrollo en las
+dev, por ejemplo para cosas de servidores y demas y las dependencias de 
+otras cosas en el dependencies
+
+engines: Versiones que quiero utilizar de node
+
+carpeta node.modules guarda todos los paquetes que utilicemos. Se puede
+instalar 
+En el apunte dice todo
+
+instalar como dependencia axios  npm install axios o npm i axios
+
+main: es donde se inicia el proyecto
+
+gitIgnore: Para que github ignore algo para no andar subiendo todo a github
+se le pone dentro por ej el node_modules
+
+cuando guardo de manera globar, al abrir la consola en cualquier lado, 
+tengo disponible las dependencias
+
+
+-P -D -O son para indicar donde guardar las cosas
+--no-save para decirle que no se guarden las cosas
+
+npm desinstall axion -D lo saca de las dependencias directamente
+
+npm docs intenta adivinar donde esta la ubicacion del paquete
+
+Test es para ejecutar por consola lo que pongas
+
+npm run corre un comando por defecto que es uno propio y lo tiene que 
+buscar
+
+console.log(process) es un objeto que te tira un monton de informacion como
+variables de entorno o de npm. El array paths escanea donde hay node modules
+
+para ver una variable de entorno:process.env.npm_package_routes
+
+npm run miScript --miArg=arg1
+
+jest es para hacer test y live servers es un servidor de desarrollo
+
+se instala el live-server y no necesitamos server apache ni nada de eso
+
+operador nullish reconoce si hay un null o un undefined es ??
+
+babel polyfills brocoli y demas son librerias de compatibilidad y 
+transpiladores
+
+por un error cuando hacemos type of de null devuleve un object aunque null
+sea primitivo
+
+Hoisting: podes usar una funcion antes de crearla es decir, todas las 
+declaraciones se elevan al inicio del codigo, por ende las declaraciones 
+van a estar primero. por ej
+bla = 2
+var bla;
+
+
+"use strict" al principio del archivo para usar en modo estricto, nos
+obliga a declarar variables
+
+ECMAScript esta basado en objetos. estos a su vez son una coleccion de cero
+o mas propiedades cada una con atributos que determinan como se puede usar
+cada propiedad
+
+las funciones tambien son objetos y se pueden usar como tales
+Se puede poner funciones sin una cantidad de argumentos definidos
+
+Se pueden declarar funciones anonimas
+let sumar = funcion(){}
+
+se puede usar el =>
+
+funciones autoejecutables se ejecutan por unica vez y se ejecutan solas
+(function(){})
+
+Spread para objetos y funciones
+
+Rest: Se utiliza para copiar arrays

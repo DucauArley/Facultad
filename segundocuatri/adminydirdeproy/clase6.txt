@@ -1,0 +1,61 @@
+Falta completar los hitos en el acta del proyecto, supuestamente sale cuando
+se hace el edt
+
+En inicio
+Es bastante complicado sacar tiempo en esta parte mas que nada con el 
+alcance, requerimiento, recoleccion de ideas y definir objetivos, se podrian 
+poner en un solo cuadarado que sea definir requisios. En relevamiento de 
+necesidades por area hay que poner las areas hay que poner a quienes relevar
+
+Analisis y diseño
+No se analiza el alta por ej, se analiza la gestion del cliente, es decir
+las funciones. Por ej en el alta hay que poner registracion, que se valide,
+que ingrese su domicilio y demas
+Hay que analizar todos los procesos que involucran por ej el pedido de un
+transporte
+
+Cotizar pedido esta bien, explayar puntuacion de contraparte, confirmar 
+cotizacion recibida esta bien
+
+Construccion todo lo que analice pero mas en detalle
+Decir como hace un pedido y como continua el flujo de trabajo de esto.
+Osea separar las cosas en procesos mas chicos
+
+En los casos de uso: Autorizacion esta bien. Tiene que estar reflejado en
+La parte de construccion. EJ cuando se registra el tranportista tiene que
+haber un proceso de validacion
+
+Funcionalidad: Parece que esta bien, quiza tendriamos que poner mas 
+detalles sobre las restricciones
+
+Cotizacion bajo que circunstancias se cancelan o se modifican
+Agregar los procesos que estan aca en la construccion
+
+
+Google analitics se analiza donde se invoca y en construccion hay que 
+preveer en que modulos se invoca esta funcionalidad
+
+
+
+Para tener en cuenta el tiempo de relevamiento hay que tener en cuenta 
+lo que tarda en relevar al transportista
+
+Area de Relevamiento de operaciones 
+
+Aplicar tecnica de casos de uso, contar usuarios, contar casos de uso 
+simples, medianos, cuantas transacciones tiene para profundizar la 
+complejidad
+
+Administrar pedido de transporte tiene cargar, modificar y eliminar. Se
+piensa en el analisis de todo el pedido, es decir bien todo lo que hace
+pero se engloba en algo. Se analiza si se elije algun transportista en base
+a la distancia, analizar los precios y demas. Es una cosa generica aca y 
+una vez analisado, ver que componentes de software resuelven esto
+Intenta comprender la totalidad
+
+Validar los items a transportar en construccion, restricciones como que no
+se puedan transportar alimentos con combusibles y asi, que procesos tengo
+que pedir para que el pedido se complete, pedir cotizacion, aceptar 
+cotizacion
+
+Leer el apunte de casos de uso por las dudas

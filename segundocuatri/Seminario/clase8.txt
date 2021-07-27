@@ -1,0 +1,31 @@
+El Caso de uso 4
+Muestra el mapa para el item de todos los proveedores y cual es el elegido
+
+No mandar excel, siempre tiene una salida por pantalla cuando se ejecute,
+es un tema sensible
+
+Ordenada fifo por hora de cierre, pasada la hora nadie puede cotizar
+
+Lo del co-gerente me parece que no lo tomamos
+
+La fecha de cierre no se puede cambiar
+
+El automata se ejecuta todos los dias y busca si hay alguna solicitud con
+fecha de cierre. El tema es que seria mejor mostrar varias, es decir las
+que esten en un estado de no seleccionadas o algo por el estilo
+
+Cuando se coloca en un sistema ejecuciones automatas, hay que tener las
+reglas bien en claro, porque sino explota la maquina jejejejeje
+
+Si la clase de control se esta enlazando con tal clase, hay que fijarse en
+el diagrama de clases, que estas esten enlazadas
+
+En el diagrama de colaboracion tengo que poner primero lo de que tomo los
+datos y demas, mejor consulto algun otro diag para ver que onda
+
+
+
+
+
+
+

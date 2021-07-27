@@ -1,0 +1,152 @@
+Diagrama de casos de uso por actor. Osea basicamente se juntan todos
+los diagramas de casos de uso dividido por cada uno de los actores en los 
+que este aparece como iniciador
+
+Te muestra basicamente que los actores pueden trabajar en varios subsistemas
+Te dan las interfaces primitivas
+
+Modelo de Analisis es para los desarrolladores basicamente
+
+
+Modelo de casos de uso
+1) Descripto con el leguaje del cliente
+2) vista externa del sistema
+3) Estructurado por los casos de uso, proporciona la estructura a la vista
+externa
+4) Utilizado fundamentalmente como contrato enre el cliente y los 
+desarrolladores sobre que deberia y no deberia hacer el sistema
+5) Puede contener redundancias, inconsistencias, etc entre requisitos
+6) Captura la funcionalidad del sistema, incluida la funcionalidad 
+significativa para la arquitecura
+7) Define casos de uso que se analizaran con mas profundidad en el modelo
+de analisis
+
+Modelo de analisis
+1) Descripto con el lenguaje del desarrollador
+2) Vista interna del sistema
+3) Estructurado por clases y paquetes estereotipados, proporciona la 
+estructura de la vista interna
+4) Utilizado fundamentalmente por los desarrolladores para comprender como 
+deberia darse forma al sistema, es decir, como deberia ser diseñado e
+implementado
+5) No deberia contener redundancias, inconsistencias, etc entre requisitos
+6) Esboza como llevar a cabo la funcionalidad dentro del sistema, incluida
+la funcionalidad significativa para la arquitectura, sirve como primera 
+aproximacion al diseño
+7) Define realizaciones de casos de uso y cada una de ellas representa el 
+analisis de un caso de uso del modelo de casos de uso	
+
+Clases de analisis: Deben tener definidas su responsabilidad de que tiene
+que conocer y que hacer. Son expandidas, se muestra el nombre, atributos y
+operaciones. LLevan estereotipo que diga que es clase analisis
+No se definen bien las operaciones hasta el modelo de diseño
+
+Paquetes definen dos capas, las especificas y las generales de aplicacion
+
+Casos de uso son funcion y arquitectura es la forma. Avanzan paralelamente
+
+Una realizacion es un comportamiento corporativo es decir que es el comp
+de todos los que intervienen en esta relacion, por ende es superior al
+individual
+
+Arquitecto crea el modelo de analisis y la descripcion de la arquitectura
+
+ingeniero de casos de uso crea ka realizacion de cas de uso analisis
+
+Ingeniero de componentes crea la clase analisis y los paquetes analisis
+
+interaccion: Es un conjunto de mensajes enviados por un conjunto de objetos 
+dentro de un contexto para lograr un proposito	
+
+Hay que hacer tantos diagramas de colaboracion como escenarios tiene el
+sistema
+
+Un enlace es una instancia de una relacion
+
+Mensaje: Info que va de un objeto emisor a un objeto receptor con la idea de 
+activar una accion
+
+Ingeniero de componentes necesita analisis de la arquitectura, analizar un
+caso de uso y analizar una clase para analizar un paquete
+
+Arquitecto necesita el modelo de casos de uso, los requisitos adicionales,
+el modelo del negocio y la descripcion de la arquitectura(vista desde el 
+modelo de casos de uso) para crear el analisis de la arquitectura y esto 
+lleva a el paquete analisis, la clase analisis esbozada y los incorpora a la
+descripcion de la arquitecutura (vista desde el modelo de analisis)
+
+Ingenierio de casos de uso necesita el modelo de casos de uso, los 
+requisitos adicionales, el modelo del negocio y la descripcion de la 
+arquitectura(vista desde el modelo de casos de uso) para crear el analisis 
+de un caso de uso y esto lleva a la realizacion de el caso de uso analisis, 
+la clase analisis esbozada
+
+Ingenierio de componentes necesita el modelo de casos de uso, los 
+requisitos adicionales, el modelo del negocio y la descripcion de la 
+arquitectura(vista desde el modelo de casos de uso) para crear el analisis 
+de un caso de uso y esto lleva a la realizacion de el caso de uso analisis, 
+la clase analisis esbozada 20:16*********************
+
+
+Toda clase candidata que colaboro en un caso de uso forma parte del sistema
+porque tiene que colaborar como clase de entidad en una realizacion de un
+caso de uso
+
+El modelo de analisis se representa mediante un sistema de analisis que 
+denota el paquete de mas alto nivel del modelo
+
+la utilizacion de otros paquetes de analisis es por tanto una forma del 
+organizar el modelo de analisis en partes mas manejables que representan 
+abstracciones de subsistemas y posiblemente cpas completas del diseño del 
+sistema
+
+Clase de interfaz: A cada caso de uso le permite establecer la relacion
+del actor al sistema y viceversa, es la interfaz humano maquina.
+En analisis todavia se representa como clase, en diseño puede llegar a ser
+una salida impresa, un mensaje que se manda, un mail, etc. Representa algo
+concreto
+
+Clase de control: Organiza, secuencia, crea objeto, encapsula el 
+comportamiento del caso de uso
+
+Clase de entidad: Representa a los objetos involucrados que se van a 
+enlazar y enviar mensajes. Se utilizan para modelar info que posee una vida
+larga y que es a menuido persistente
+
+Clase de analisis se centra en el tratamiento de los requisitos funcionales
+y pospone los no funcionales, denominandolos requisitos especiales hasta
+llegar a las actividades de los flujos de trabajo diseño e implementacion
+Raramente define u ofrece un interfaz en termino de sus operaciones y su
+signatura. Su comportamiento e define mediante responsabilidad en un nive
+mas alto y menos formal.
+Define atributos a un alto nivel ya que los tipos de atributos son
+conceptuales y reconocibles en el dominio del problema.
+Participa en relaciones conceptuales
+
+
+Una realizacion caso de uso-analisis es una colaboracion dentro del modelo
+de analisis que descirbe como se lleva a cabo y se ejecuta un caso de uso 
+determinado en terminos de clases de analisis y de sus objetos en 
+interaccion
+
+Existe una dependencia que indica una relacion historica o de proceso entre
+dos elementos que representan el mismo concepto, sin reglas especificas
+para derivar una de la otra. A esto se lo llama Traza y se usa para la
+realizacion de caso de uso-analisis del modelo
+Se construye con diag de clases, de interaccion, el nombre de un mensaje
+denota el proposito del objeto invocante en la interaccion con el objeto
+invocado, flujo de sucesos-analisis que es un texto adicional en lenguaje
+corriente que explican los diagramas de colaboracion y requisitos 
+especiales que son descripciones textuales que recogen los requisitos no
+funcionales sobre una realizacion de un caso de uso-analisis
+
+21:14************************ diag de actividades
+
+Diag de colaboracion interesa el camino de enlace con los mensajes y los 
+numeros de cual va primero y demas
+
+Diag de secuencia se ordenan los mensajes en el tiempo en el eje de las Y
+con los ida y vueltas
+
+
+

@@ -1,0 +1,108 @@
+Martes 19 y Jueves 21 Parcial Martes es teorico, jueves es practico
+
+Siempre hay dos salidas: El valor de retorno del metodo o una excepcion
+
+Manejo de archivos:
+File es la clase prinicipal para el manejo de archivos
+File archivo = new File() Que puede ser un archivo o una ruta
+archivo.txt o /imagenes. hay que saber si se trabaja con un directorio o con
+un archivo porque hay metodos que van a funcionar en uno pero no en otro
+con el new el archivo existe pero en memoria ram
+exist() devuelve si el archivo existe o no, si no existe se hace un
+createNewFile()
+19:07 revisar
+hasta 19:09
+
+mkdir() genera el ultimo directorio
+mkdirs() creo que genera todos los directorios
+archivo.isFile() ve si existe y es un file
+isDirectory es lo mismo pero para los directorios
+list() lista de todos los archivos en un directorio
+new File(C:\\Users\\algo\\otroalgo) Se ponen las 2 \\ porque es un caracter
+de escape y lo toma literal, no como string
+getName() da el nombre del archivo
+
+FileWriter fw = new FileWriter(archivo, true) Si no existe lo crea. Si no 
+lo puede crear tira una excepcion por eso se usa en un try. El true es para
+el append, osea si lo pisa o los sobreescribe
+Usamos BufferedWriter bf = new BufferedWriter(fw) Guarda la info de manera 
+Buffereada. Guarda info en el ram y cuando se hace el bw.flush() guarda todo
+esto en el disco. 
+bw.write("Hola") Para escribir
+bw.newLine() Salto de linea
+fw.close() Para cerrar el writer  
+
+FileReader fr = new FileReader(archivo) Tira una excepcion si el archivo no
+existe o no tiene permisos para lectura
+Usamos BufferedReader = br = new BufferedReader(fr) que lo lee de manera 
+buffereada
+br.readLine() lee hasta el proximo salto de linea, para leer todo se usa
+String s = "";
+while((s=br.readLine()) != null)
+{
+  System.out.Println(s);
+}
+
+fr.close() Para liberar el archivo y lo pueda tomar otro
+
+fw y fr heredan de java.io como el File
+
+System.getProperty("line.separator") simboliza las \ independientemente del
+entorno que estes usando, si fuese windows, linux o lo que sea
+
+Para leer archivos de imagenes o pdfs y demas se leen los bytes
+Para copiar una imagen tal cual se usa:
+
+File archivo = new File("logo.jp")
+File archivoSalida = new File(logoCopy.jpg)
+
+FileInputStream fis = new FileInputStream(archivo)
+BufferedInputStream bis = new BufferedInputStream(fis)
+
+FileOutputStream fos = new FileOutputStream(archivoSalida)
+BufferedOutputStream bos = new BufferedOutputStream(fos)
+
+byte[] aux = new byte[1024] array de 1024 bytes
+
+int cantBytesLeidos = 0;
+
+bis.read(aux,0, 1024); Lee y guarda de a 1024 bytes en aux
+desde la posicion 0 hasta la 1024, Devuelve un int con la cantidad de bytes 
+que leyo no es hasta el 1023 porque el 1024 no lo incluye
+
+while((cantBytesLeidos = bis.read(aux,0, 1024))>-1) cuando no quedan mas 
+bytes que leer devuelve -1
+
+bos.write(aux,0,cant) Escribe desde el objeto aux
+
+La api collections permite tener las colecciones
+Collecciones son de objetos no de datos primitivos, se pueden usar wrapers
+Listas pueden ser arraylist, linkedlist, vector,etc
+
+for(Object o: coleccion) El foreach de java
+{
+   System.out.println(o);
+}
+
+isEmpty() Para saber si la coleccion esta vacio
+add() Para agregar elementos a la coleccion
+get(indice) Para obtener el elemento en ese indice
+elementos.remove(indice o elemento) Para remover el elemento pasado o en tal
+indice
+clear() Borra todos los elementos
+removeAll(Lista) Borra todos los elementos que existen en ambas listas de la
+primer lista. Toma en cuenta el metodo Equals y el hashcode
+
+Serializacion es muy parecido, es para guardar objetos en un archivo y
+despues se pueden recuperar. Leer esto y hacer el ejercicio
+
+Temas parcial: todo lo de la guia hasta la pagina 48 pero patrones vamos a
+ver hasta a la mitad asique son menos pags
+
+
+
+
+
+
+
+

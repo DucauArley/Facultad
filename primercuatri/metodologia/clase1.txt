@@ -1,0 +1,116 @@
+Otra vez vemos lo de objetos en vez de procesos
+El porque modelamos
+staruml para modelar, tipo draw.io, visual paradine tambien, arquitect igual
+Se ve el uml en metodologia 2
+
+Modelado es una actividad central para la produccion de software de calidad
+Encuentra el beneficio suficiente y ahorra plata
+comunica como debe ser la estructura
+atributos = estructura, operaciones = comportamiento
+modelos de comportamiento
+perspectiva algoritmica se utiliza en el analisis estructurado
+perspectiva orientada a objetos el principal bloque de construccion es el
+objeto o la clase
+
+uml es un lenguaje de modelado, se utiliza para escribir planos de software
+en sistemas muy grandes, para documnentar cosas tambien del sistema
+Tiene reglas especificas para su utilizacion
+Bloques de construccion:Elementos,Relaciones, Diagramas
+Significado semantico quiere decir que una va a ser el padre y otra el hijo
+en una generalizacion
+opeacion define un servicio que se muestra y el metodo define como se hace 
+esta operacion
+
+Elementos estructurales: Representan cosas conceptuales o materiales, por lo
+general son partes estaticas del modelo(Clases, Interfaz: Usa el estereotipo
+interface para discriminarlas de las clases, colaboracion: Por ejemplo una
+clase alumnos, una clase universidad, una clase cursos y una clase materias,
+Todas estas clases y sus objetos van a colaborar para que se permita que los
+alumnos se puedan inscribir a las materias de la facultad, casos de uso:
+Tiene la secuencia de acciones que permite que el usuario vea el resultado
+deseado de el sistema, Clase activa: es igual que una clase comun, pero sus
+objetos tienen uno o mas procesos en ejecucion, Componente: parte fisica y 
+reemplazable, da vida al mundo logico, archivos, Nodos: Reperesentan a los 
+servidores o algo que tenga memoria y capacidad de procesamiento)
+
+Elementos de comportamiento:son las partes dinamicas de los modelos (son los 
+verbos del modelo, Interaccion:Son los mensajes que se mandan entre las
+clases/objetos/etc entre si, Maquinas de Estado:Representan todos los
+estados por los que pasa un objeto a lo largo de su vida)
+
+Elemento de agrupacion: Sol las partes organizativas de los modelos, permite
+agrupar elementos por cosas en comun, tambien se pueden modelar subsistemas
+(Paquetes: Se usan para agrupar los elementos)
+
+Elemento de anotacion: Las notas que se pueden hacer dentro de un modelo
+(Nota: basicamente es para aclaraciones y demas)
+
+Relaciones: Como se vinculan los elementos ya mencionados 
+
+Dependencia:Relaciona dos elementos, un cambio en el independiente afecta
+a el dependiente pero no visceversa ej pila(independiente) control remoto
+(dependiente)
+
+Asociacion:Relacion estructural, Indica que los objetos estan en un mismo
+nivel ej para decir esta clase realiza tal cosa con...tal clase
+existe simple(agregacion), compuesta(composicion), y la asociacion comun
+
+Generalizacion: Es la herencia
+
+Realizacion:Pasa con las interfaces, hace que se cumpla con un contrato, ej
+que los metodos de las interfaces esten en las clases
+
+Diagramas: Representacion grafica de un conjunto de elementos, se usan para
+visualizar el sistema desde diferentes perspectivas 
+
+Diagramas de clases: Muestra clases interfaces y colaboraciones
+Diagramas de objetos:Muestra conjunto de objetos y sus relaciones
+Diagramas de casos de uso:Muestra conjunto de casos de uso y sus actores
+Diagramas de secuencia:Muestra interaccion entre los objetos hace incapie en
+cuando se envio el mensaje
+Diagrama de colaboracion:Representa las interacciones entre los objetos pero
+haciendo incapie en el camino de estas interacciones
+Diagrama de estados:Representa los estados por los que pasa el objeto en su
+vida, tiene estados, transiciones, eventos y actividades
+Diagrama de actividades: Flujo de actividades que tienen lugar en el sistema
+Diagrama de componentes:Muestra la organizacion y dependencias entre
+un conjunto de componentes
+Diagrama de despliegue:Muestra la configuracion de los nodos de
+procesamiento, osea cual es la distribucion de los servidores sobre el 
+sistema
+
+Mecanismos comunes: Caracteristicas que se aplican a todo el lenguaje
+Especificaciones:Le da un significado a un bloque de construccion
+Adornos: Notaciones que exceden las caracteristicas mas basicas de un bloque
+de construccion, accesorios semanticos que extienden las propiedades de un
+elemento, extienden el significado
+Divisiones comunes:Por un lado las cosas abstractas y por otro las cosas
+concretas, ej Clase/Objeto interfaz/implementacion
+
+Mecanismos de extensibilidad: permiten extender el lenguaje de forma 
+controlada, es decir que se pueden crear bloques de construccion a partir de
+bloques existentes. Por ejemplo, una interfaz es un estereotipo de una clase
+Estereotipos:Para crear nuevos tipos de bloques de construccion
+Valores etiquetados:Extiende las propiedades de un bloque añade informacion
+Restricciones: Extiende la semantica de un bloque permitiendo añadir, sacar
+o modificar las reglas de este bloque
+
+Arquitectura: Es un conjunto de aspectos que componen el sistema, permite
+abordar al sistema desde diferentes puntos de vista, desde la estructura y
+el comportamiento, tambien considera: el uso, funcionalidad, rendimiento
+
+Para comprender la arquitectura hay diferentes vistas:
+Vista de casos de uso: Comprende los casos de uso que describen el
+comportamiento del sistema tal como es percibido por los usuarios finales,
+analistas y encargados de las pruebas
+Vista de diseño: Todo lo que se va a diseñar para el sistema ej Cuales son 
+las clases que se van a realizar, etc
+Vista de procesos: hilos y procesos que se pueden ejecutar y como se genera 
+la distribucion de recursos, aborda los temas de concurrencia
+Vista de implementacion: Los componentes que dan vida desde la perspectiva 
+fisica al sistema
+Vista de despliegue:Tiene que ver con los nodos y el despliegue del sistema
+
+artefacto: Pieza de informacion que es utilizada o producida por un proceso
+de desarrollo de software
+

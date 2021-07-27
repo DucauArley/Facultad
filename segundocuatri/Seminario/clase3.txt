@@ -1,0 +1,41 @@
+ARLEY DUCAU
+Caso de uso del negocio
+
+
+Desde: Mensualmente hay que estar preparados para invitacion a proveedores y demas. 
+La empresa solicita la compra de uno o mas volquetes
+
+
+Hasta: El o los volquetes llegan a la playa de estacionamiento
+
+19:20 habla de mi parte
+Trabajador: Cada puesto va a ser responsable de crear artefactos
+
+Modelo de casos de uso: lo construimos con los bloques de construccion de
+uml: diag de caso de uso de sistema/subsistema, diag de clases semantico
+y artefactos Glosario, caso de uso, prototipos de interfaz
+Es una estructura gerarquica como parte del todo que ********19:13
+
+El encargado de la playa de estacionamiento recibe el cargamento de volquetes
+
+
+Cuando se calcula la disponibilidad hay un parque de prorrogas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

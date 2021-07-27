@@ -1,0 +1,81 @@
+Dentro del ciclo de vida del producto tengo operaciones
+
+Desarrollo es poner en marcha la planificacion
+
+El plan debe reflejar la situacion del proyecto en cada momento
+
+Al final de la fase de ejecucion viene el momento de implementacion
+
+ciclo de vida del producto: Plan de negocios IDEA, PRODUCTO operaciones, 
+disposicion
+
+Ciclo de vida del proyecto: Inicio, planificacion, ejecucion, supervision y
+control, cierre. Empieza despues de idea y termina antes de producto
+
+Habilidades interpersonales
+Comunicacion efectiva
+Influencia en la organizacion
+Liderazgo
+Motivacion
+Negociacion y gestion de conflictos
+Resolucion de problemas
+
+Definiciones del proyecto
+Objetivos
+Factores criticos de exito: cumplimiento de requisitos, satisfaccion del
+cliente y algo mas*********
+
+Interesados del Proyecto:
+Cualquiera que es afectado por las actividades o resultados de un proyecto
+Cualquiera que puede ejercer influencia, soporte o resistencia en el 
+resultado
+Cualquiera con un interes personal, fianciero o profesional en el resultado
+Afip puede ser un interesado si estoy desarrollando un software para los
+impuestos
+
+Gestion del alcance: Procesos necesarios para asegurar que el proyecto
+incluya todo y solo el trabajo requerido, para completar el proyecto
+satisfactoriamente
+Planificacion del alcance
+Definicion del alcance
+Crear EDT(Estructura detallada de trabajo) Diagrama jerarquico del tipo 
+arbol donde voy desagregando tareas, vendria a ser el alcance
+Verificacion del alcance
+Control del alcance
+El grado de completitud de un producto se mide contra las especificaciones
+(requerimientos) y contra el plan (alcance)
+
+Crear EDT
+Descomposicion jerarquica orientada al entregable del trabajo a realizar
+por el equipo de proyecto, para cumplir con los objetivos del proyecto
+Su proposito es organizar y definir el alcance total aprobado del proyecto
+Identificar todos los elementos finales, llamados "Paquete de trabajo"
+Es un elemento exhaustivo; todo trabajo a ser hecho en el proyecto debe
+poder rastrear su origen en una o mas entradas de la EDT
+
+Definicion del alcance: Una pobre definicion de alcance, genera costos mas
+altos, interferencia en el ritmo del proyecto, aumentando los cronogramas y
+bajando la moral y productividad del equipo
+La declaracion de alcance debe definir lo que esta dentro de las fronteras
+del proyecto y lo que esta afuera de las fronteras
+
+El alcance se verifica inspeccionando incluye actividades como medir 
+examinar verificar a fin de determinar
+
+Controlar el alcance:
+Es el proceso por el que se monitorea el estado del alcance del proyecto y 
+del producto, y se gestionan cambios a la linea base del alcance
+Asegura que todos los cambios solicitados o las acciones preventivas o 
+correctivas recomendadas se procesen a traves del proceso de control de 
+cambios
+
+
+
+
+
+
+
+
+
+
+

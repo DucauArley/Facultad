@@ -1,0 +1,87 @@
+Parcialito flujo de trabajo analisis prox clase
+
+18:38 da todos los temas pero es todo el tema 2º osea del 1 al 7
+Para el primer punto muestra un cuadro
+
+Modelo de casos de uso
+1) Descripto con el lenguaje del cliente
+2) Vista externa del sistema
+3) Estructurado por los casos de uso, proporciona la estructura a la vista
+externa
+4) Utilizado fundamentalmente como contrato entre el cliente y los
+desarrolladores sobre que deberia y no deberia hacer el sistema
+5) Puede contener redundancias, inconsistencias, etc entre requisitos
+6) Captura la funcionalidad del sistema, incluida la funcionalidad
+significativa para la arquitectura
+7) Define casos de uso que se analizaran con mas profundidad en el modelo
+de analisis
+
+Modelo de analisis
+1) Descripto con el lenguaje del desarrollador
+2) Vista Interna del sistema
+3) Estructurado por clases y paquetes estereotipados, proporciona la 
+estructura de la vista interna
+4) Utilizado fundamentalmente por los desarrolladores para comprender como
+deberia darse forma al sistema, es decir, como deveria ser diseñado e
+implementado
+5) No deberia contener redundancias, inconsistencias, etc entre requisitos
+6) Esboza como llevar a cabo la funcionalidad dentro del sistema incluida la
+funcionalidad significativa para la arquitecura, sirve como una primera
+aproximacion al diseño
+7) Define realizaciones de casos de uso, y cada una de ellas representa el 
+analisis de un caso de uso del modelo de casos de uso
+
+Despues los trabajadores responsables para los artefactos 18:43
+A traves de un diag de actividades, que cosa hace cada uno de los 
+trabajadores
+
+3 tipos y convencion iconica de interfaz control y entidad, caracteristicas
+de una clase de analisis y realizacion caso de uso - analisis
+y concepto de trazabilidad
+
+Todo lo de paquetes no entra
+
+27 recuperatorio de seminario
+
+Para el diag de clases como colaboraciones simples
+Tipovolquete es clase, detallesolicitudcompra
+
+Las grillas se pueden poner como un estereotipo de <<para cada detalle>>
+
+Estereotipo, construccion nueva en base a una construccion vieja
+
+Tambien se pueden poner notas que con una relacion de dependencia apunte 
+al estereotipo en el que puedo decir este conjunto de atributos se repite
+para cada elemento de tal
+
+El diagrama de colaboracion esta mal, hay que trabajar con el objeto como
+si fuese una clase reducida, es decir el rectangulo con el nombre del
+objeto, osea como toda la vida
+
+Poner una sola flecha con todos los numeros
+El 2 quiza no va
+
+Hay que poner que el actor hace click en todas las partes que lo haga.
+Hay que poner que el sistema espera a que haga click// NO estoy seguro de
+estas dos
+
+La de control tiene los volquetes, no hace falta que la vuelva a pedir.
+Esta clase organiza, secuencia, da la orden de crear objetos y demas.
+Aparte resuelve calculos intermedios
+
+Crear solicitudDeCompra y sus detalles
+
+Se pone una nota para los detalles igual que el de el diag de clases como
+colaboracion simple
+
+Las clases de control pueden tener funciones propias de validacion
+
+En diseño los objetos y las clases pueden ser elemenos fisicos tipo 
+impresoras y demas
+
+Hacer diag de clases como colaboracion y de colaboracion del flujo principal
+y un alternativo
+
+
+
+

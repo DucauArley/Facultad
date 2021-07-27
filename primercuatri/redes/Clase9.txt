@@ -1,0 +1,213 @@
+Ipv6
+Lineamientos de ipv6
+Ipv4 no tenia las suficientes direcciones para todas las personas del mundo
+sin tener en cuenta los broadcast y demas cosas
+En 2011 se entrego el ultimo paquete de ipv4, las ultimas 33 millones
+Pero no estan todas las ip publicas asignadas, todavia se pueden comprar
+aunque sean caras
+
+Ipv6 admite 340 sextillones de ips distintas cerca de 6.7 * 10 a la 17,
+tiene 128 bits, mientras que ipv4 tiene 32, no son retrocompatibles, osea 
+que no son operables entre si. Aunque todos los dispositivos tienen las 2
+pilas osea stack para poder operar con ambas
+
+Protocolos superiores 5, 6, 7 no necesitaron modificacion para operar con
+Ipv6 excepto FTP o NTP que utilizan las direcciones ip, por eso hubo que 
+sobreescribirlos
+
+La cabecera de ipv6 a pesar de que es mas larga (128 bits) es mucho mas 
+sensilla, osea que se eliminaron varios campos de ipv4, modificaron otros
+y agregaron otros, simplifican el procesamiento de paquetes a los routers,
+por ejemplo la fragmentacion
+
+Los datagramas poseen una payload de maximo 64kb de manera estandar pero
+hay algo llamado jumbogramas soportan hasta 4gb, pero son utopicos ya que la
+mayoria de las capas inferiores no los soportan, se usan mas que nada en
+backbounds, en el nucleo de internet
+
+Prefijo de red son los primeros 64 bits, son 8 grupos de 4 digitos 
+hexadecimales. Se pueden achicar
+
+Como existen en las direcciones ip valores muy grandes, hay 2 reglas de 
+abreviacion de direcciones:
+Se puede reemplazar cadenas completas de 0 con un solo 0, si tengo mas de
+una cadena completa de 0, se reemplaza con ::, se puede hacer una sola vez
+
+Cuando hay 2 cadenas de 0, se utilizan los 2 puntos en la mas larga, y los
+0 en la mas corta
+
+Otra regla es que se pueden omitir los ceros a la izquierda osea :0014:
+quedaria en :14:
+
+Esta abreviacion es meramente humana, en los headers se transmite todo
+
+Ventajas de ipv6 sobre ipv4:
+El direccionamiento es practicamente infinito
+La utilizacion de nat es practicamente innecesaria, ya que todos los equipos
+pueden tener una ip publica
+Es autoconfigurable, cada uno de los host puede tomar su propia direccion ip
+no hace falta que exista el DHCP que les entregue la direccion ip. Este se
+usa para todo lo otro que se le asigna a un dispositivo cuando se configura
+como la direccion del gateway y demas
+Ipsec integrado es un protocolo de seguridad, de encriptacion.
+
+Modos de configuracion:
+Autoconfiguracion:
+El router envia a cada lan la informacion de la red
+64 bits para la red, 48 para la red y 16 para la subred. 64 bits para host,
+se pueden tener 65536 subredes por cada red por los 16 de la subred
+64 bits de adelante son de red, 64 de atras son de la mac
+En cada una de las redes ipv6 que existen caben el cuadrado de las ipv4 en
+su totalidad.
+
+Cada host le añadia su propia direccion mac en EUI-64 a los 64 bits que le 
+mandaban a la red, Manualmente le puedo configurar los 64 bits a mi equipo
+
+Para dar anonimato ya que se podia sacar la mac de esta ip, se asignan de
+manera aleatoria las ip
+
+id de interfaz es lo que llamabamos host en ipv4
+
+Cuando aparece FF FE en los bytes del medio quiere decir que la direccion
+ipv6 se hizo con la mac de un equipo
+
+Configuracion mediante servidor es el DHCP
+
+Multicasting:
+En ipv6 no existe el broadcast, cuando se tienen que enviar paquetes a mas
+de un dispositivo, lo resuelve a traves del multicast.
+Es un protocolo que se utiliza con varios grupos, Los dispositivos deben
+aceptar formar parte de estos grupos para usar el multicast.
+Todos los equipos tienen mas de una direccion ip, tienen globales osea
+publicas, locales osea privadas y de multicasting
+El paquete solo les llega a los host que esten incluidos en determinados
+grupos de multicast, esto hace que disminuya el procesamiento del cpu ya que
+no tiene que estar procesando todos los mensajes de los broadcast
+
+Cabecera ipv6
+Se removieron 6 campos:
+Longitud de encabezado: ya que esta es de tamaño fija
+Identificacion: porque no tiene aplicacion, la fragmentacion no se hace como
+en ipv4, por ende no se usa, la fragmentacion se maneja con una cabecera 
+anidada independiente
+Banderas: Porque la fragmentacion se utiliza de manera distinta
+Desplazamiento de la fragmentacion: No existe el puntero a la fragmentacion
+Suma de verificacion de encabezado: encabezado no tiene verificacion, no se
+calcula el CRC como antes
+Si la cabezera llega mal las capas de orden superior se encargan de esto, y
+el paquete se descarta o se tira un error
+Opciones y relleno: No existen opciones pero tienen cabezeras anidadas
+
+La cabecera ipv6 es 128 bits mas larga que la maxima posible de ipv4
+
+Flow label: Se utiliza para el streaming basicamente, cuando tiene 
+determinados valores se lo pasa de largo al datagrama para darle fluides al
+streaming
+Traffic class: Dice que protocolo llevamos adentro (TCP, UDP), igual que el 
+Type of Service
+Payload Length: Basicamente el largo del datagrama
+Next header: Lo que antes se resolvia con las opciones ahora se resuelve aca
+cuando hay funciones especiales se generan cabeceras anidadas dentro de
+esta cabecera, es un numero, una etiqueta que se sabe lo que es, que se la
+llama etiqueta de header. Es una explicacion para lo que viene en el payload
+Hop Limit: Es el time to live, limite de saltos que acepta el paquete antes
+de que se descarte
+
+Etiquetas de cabecera: Determinan o describen una cierta funcionalidad. ej
+si el mensaje es fragmentado, hay una etiqueta que describe como es esta
+fragmentacion.
+
+Si el campo next header tiene un 6 quiere decir que lo que viene despues son
+datos TCP, hay un valor para UDP, otro para ICDP y demas
+
+En el segundo caso existe una cabecera de enrutamiento, que se usa cuando
+los paquetes utilicen una ruta en particular, le digo al paquete por que
+nodos tiene que pasar. Utiliza el campo 43, despues sabe que la proxima
+parte de su cabecera tiene las rutas por las cuales debe pasar.
+Estos campos tienen una longitud finita y fija, si no alcanza pongo mas
+
+En el tercero aparte le dice que el paquete esta fragmentado y la proxima
+cabcera le va a decir como esta fragmentado el paquete
+
+RFC: Son tipo normas, te dice el formato de la cabecera y demas
+
+El unico que tiene la capacidad de fragmentar paquetes es el origen y de
+desfragmentar es el destino, con estas cabeceras cada uno lee la cabecera
+que necesita, osea, por ejemplo el router no lee la cabecera de
+fragmentacion ya que el no puede desfragmentar los paquetes
+
+Existieron 6 cabeceras al principio:
+La hop by hop: La info que hay ahi adentro la tiene que revisar cada uno
+de los nodos por los que pasa
+La de enrutado: Da la lista de los nodos por los que el paquete tiene que 
+pasar para cumplir con la ruta 
+La de fragmentado: Se determina el tamaño de MTU minimo de punta a punta y
+se fragmenta en consecuencia. Solo framenta el origen, en ipv4 lo podia
+hacer el router tambien. El origen para saber a que tamaño debe transmitir 
+todos los fragmentos, le manda a todos los destinos un paquete del tamaño 
+maximo osea 64kb para ver si los mensajes llegan a destino, si llega quiere 
+decir que los destinos soportan ese tamaño, si alguno de los receptores
+devuelven un error, el origen divide ese mensaje las veces que sean 
+necesarias hasta que no devuelva mas error
+La de opciones de destino: LLeva info que sera procesada por el nodo destino
+La de autenticacion: Proporciona integridad y autenticacion para todos los
+paquetes, son para gestion de sesiones
+La de seguridad encriptada para la carga(ESP): Desarrolla como se tienen
+que encriptar los datos de la carga para darle confidencialidad a los
+mensajes/paquetes
+
+El campo Payload Lenght: tiene 16 bits de tamaño maximo, osea 64 kb.
+
+Jumbogramas: Son hop to hop que permite hasta 4gb, como en ipv6 no podes
+fragmentar en el camino, pocas veces se puede utilizar
+
+Tipo de direcciones ipv6:
+Unicast: Tienen el formato origen-destino ej:
+Direccion indefinida: ::/128 osea todo 0, la usan los equipos cuando estan
+buscando un DHCP es la paralela a la 0.0.0.0 de ipv4
+
+Direcciones locales: 
+Loopback: ::1/128 todos 0 y un 1 que tambien es un 1 en binario, se suele
+utilizar cuando una transmisión de datos tiene como destino el propio host. 
+También se suele usar en tareas de diagnóstico de conectividad
+Es la direccion de LoopBack en ipv4 127.0.0.1 a 8
+Local link address: fe80::/10 todas las que empiezan asi tienen las misma
+funcion que las IP APIPA, en ipv4 toma la 169.254.0.0
+cuando un equipo no tiene conexion con el servidor DHCP y no encuentra un
+servior de estos y no existe un router que le hable, asi y todo el host
+genera una direccion ip que arranca con el fe80, practicamente no sirve para
+nada, lo hacian para darle una direccion ip al stack
+Unique local address: Reemplaza a la local link que arranca en fc00::/10,
+los primeros 64bits tienen que ver con la red. En ipv4 se las llama 
+direcciones privadas osea las 192.168.x.x. se usan para armar las
+Redes privadas que en ipv6 se llaman ambitos privados, no se pueden publicar
+en internet
+
+De uso especial: Reservadas por la IANA para distintos protocolos
+2001::/32 los primeros 32 bits son 2001 + cuatro ceros
+2001:2::/48
+2001:10::/28
+Reservada para documentacion del funcionamiento de ipv6:
+2001:db8::/32 Incluyen desde esta:
+2001:0db8:0000:0000:0000:0000:0000:0000:/32 hasta esta:
+2001:0db8:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:
+
+Multicast: Cuando son entre los nodos, todas las direcciones ip que empiezan
+con FF0x y terminan con 1 FF0X::1, la x depende del valor, si es un 1 el 
+mensaje es para mi solo, si es un 2 son el grupo de equipos conectados al 
+mismo enlace(red fisica).
+Cuando son entre routers es FF0x::2, cuando x es 1, es al mismo router,
+cuando es un 2 es a todos los ruters en el mismo enlace local, cuando es un
+5 es a todos los routers que estan dentro de un sitio web
+
+La ip publica es de la pc, no del router, obviamente cambia con el tiempo
+como la ip publica de ipv4
+
+Estructuras de ip globales(publicas): Todas arrancan con un 0010 es decir
+que todas arrancan con un 2, los proximos 13 bits son para un id que define
+de donde son estas direcciones, las asigna el LACNIC en latinoamerica, luego
+hay 8 bits reservados que hoy son todos 0, despues 24 bits para los ISPs,
+osea proveedores de servicio de internet. Aca terminan los 48 bits que te
+publica el proveedor de internet, luego vienen 16 bits para dividir en sub
+redes y por ultimo vienen los 64 bits que componen el id de interfaz
+

@@ -1,0 +1,135 @@
+20/11 Segundo Parcial
+Consiste en temas que nos da ella para exponer
+Nuestro es cpaitulo 13 La fase de inicio pone en marcha el proyecto
+Esta en este link el libro
+https://es.slideshare.net/gagamonsterbadromance/el-proceso-unificado-de-desarrollo-de-software-jacobson-booch-rumbaugh
+
+19:17 Habla de una imagen o algo que nos va a pasar que tiene que estar en
+un power point que tenemos que hacer para este parcial del orto
+
+19:22************ Dice algo de especificar con workflow o diagrama de nash
+o una cosa de ese estilo
+
+Diseñar un sistema significa que a partir de los paquetes de analisis 
+construyo subsistemas de diseño
+
+El modelo de flujo de trabajo que se trate, tiene una estructura jerarquica
+En el de diseño tengo las clases de diseño, la realizacion de las clases
+de casos de uso y el concepto de interfaz
+
+Una realizacion de caso de uso diseño proporciona una traza directa a una 
+realizacion de caso de uso analisis en el modelo de analsis
+
+por lo tanto realizacion caso de uso-Diseño tambien puede tener una traza a
+un caso de uso en el modelo de casos de uso a traves de una realizacion
+caso de uso analisis
+
+La dependencia de traza de una realizacion caso de uso diseño ira en este 
+caso directamente hasta el caso de uso en el modelo de casos de uso
+
+Traza: Es una dependencia que indica una relacion historica o de proceso
+entre dos elementos que representan el mismo concepto, sin reglas
+especificas para derivar una de la otra
+
+Una realizacion caso de uso diseño se construye con:
+Diagrama de clases como colaboracion simple pero con clases de diseño
+Diagrama de interaccion (el de secuencia) Uno para flujo principal y uno
+para cada alternativo
+flujo de eventos textual
+requisitos implementacion
+
+El proposito de diseñar una clase es crear una clase diseño que cumpla su
+papel en las realizaciones caso de uso diseño y los requisitos no 
+funcionales que se aplican a estos
+
+Esto incluye el mantenimiento del diseño de clases en si mismo y:
+Sus operaciones, atributos, relaciones en que participa, metodos(que 
+realizan sus operaciones), los requisitos relevantes a su implementacion y
+la correcta realizacion de cualquier interfaz requerida
+
+El primer paso es esbozar uno o varias clase del diseño, dada la entrada en
+terminos de clase de analisis y/o interfaces
+
+Cuando tomamos una interfaz como entrada suele ser simple y directo asignar
+a una clase de diseño para que proporciona esa interfaz
+
+Diseñar clases de interfaz es dependiente de tecnologia de interfaz 
+especifica que se utilice. Hay que considerar que tenemos herramientas de
+diselo de interfaces de usuarios, lo cual quiere decir que las interfaces
+de usuarios creadas en forma visual directamente sobre la pantalla implica
+la correspondiente clase de diseño(de interfaz)
+
+Diseñar clases de entidad que representan informacion persistente implica
+el uso de tecnologia de bases de datos especificas. En el caso de las bases
+de datos relacionales, es un error pensar en clase-tabla pues el diseñador
+para solucionar este error debe aplicar estraegias de persistencia
+
+Puede haber muchos aspectos de diseño involucrados en la adopcion de una 
+estrategia, especialmente a la hora de hacer corresponder el modelo de 
+diseño oo con el modelo de datos relacional
+
+Diseñar clases de control es una tarea delicada porque las clases de control
+encapsulan secuencias, coordinacion de otros objetos o algunas veces pura
+logica del negocio, por eso es necesario considerar:
+Aspecto de distribucion: Si la secuencia necesita ser distribuida y manejada
+por diferentes nodos de una red, se puede requerir separar las clases del
+diseño en diferentes 19:59******************************************
+Completar lo escrito en la pantalla
+
+Componentes y nodos:
+
+Componentes son elementos fisicos, tiene la caracterisitica de agrupar
+elementos logicos. Los alojo en nodos Tiene que garantizar la realizacion de
+interfaces. Son una parte fisica y reemplazable de un sistema que conforma
+un conjunto de interfaces y proporciona la realizacion de dicho conjunto
+Se utilizan para modelar los elementos fisicos que pueden hallarse en un
+nodo tales como ejecutables, bibliotecas, tablas, archivos y documentos
+Normalmente representa el empaquetamiento fisico de elementos que por el
+cotrario son logicos tales como clases, interfaces y colaboraciones
+Los buenos componentes definene abstracciones precisas con interfaces bien
+definidas permitiendo reemplazar facilmente 20:19***********************
+
+Nodo: Es un elemento fisico que existe en tiempo de ejecucion que tiene
+memoria y procesamiento de informacion
+
+En muchos sentidos los componentes son como las clases: ambos tienen nombre
+ambos pueden realizar un conjunto de interfaces, ambos pueden participar en
+relaciones de dependencia, generalizacion y asociacion, ambos pueden tener
+instancias, ambos pueden participar en interacciones.
+
+Las diferencias entre estos son:
+1) Las clases representan abstracciones logicas en cambio los componentes
+representan elementos fisicos del mundo de los bits osea que pueden estar
+en nodos, las clases no
+2) La relacion puede representarse mediante una relacion de dependencia
+para los componentes para con las clases
+3) Indica como las interfaces hacen de puente entre los componentes y las 
+clases, tanto los componentes como las clases puedne realizar una interfaz
+pero los servicios de un componente normalmente solo estan disponibles a
+traves de sus interfaces
+
+Una interfaz es una coleccion de operaciones que se utiliza para especificar
+un servicio de una clase o un componente.
+
+Una interfaz que es realizada por un componente se denomina interfaz de 
+exportacion, lo que significa que es una interfaz que el componente ofrece
+como servicios a otros componentes
+
+Una interfaz que es utilizada por un componente se denomina interfaz de 
+importacion, lo que significa que es una interfaz con la que el componente 
+conforma y sobre la que puedo basar para construir
+
+Sustitucion binaria:
+El objetivo basico de cada facilidad del sistema operativo, basado en 
+componentes es el de permitir el ensamblado de sistemas a partir de partes
+binarias reemplazables. Esto significa que se puede crear un sistema a 
+partir de componentes y posteriormente ir haciendolo evolucionar 20:36*****
+
+Diagrama de despliegue muestra la configuracion de nodos que participan en
+la ejecucion y ademas los componentes que residen en cada nodo
+
+
+Hay que poner los casos de uso en los que se cambia el estado en las
+maquinas de estado
+Cuando no aparece el estado en ningun caso de uso, se pone sin definir
+

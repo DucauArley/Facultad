@@ -1,0 +1,73 @@
+Hilos: Apps multi procesos
+
+Hilos son instancias de la clase thread
+Thread t = new Thread();
+t.start() Para arrancar el hilo
+
+Para ejecutar lo que yo quiero hay que crear una clase nueva que herede de
+la clase thread y sobreescribiendo el metodo run
+public void run(), todo lo que este aca va a pasar en paralelo
+
+Se puede implementar una interfaz Runnable ya que no se puede heredar de 
+varias clases, asi dejo libre para heredar de otra clase
+
+Asi queda el codigo de arriba
+
+Runnable r = new MiHilo()
+Thread t = new Thread(r, "Nombre del hilo")
+El nombre del hilo se usa para saber que hilo se esta ejecutando en caso de
+que haya muchos ejecutandose
+
+En el run de la clase mi hilo se puede hacer
+System.out.println("Ejecucion" + Thread.currentThread().getName)
+Para asi saber cuando se esta ejecutando el hilo
+
+
+El metodo isAlive() te dice si e hilo esta vivo o muerto
+El hilo muere cuando sale del metodo run.
+Una vez que muere no se puede volver a llamar, tira error si se intenta
+
+El metodo Thread.sleep(1000) El hilo frena la ejecucion por 1 segundo. Asi
+el hilo sigue vivo, pasa a esta no runnable como estado. Cuando esta
+despierto esta en runnable
+
+Si yo lanzo un hilo primero nada me garantiza que termine primero, por ende
+no se pueden encadenar hilos. Por eso se le pueden setear prioridades
+se miden de 1 a 10. 1 la menor y 10 la mayor, el valor por defecto es 5.
+Siempre se toca esto antes que el start. Igual nada garantiza que se cumpla
+
+Si alguien cierra la app se siguen ejecutando los hilos hasta que terminan
+por eso es necesario destruirlos cuando no se usen, mas que nada a los que
+son infinitos
+se usa el metodo interrupt(). Este cambia una bandera que si el hilo esta
+dormido, lo despierta y lanza una excepcion de tipo InterruptedException
+En el catch le mando un return
+
+Siempre que se termina la ejecucion del run hay que preguntar 
+if(Thread.interrupted())
+{
+return
+}
+Porque si esta despierto y se lo interrumpe, no se da cuenta que lo
+interrumpieron
+
+
+Metodo join es un metodo de instancia que linkea un hilo con otro, es decir
+espera que un hilo termine para empezar otro
+Arma una cola de trabajo y los demas hilos se van a ir uniendo a esta ej
+t1.start()
+t1.join(3000)
+t2.start()
+t2.join()
+t3.start() 
+t3.join()
+Asi se escriben uno atras del otro pasados 3 segundos
+
+
+Metodo Yield() Cuando encuentra al metodo el procesador automaticamente lo
+saca y lo pone en la cola. Esto sirve para balancear los hilos
+Va en el metodo run
+Basicamente saca al thread del runnable
+
+Pool de threads sirve para manejar conjunto de hilos como si fuese uno solo
+

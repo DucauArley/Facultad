@@ -1,0 +1,93 @@
+json para usar en los ejercicios de la guia 1.6
+
+Mongo shell(consola): ES una consola java script
+db.banks.find().pretty(): Se vuelve mas legible la salida por consola con
+el pretty
+db.banks.find(query, {_ID: 0}): Asi se escriben las consultas mas prolijas
+
+Operaciones multilinea, db.banks.find({projectfinancialtype: 'OTHER'
+... age: 15,
+...etc}): Para trabajar de manera mas ordenada con las querys
+
+Customizar el prompt: por lo general aparece con un > pero se lo puede
+cambiar
+var cmdCount = 1
+prompt = ()=> (cmdCount ++ + "> Signo por el que se quiere cambiar") 
+Asi te aparecen los numeros de linea cada vez que usemos el prompt
+
+host = db.serverStatus().host: Toda la info del servidor pasada a la
+variable host
+
+Se puede hacer que me muestre el prompt en que base de datos con el host
+
+Cuando usas el find, te manda los datos de a partes, a medida que los vas 
+leyendo, te imprime los primeros 20 documentos y despues si vos escribis
+it, te trae mas
+Se puede cambiar la cantidad de info que muestra con el comando
+DBQuery.shellbatchsize = numero por el que se quiere cambiar
+
+Con mongo te podes conectar a cualquier servidor, poniendo el id y el puerto
+del servidor, por defecto el puerto es 27017
+
+Esto va en un archivo js aparte, que despues se va a ejecutar desde la shell
+var conn = new Mongo('localhost:27017')
+db = conn.getDB('nombre de la base')
+Para ejecutarlo habria que poner mongo y la ruta del archivo, esto desde la
+consola de sistema
+Desde la consola de mongo es load('nombre del archivo js')
+
+var cursor = db.banks.find()
+resultado = cursor.toArray(), te trae todos los resultados en formato array
+lo podes ver con printjson(resultado)	
+
+Esta es la mejor forma de ver todos los resultados, la mas performante
+while (cursor.hasNext())
+{
+   printjson(cursor.next())
+}
+
+cada metodo nos va a devolver algo, ya sea un objeto, un booleano, etc
+
+NumberLong es un numero de 64 bits, osea un numero muy grande
+
+InsertOne: garantiza cuantos documentos se van a insertar, lo mismo con el
+insertMany, cambia lo que nos devuelve. El one devuelve el id insertado
+
+Writeconcern: Tiene que ver con como se va a escribir cuando estamos
+trabajando
+
+InsertMany en vez de recibir un solo documento, recibe un array, devuelve
+un array con todos los ids insertados
+ordered: Dice si los datos tienen que ser guardados como se los escribio en
+el array, si no importa, se pone false, esto es mas performante
+
+insert(): permite insertar uno o varios, devuelve la cantidad de objetos
+insertados, no ids ni nada
+
+update: multi se pone true si se quieren modificar a todos, por defecto es
+false. Cuando se le pasa un objeto que no existe, lo reemplaza por el 
+primero que encuentra, para eso se le pone la propiedad set para que no los 
+reemplace, eso para modificar un campo especifico
+
+upsert: Si no existe el objeto con los campos buscados, va a crear uno
+
+Operador $inc: Operador de incremento, sirve para modificar un valor
+numerico, te pregunta cuantos le agrega
+
+Remove: Para borrar, just one por defecto es false, asique borra todas las
+coincidencias que encuentre
+
+$slice: Es para separar cosas de un array
+$meta: Para las busquedas de texto
+
+projection: Indicar que campos del objet voy a querer utilizar. Con 1 lo
+incluyo y con 0 excluyo un campo, se tiene que decidir si se incluye o se
+excluye un campo, excepto que sea el id
+
+$and: se usa para dos o mas condiciones sobre la misma propiedad,
+exceptuando estos casos, por lo general se usa la coma ","
+
+Para importar archivos json: mongoimport -d nombre db -c nombre coleccion
+--jsonArray personas2.json
+
+

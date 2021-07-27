@@ -1,0 +1,115 @@
+Protocolos de enrutamiento: Son los encargados de administrar armar y
+generar las rutas de las redes, son el conjunto de reglas utilizadas por un
+grupo de routers para comunicarse entre si con el objeto de compartir
+informacion de la topologia de la red para permitir el enrutamiento de 
+paquetes
+
+Topologia logica de la red
+Con la info de los protocolos los routers arman las tablas de enrutamiento
+
+Tipos de protocolos de enrutamiento
+Interior: Administra rutas dentro de un sistema autonomo(sistema en el que
+todos los routers utilizan las mismas redes de enrutamiento)******
+ej, rip, igrp, eigrp, ospf
+Protocolos de vector distancia: Basa el calculo de la metrica(peso de la 
+ruta) en funcion de distancia entre origen y destino. Vector es el enlace
+y el router al siguiente salto osea direccion y sentido. Tiene convergencia
+lenta. Osea tarda en conocer toda la red completa. Ej Rip. Envia informacion
+constantemente, por ende el consumo ancho de banda es alto. Actualiza cada
+30 segundos
+
+Protocolo de estado de enlace: Se avisan los cambios al momento, al final de
+la convergencia todos los routers poseen la misma base de datos, y esta es 
+mucho mas rapida pero requiere mas cpu y memoria. El consumo de recursos de 
+pc/router es mucho mayor. Ej ospf. Actualizan cuando hay un cambio
+
+Bellman Ford es lo de ruta mas corta de matematica 1. El router recibe info
+de los routers vecinos y asi va conociendo la red
+Dijsktra: Considera el peso de las distintas rutas. Es mas complejo y mas 
+rapido para calcular la distancia
+
+Enrutamiento por rumores, el vecino le pasa al vecino y este a otro vecino y
+asi sucesivamente
+
+Saltos: cantidad de routers que se atraviesan
+Costo de ruta: Toma en cuenta la latencia, ancho de banda, y demas factores
+Latencia: Tiempo que tarda un dispositivo en que se lo exita hasta que 
+responde
+			   protocolo de vector	de estado de enlace
+Algoritmo de enrutamiento: Variante Bellman Ford   Dijisktra
+Vista de red:		Vista del vecino	info completa de la red
+Eleccion de ruta: 	Cantidad de saltos	Costo de cada ruta
+Actualizaciones:	Periodicas/completas	Especifica ante cambios
+Convergencia:		Lenta			Rapida
+Comunicacion:		Broadcast/Multicast	Multicast
+
+Exterior: Administran rutas que conectan diferentes sistemas autonomos
+Se comunican con el backbone
+
+Rip: Protocolo de enlace interno(IGP): Osea que se comunican con otros 
+routers de la red, no sirve para lan
+Sirve para amdinistrar el intercambio de rutas del lado interno del sistema
+autonomo y no de su conexion contra el backbone de internet
+Backbone: Conexiones logicas entre los continentes 
+
+Los proveedores de internet son sistemas autonomos pero los ministerios de
+estados unidos y demas tambien
+
+Caracteristicas de Rip: Es un algoritmo de vector distancia
+Para calcular: Cada nodo calcula las distncias entre el mismo y todos los
+demas nodos y almacena esta info en una tabla, Cada 30 seg cada nodo envia
+su tabla a todos los nodos vecinos.
+Cuando un nodo recibe las tablas de distancias de sus vecinos calcula la 
+ruta mas corta a los demas nodos y actualiza su tabla para reflejar los
+cambios.
+
+Ripv1 cuando se modificaba algo se tenian que esperar 30 seg para pasarle
+esa modificacion a los vecinos
+
+Ripng es para ipv6
+
+Enrutar con clase: No considera la mascara de red
+Enrutar sin clase: Manda las mascaras y demas
+
+Rip considera que la cantidad de saltos maxima es de 15, por eso el mejor 
+camino es el que menos saltos tenga. Si tiene 16 saltos una ruta, esta es
+inalcanzable
+
+Update timer: Tiempo en el que un router intercambia las tablas, osea los 30
+segundos, no se puede alaragar ni achicar, quiza entre 27 y 32 segs
+
+Invalid Timer: es el Update timer por 6. Si no hay intercambio de info sobre
+una ruta en este periodo, la ruta se considera invalida
+
+Hold down timer: Tiempo por el cual espero recibir una ruta del nodo vecino,
+es de 180 segundos, si no se recibe, la ruta se declara invalida, osea 
+muerta la interfaz entre yo y mi vecino
+
+Flush time: Pasados 60 segundos despues de los del invalid, borro de mi
+tabla la ruta, esto si no recibe novedades
+
+ip multicast 24.0.0.9
+
+Para que un router elija una nueva ruta, esta tiene que ser estrictamente 
+menor que la almacenada
+Se identifica a la red desde el punto de vista del router
+
+La cuenta al infinito, resolucion:
+Si se cae una red, el mensaje se manda infinitamente, por eso cuando llega
+a 16 se invalida la ruta, igual van a pasar 7 y medio minutos hasta que se 
+den cuenta que se cayo la red
+
+Horizonte dividido: Prohibe informar una ruta por la misma interfaz que la 
+aprendiste por primera vez, osea si aprendi una ruta por E0 dejo de informar
+la misma ruta por E0
+
+Ruta envenenada: Mecanismo de advertencia. Pone la ruta en 16 y la envenena,
+osea que se invalida para todos
+
+Mismo ejercicio pero se cae el enlace 192.168.1.0
+
+
+
+
+
+

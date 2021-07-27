@@ -1,0 +1,39 @@
+6 de agosto ultima fecha para entregar el tp
+
+Hacer busquedas en la toolbar y webview que es para mostrar cosas como si
+fueran una pagina web
+
+El inflate toma datos en xml y los transforma a java
+
+app:actionViewClass = "android.widget.SearchView"
+Para poner el buscador. Se agrega en el item de menu
+
+Hay que capturar el texto que esta sobre el item en concreto, hay que 
+sobreescribir los metodos onQueryTextSubmit y la onQueryTextListener
+
+En el onCreateMenuOptions
+
+find item para recuperar un objeto, devuelve un menu item
+MenuItem mi = menu.findItem(R.id.campo_buscar)
+
+MenuItemCompat.getActionView(mi) Es un metodo deprecado, hay que usarlo
+de otro modo
+Deprecado: El metodo va a dejar de existir, aparece tachado
+Le sacamos el actionView
+
+Hay que usar mi.getActionView();
+
+Quiza me convenga buscar como dice el profe que vas escribiendo letras y
+te filtra los streamers que no un usuario agregar streamers
+
+WebView carga un navegador dentro de un activity, podria hacer una pagina
+web y ponerla en un webview en vez de hacer una app
+
+WebView es un item dentro del layout
+
+Hay que setearle a la webView un url
+
+wv.loadData("Etiquetas de html", "text/html", "utf-8")
+loadUrl() y le pasas una url
+
+

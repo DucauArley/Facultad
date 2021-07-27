@@ -1,0 +1,80 @@
+Origen de sql, el modelo relacional es de la epoca del 70
+Caracteristicas: lenguaje de consulta expresivo, tenia consistencia fuerte,
+e integracion a las empresas
+
+Nosql: Sistemas distribuidos de forma nativo, open source, no relacionales 
+es decir que no tienen normalizacion de las tablas
+caracteristicas: Flexibilidad:guarda datos no estructurados
+Orientadas a escalabilidad y performance: Se la bancan con muchos datos y
+trabajan constantemente
+cluster friendly: preparadas para trabajar en cluster
+
+Acid: (Atomicity Consistency Isolation Durable) Consistencia sobre 
+disponibilidad
+Base: (Basically Available Soft state Eventual consistency) Disponibilidad 
+sobre consistencia
+
+Almacenamiento de Nosql: Clave Valor: Es un array asociativo, rapidas para
+busquedas por indice, no buena para reverse lookups(Buscar por valor)
+Columna ancha: Carga de trabajo analitica(sacar estadisticas), manejan
+muchos gb de informacion, no lee filas completas, no son buenas para los
+updates o deletes, almacenan por columnas, mientras que las comunes 
+almacenan por filas
+Grafos: Almacenan grafos(nodos y vertices), no importan los datos, solo la
+relacion entre ellos, por ej para redes sociales
+Multi-modelo db: Combinan multiles modelos, es decir que se puede utilizar
+cualquier tipo de base de datos de las mencionadas anteriormente
+Bd Documentales: Son estructuras anidadas creadas usando la notacion de 
+objetos javascript(JSON)
+
+MongoDb: Replica set: Tiene diferentes nodos que pueden ser servidores,
+grantiza que tenga alta disponibilidad, durabilidad de los datos, que se
+pueda mantener y recuperacion de desastres. Tiene una aplicacion que se 
+comunica con un driver, y este con un nodo primario y otros secundarios,
+El primario se comunica con los nodos secundarios a traves de algo que se
+llama latidos. Se replica el nodo primario en los secundarios, si se pierde
+el nodo primario, uno secundario toma el rol del primario
+Sharding: Es cuando una tabla sql no entra en el server por lo grande que es
+, se guarda esta tabla en varios servidores, se prefiere agregarle memoria
+a el servidor, se le hace un replica set a cada shard
+Modelado y Cardinalidad: Desnormalizacion: Datos redundantes se repiten,
+se tiene que pensar para que se usa la tabla, si para leer mayormente o para
+escibir mayormente, Ej si lo uso para leer lo guardo todo en una misma tabla
+
+Relaciones: Uno a uno: por ej titulo de un libro y el autor de este, con
+su nombre y login en la misma tabla, no tablas diferentes para cada uno
+Uno a muchos: ej Comentarios para un post, pongo todos los comentarios con
+el post en la misma tabla, otra forma es linkearlos, es decir ponerles 
+foreign keys del post, o tener un array con foreign keys de los comentarios
+Muchos a muchos: posts con varios autores se ponen arrays de autores y las
+foreign keys de los autores y en los autores arrays de las foreign keys de
+los posts, sino un array solo de los posts o de los autores
+
+Embedding: Buena performance de lectura, mala de escritura, se tiene que 
+manejar la integridad, tiene sentido si la cardinalidad que embebemos no es
+muy grande(Es tipo un join)
+Linking: Flexibilidad, permite juntar colecciones, la integridad de datos es
+automatica
+
+Diferentes tipos de datos en mongo, se guarda un tipo de dato BSON es un 
+binary JSON 
+Object Id:Es un identificador unico que garantiza que va a ser unico en el
+mundo. Se arma con la fecha, el id de la pc, el id del cliente conectado y
+un contador que empieza en un valor cualquiera
+
+Iniciar server de mongo comando: mongod
+Acceder a base de datos por consola: mongo y se puede escribir javascript
+show dbs: Muestra las bases de datos
+use nombre de db: Usa la base de datos si existe, sino la crea
+Show collections: Muestra las tablas
+db.personas.find(): Muestra todos los datos de la colleccion
+db.personas.insert({nombre: 'Juana'}): Para insertar cosas a la coleccion
+si se escribe con _id se cambia el id de la fila
+db.personas.update({_id: 1}, {edad: 18}): Lo primero es la condicion, lo 
+segundo es la columna que se va a cambiar, es decir sobreescribe el objeto
+cambiando la edad al objeto con indice 1, para que no lo reemplace se usa
+{$set: {edad: 18}}
+db.personas.remove(): Borra todo
+
+Para la clase que viene hay que instalar mongo y probar todas las weas
+Compas es la interfaz grafica de mongo

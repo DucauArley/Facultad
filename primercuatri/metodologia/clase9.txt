@@ -1,0 +1,82 @@
+Consigna integradora en el parcial, hay que recuperar los parcialitos y las
+consigna integradora si me va mal en algun parcialito
+Esta consigna es la que mas puntaje va a dar
+
+Maquina de estados permite modelar el comportamiento de un objeto
+
+Diagrama de estados modela los estados por los que pasan los objetos a lo
+largo de su vida, se suele utilizar en sistemas que se denominan reactivos
+(Que reciben muchos estimulos del exterior de la frontera del sistema)
+
+Flujo de control es aquello con lo cual se modelan todos los aspectos 
+dinamicos. 
+
+La caracteristica del diagrama de estados es que sirve para modelar estos
+sistemas reactivos, modela comportamiento pero dirigido por eventos
+destacando los estados estables
+
+Acciones: Son eventos que se dan, acompañan a la maquina de estados en una
+transicion que produce el cambio de estado
+
+En transicion de estado se pueden modelar eventos y acciones
+
+El diagrama tiene una maquina de estados anidada y un estado inicial, Supone
+que no tiene estado final, con lo cual puede estar iterando constantemente
+Permanentemente el objeto va a ir cambiando de estados
+
+Los objetos reactivos luego de responder al evento, vuelven a estar osciosos
+osea que estan esperando un evento nuevamente
+
+Determinar pre y post condiciones
+
+Hay que comprobar que todos los estados son alcanzables y que se puede salir
+de todos estos, excepto que sean los estados finales
+
+Hacer el diagrama de estado para el objeto turno
+Tiene muchas cosas en comun con el diagrama de transiscion de estados
+
+
+Diagrama de actividades
+Modela aspectos dinamicos. Muestra el flujo de control entre actividades
+Modela los pasos secuenciales de un proceso computacional. Modela estados
+de accion, o de actividad. Deja en claro los pasos secuenciales de los
+procesos, da una visibilidad muy rapida de lo que sucede en ese proceso
+
+Se puede ver como cada accion del proceso computacional repercute en el 
+estado del objeto, eso se llama flujo del objeto
+
+Paso la transicion de estados, paso la accion
+
+Las acciones son computaciones, ejecuciones atomicas ejecutables que
+producen un cambio de estado
+
+Cuando se dividen los flujos es porque van a pasar las cosas en paralelo
+
+En el diagrama de estados puedo ver el diagrama de actividades en las 
+acciones
+
+Barras de sincronizacion representan las divisiones y uniones de flujos de
+control
+
+Se puede representar el diagrama de arriba hacia abajo (vertical) o de 
+derecha a izquierda (Horizontal)
+
+Calles(Swimlanes) permiten separar intereses o entidades que tienen 
+determinadas responsabilidades de ciertas acciones, permite ver quien hace
+que cosa
+
+Flujo de objetos: Representa cual es la repercucion de una accion en un
+objeto
+
+
+Invocar lo mismo que en casos de uso en los diagramas de secuenciacion y
+de colaboracion, osea hay que cambiar varias cosas del diagrama de clase
+Consultar a la clase profesional la fecha disponible de los profesionales
+segun la especialidad. Esto es un mensaje desde el objeto emisor hasta el
+objeto receptor, si o si tiene que ser una operacion
+
+Hay que modelar tambien cuando el paciente asiste que el recepcionista
+registre esa asistencia
+
+
+Estimulos y señales tengo que dar recuperatorio

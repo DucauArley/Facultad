@@ -1,0 +1,113 @@
+Vamos a usar un framework llamada express
+Sirve para aplicaciones web y api me parece, firebase tiene funciones que
+son como microservicios. Para esto firebase maneja express
+
+npm install --save express
+const express = require('express');
+const app = express() Genera un objeto que va a ser el servidor express que
+maneja todas las peticiones que le vamos a hacer
+
+Luego se hace el direccionamiento
+Se pueden manejar todos los metodos http mas otros nuevos
+
+Ej con un get
+app.get('/',(req,res)=>
+{
+  Lo mismo que la clase pasada
+})
+
+app.listen(3100, ()=>{
+console.log('Servidor iniciando...')
+}) Sirve para iniciar el servidor en el que le pasamos un puerto
+y un callback
+
+Se le pueden pasar varias funciones manejadoras, el callback y luego otra, 
+y se ejecutan en este orden:
+app.post('/',(req,res, next)=>
+{
+  req.user = "Mario" para pasarle info a la otra funcion
+  next(); Cuando llama al next se ejecuta la otra funcion
+}, postUser);
+
+function postUser(req, res)
+{
+  res.send("hola post" + req.user);
+}
+
+Otra manera es con arrays
+
+app.post('/', [primeraFuncioncon un next, postUser, etc])
+
+Creo que es bastante parecido a php esto
+
+app.route('/users')
+.get()
+.post()
+.delete() Asi puedo manejar los distintos metodos para una misma ruta
+
+res.json y req.params para enviar parametros por url
+
+Los metodos use se usan para agregar middlewares
+
+El bodyParser creo que es para tomar info del body de postman
+
+Todos los middleware tienen que tener (req, res, next)
+
+Hace algo para las rutas con router = express.Router()
+y el router hace de app
+
+20:38*************************************
+Integracion con bases de datos mongo
+Hay que bajar un driver
+Incluir clase MongoCLiente = require('mongodb').MongoClient
+
+la conexion se hace en un app.use
+
+Hacer get all, obtener 1, delete y put en la base de mongodb
+
+En el class user se escribirian los metodos y despues en try {const data
+los llamaria
+
+21:32************************************
+Conexion a mysql
+Hay que usar un driver que se llama mysql, esta en npm
+
+var mysql      = require('mysql');
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'my_db'
+});
+ 
+connection.connect();
+ 
+
+});
+ 
+connection.end();
+
+function getAll()
+{
+return new Promise((resolve, reject)=>{
+  connection.query('SELECT *from ....', function (error, results, fields) {
+  if (error)
+  {
+    return reject(error)
+  }
+  console.log('The solution is: ', results[0].solution);
+
+  resolve(results);
+
+});
+}
+
+En otro archivo se llama a esta accion
+
+try
+{
+  const data = await getAll();
+
+
+}
+

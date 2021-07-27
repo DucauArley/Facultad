@@ -1,0 +1,20 @@
+Hacer interfaz humano-maquina, Osea, habria que hacer tipo borradores
+de interfaces
+
+Explica bien los diagramas 19:00
+
+En la hoja 419 del libro proceso de modelado de desarrollo, esta lo de los 
+estereotipos de los packages
+
+Ver mis casos de uso y ver si los actores se mezclan con los demas 
+subsistemas
+
+
+
+
+
+
+
+
+
+

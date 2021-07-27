@@ -1,0 +1,34 @@
+$Group es similar al group by de sql
+se le aplica un acumulador, una operacion matematica
+Acumuladores son operadores $sum, $first, $max, $min, etc
+
+En el zip hay ciudades con uno o mas codigos postales
+
+_id es el unico campo obligatorio
+db.zips.aggregate([{$group: {_id: "$state"}}])
+Solamente devuelve el campo id, Osea devuelve los acumuladore que yo haga
+para esto esta el operador $push
+db.zips.aggregate([{$group: {_id: "$state", datos:{$push: "$$ROOT"}}}])
+$$ROOT le hace referencia a todo el documento para que te muestre todo,
+datos es un array que se crea para guardar todos los documentos que ´
+coinciden con lo pedido, es una variable asique despues se puede usar creo
+totalpop es para aplicar los operadores sobre campos determinados
+se pueden hacer totalpops anidados
+
+_id se puede igualar a un objeto, es tipo para cambiarle el nombre esto va a
+ser obligtorio cuando queramos agrupar por mas de un campo
+
+$project {ciudad: "$_id.ciudad", estado: "$_id.estado"}
+
+
+
+
+
+
+
+
+
+
+
+
+

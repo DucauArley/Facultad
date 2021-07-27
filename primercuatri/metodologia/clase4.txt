@@ -1,0 +1,78 @@
+Primero que hay que detectar es las responsabilidades de las clases para
+luego sacar las operaciones, atributos y demas
+
+Identificar cosas importantes dentro del vocabulario del dominio, 
+Analizar las responsabilidades de cada clase, Siempre se empieza con la 
+asociacion que es la mas simple, hasta lo mas complejo
+
+Diagramas para tener visibilidad en el sistema desde una perspectiva
+determinada(vistas). Medios para poder combinar los bloques de construccion
+y poder crear los modelos
+
+Trazabilidad se asegura de que el modelo sigue siendo coherente en todas las
+perspectivas que se van generando
+Ya vimos las vistas en la primer clase, los diagramas tambien
+
+Diagramas de la estructura(diagrama de clases)
+Diagramas de comportamiento para modelar los aspectos dinamicos del sistema
+
+Sistemas se componen de subsistemas que constituyen o forman parte del
+comportamiendo de los sistemas. Modelo simplificacion del sistema
+
+Artefactos es toda pieza de informacion que empiezo a generar en mi sistema,
+Siempre en el contexto de uml(Diagrmas y demas)
+
+Diagrama de clases: Representa un conjunto de clases y colaboraciones y las
+relaciones entre ellas. Es un diagrama del tipo grafico. Contiene clases,
+interfaces, colaboraciones, relaciones de dependencia, generalizacion y 
+asociacion,paquetes o subsistemas, etc
+Representa los requisitos funcionales que el sistema debe hacer para 
+satisfacer al usuario final
+Vocabulario del sistemas se conforma a partir de reconocer las cosas 
+importantes dentro del sistema
+Con los diagramas de clases se especifican las abstracciones y sus 
+responsabilidades
+Se usa tambien para modelar el esquema logico de bases de datos
+
+No tiene sentido tener clases aisladas ya que tienen que colaborar entre si
+
+Modelado de colaboraciones simples: Se visualizan en el diagrama de clases
+con los elementos y las relaciones que las conectan
+Cuando el proposito es modelar colaboraciones simples, hay que identificar
+los mecanismos que representan funciones o comportamiento de el sistema que
+resulta de la interaccion de clases, interfaces, etc
+
+Modelado del esquema logico de base de datos: No es el mismo diagrama
+entidad relacion de yurdon. 
+
+Diagramas de clase son un subconjunto de un diagrama de entidad relacion
+
+Ingenieria directa transforma el modelo a codigo, se dice que produce
+perdida de informacion por que el codigo no es tan rico en informacion como
+el modelo
+
+Hay tips de modelado al final del pdf de la profe
+No hay que escatimar en detalles, todos los diagramas tienen que tener un 
+nombre representativo(ej Diagrama de clases de turnos rotativos)
+Subrayar sustantivos importantes en el diagrama de clase
+Pensar responsabilidades de las clases. Buscar equilibrio, ni clases grandes
+ni clases chicas(Menejarlas como posibles atributos de otras clases)
+Definir atributos y operaciones, ahi ya podemos empezar a diseñar el
+diagrama de clases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,167 @@
+Segundo parcial con camara 
+Mandarle una foto al profe de mi cara al mail de la tecnicatura
+d.cuda@sistemas-utnfra.com.ar
+1ero de julio Parcial
+Ultima semana de julio y primera de agosto fechas de finales del 27 al 8
+6 de julio hasta 17 de julio inscripciones para finales
+
+Sistema de nombre de dominio(DNS)
+Es un sistema encargado de traducir un nombre de dominio o una URL en la 
+direccion ip que le corresponde
+Es igualmente valido para ipv4 e ipv6
+Es abierto, osea que se puede tener un servidor propio de dns con el mismo
+nivel de complejidad que el dns que tiene el proveedor de internet
+Me parece que tiene que ver con vpn
+
+La idea es que te conectas a un servidor a traves de un dominio ej
+github.com, la maquina le pregunta a un servidor de dns que ip tiene github
+y este se encarga de buscarlo y darsela
+
+Una vez que el servidor de dns tiene la respuesta y otras maquinas dentro
+de una red le preguntan, esta contesta mas rapido
+
+host.txt era un archivo que se mantenia a mano para dns cuando estaba el 
+arpanet, ya que eran muy pocas maquinas conectadas, luego salio ipv4 y se
+dieron cuenta de que no se podia seguir usando esta metodologia, para eso
+se hicieron 2 preceptos: no podia ser un equipo unico el que almacenase los
+registros, asique tenian que tener varios servidores de base de datos 
+distribuidos en varias zonas de autoridad
+
+ej hay un servidor cuya zona de autoridad sea los .com.ar, osea que sabe 
+todas las ip de los servidores que tengan los nombres de dominio .com.ar
+
+Como la mayoria de los protocolos de internet es del tipo cliente-servidor
+8.8.4.4 y 8.8.8.8 son los servidores de google de dns, a veces andan mas
+rapido que los servidores de telecentro. Propiedades protocolo internet
+cloudflare 1.1.1.1 o 1.0.0.1
+
+Nombres de dominio: tiene varias etiquetas que son cada una de las partes
+del nombre de dominio, cada una se separa a traves de un punto. Minimo tiene
+2 etiquetas separadas por un punto
+Como es jerarquico, la jerarquia mas alta se encuentra a la derecha ej, en
+.com.ar el .ar tiene mas jerarquia, a esta se la llama top level domain(TLD)
+Cuando arranco el dominio tld se les daba a los paises por eso el .ar, .es,
+etc. Ahora se usa tambien para algunas actividades en especifico. 
+Hay al rededor de 1000 TLD
+Los dominios yankis pueden no utilizar el .us y se quedan solo con el .com
+
+Ahora se pueden tener dominios .ar hosteados en usa o en cualquier lugar
+del mundo, antes no
+
+Cada etiqueta a la izquierda especifica un subdominio ej google.com, google
+es el subdominio
+
+Un nombre de dominio podria tener hasta 127 etiquetas
+Cada nombre de subdominio puede tener hasta 63 caracteres
+El total del nombre de dominio no puede exceder los 255 caracteres
+
+La parte mas a la izquierda del nombre suele representar el nombre del host
+
+Todos los nombres de dominio empieza con un punto que puede o no ponerse
+osea es lo mismo google.com. que google.com
+
+Este punto se lo llama raiz o root
+De este salen los dominios TLD, Estos a su vez delegan otros como el .com,
+.edu, los dominios de segundo nivel SLD. El mismo dominio puede apuntar a 
+distintas direcciones ip pero no al revez
+Estas a su vez pueden tener dominios autoritativos ej .utn, .uba. unlp y
+estas a su vez tambien pueden delegar ej .fra, .frm, .frba para .utn que 
+son los subdominios, a su vez estos tienen el hostname ej www
+www.fra.utn.edu.ar
+Con esta estructura se organizan las bases de datos del mundo para
+establecer las ips con los dominios
+
+Nombre de dominio pueden tener letras, numeros o guion medio (-), pero no
+pueden empezar con este despues del punto
+
+nic.ar se encarga de registrar los dominios en argentina
+
+ej el equipo quiere acceder a www.fra.utn.edu.ar, el navegador busca en su
+propio cache. Cada vez que te metes a un sitio, aparece un archivo temporal
+en el que se especifica la ip y demas de la pagina, para que si te conectas
+otra vez no tenga que hacer todo el proceso de volver a buscar la ip
+A su vez hay un achivo host en donde se pueden poner las ip de las paginas
+que queres para que se conecte mas rapido y con otro nombre. Se podia hasta
+hace poco cambiar una url por otra y que te lleve a otra pagina, ahora no
+Luego se conecta con el servidor de dns de telecentro si no encuentra nada
+en el cache
+Todos los servidores de dns recursivos y recurrentes deben tener un servidor
+esclavo por lo menos que se comunica con el servidor principal. Se mantiene
+permanentemente actualizado con el servidor. Si uno se cae, el otro va a 
+funcionar
+
+ipconfig/displaydns te muestra el cache en memoria de todos los sitios
+con flushdns me borra el cache
+
+Los servidores tienen guardados todos las ips y demas en cache, estas duran
+1 dia ahi guardadas. Si lo tiene, lo devuelve. Esta respuesta es la del 
+displaydns, por ejemplo si es google se va a devolver rapido la respuesta
+ya que muchos clientes lo buscan y siempre esta en cache
+
+Servidor dns resolver recursivo: Si no conoce el ip del servidor, el dns 
+pregunta punto por punto, primero a los 13 servidores que sean root que se
+pueden replicar. En la ciudad de bsas hay 6 replias de estos servers.
+Estas ips estan hardcodeadas en el servidor dns. El servidor root sabe a 
+quien le delego el dominio al dns. Y le dice a quien preguntar, a los .ar 
+por ejemplo. y asi con todos los demas dominios, el .edu y el .utn
+
+Los servidores de dns mas inteligentes, depende de que direccion ip le hacen
+la consulta, pueden devolver ips diferentes para acceder mas rapido al 
+dominio que se esta consultando
+Los registros A de address son de ipv4, los AAAA de ipv6
+
+La ventaja de tener bases de datos distribuidas es que todas las consultas
+no caigan en el mismo servidor
+
+Anycast formato de enrutamiento que depende del lugar donde estas la ip te
+lleva a un lugar u otro, mas que nada para los servicios de gran utilizacion
+por ejemplo google que debe tener varias ips distintas para que dependiendo
+tu ip vayas a una u otra ip de google
+
+
+Redes inalambricas(Wifi)
+Siguen el estandar IEEE 802.11
+Wifi alliance es una org que administra y certifica normas de las distintas
+normas inalambricas que esten y que sigan apareciendo
+
+Existen varias versiones en uso
+wifi 4: la 11n de cuarta generacion (2009)
+wifi 5: la 11ac de quinta generacion (2013)
+wifi 6: la 11ax de sexta generacion (2019)
+
+se prohibe que haya 4.1 o 5.2 o 4.2 o 6.1, cada actualizacion tiene un
+numero distinto
+
+A medida que uno aumenta la frecuencia transportadora, es mas dificil
+transmitirlas por el aire, la de 5ghz es muy buena de cerca, pero lejos es
+muy mala, mientras que la 2.4ghz es mediana de cerca y de lejos
+
+De la serie de wifi de 1997 no existieron equipos asique tecnicamente no
+existio, no se uso
+
+Los equipos tienen retrocompatibilidad es decir, un equipo de wifi 5 tiene
+que tener la capacidad de conectar equipos con las normas 4, g y anteriores
+
+Forma en la que se modula la señal de wifi se llama QAM basicamente tomas
+2 señales la de 2.4 y 5 ghz y se defazan una respecto de la otra. y depende
+en que punto este se emite una cosa o la otra ej, la 11g reconocia 64 puntos
+distintos, la 11ax reconoce 1024
+Cada vez nos acercamos mas al limite teorico de capacidad de transferencia
+
+A partir de wifi 4
+Mimo (multiple input - multiple output) Se penso para ampliar los alcances
+Permite multiples antenas entre el transmisor y el receptor. Osea la
+creacion de los repetidores que no interfieren con la transmicion el router
+
+A partir de wifi 5
+Mimo Multi User: Es un dispositivo que hace que cada dispositivo que se
+conecta, se conecta a una antena distinta. Los dispositivos deben ser de 
+wifi 5 para aprovechar esto. Multiplexa el espacio, osea que lo divide
+
+Access point: Es el punto de acceso a la red inalambrica. Brinda la gestion
+de credenciales de usuarios osea cuando pones la contraseña 
+
+Amplificadores: Recibe una señal y eleva la potencia con la que lo transmite
+
+Repetidores: Tienen la capacidad de ir repitiendo la conectividad, osea lo
+de telecentro wifi gratis en las calles

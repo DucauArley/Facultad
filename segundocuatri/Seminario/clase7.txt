@@ -1,0 +1,26 @@
+Carpeta borrador para que tenga los casos de uso todo en rojo, y ponemos el
+resto corregido en las carpetas de cada uno
+
+El diagrama de interaccion es respetar lo que es una interaccion.
+Respeta el contexto para lograr un flujo principal
+
+Rivarola tiene un caso que tiene un include. Por ahora lo dejamos si 
+tenemos uno
+
+En la nota se coloca que el sistema incluye tal caso de uso y le pasa tales
+parametros. Se pone el nombre del caso de uso abstracto
+
+Clases de entidad colocarle los atributos
+
+19:30 masomenos habla de nuestro tp
+
+
+
+
+
+
+
+
+
+
+

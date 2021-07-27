@@ -1,0 +1,52 @@
+Jueves 21 Nos manda la consigna y un sevidor en node para resolver el 
+parcial. Subir todo el proyecto a github
+
+Bibliotecas de conexion para http
+
+Para hacer una peticion hay que crear un objeto url a traves de un string, 
+crear un objeto Http url connection, se setea el metodo y se conecta.
+Obtener input stream
+
+Poner el permiso de internet dentro del manifest
+Siempre se busca tener un status 200 si es que funciona bien la coneccion
+
+En el buffer se guarda la info
+
+Es mejor trabajar con un array de bytes ya que funciona con cualquier cosa 
+que se quiera bajar. En stream varias personas pueden usar el mismo archivo
+a la vez sin que se trave nada
+
+Aplicacion ha dejado de funcionar es porque tarda mas de 10 o 15 segundos.
+Android cierra la app porque piensa que algo fallo, por eso no se puede
+demorar en el onCreate. Cualquier cosa que android piensa que va a demorar 
+mas de 15 segs no te la deja hacer
+
+Generando una clase que hereda de la clase thread, todo lo que este en el
+metodo run se ejecuta en paralelo
+No llamar al metodo run
+
+Se usa un protocolo de comunicacion entre hilos
+
+Handler recibe mensajes de los hilos. El procesador los lee uno por uno y 
+los va procesando 
+Hilo main genera la cola de mensajeria y se la va a pasar a los demas hilos
+para que agreguen mensajes
+Handler va a estar presente en todo los hilos
+
+Sendmessage pone el mensaje en la cola de mensajes
+
+20:30 hace el handler	
+
+byte array son 1 y 0 asique es recontra generico
+
+
+
+
+
+
+
+
+
+
+
+

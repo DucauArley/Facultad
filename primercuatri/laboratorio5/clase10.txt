@@ -1,0 +1,72 @@
+Parcial 16 de julio y defensa del parcial
+Parcial van a ser puntos puntuales, no un proyecto completo
+
+Dialogos:
+Son los pop-ups
+
+Los dialogos son asincronos, osea que se lanza el pop-up pero el activity
+sigue ejecutandose
+
+Hay que setear botones, tiene 3 pero podes elegir cuales usar y el 
+onClickListener
+
+Clase MiDialogo extends Dialogfragment
+
+sobreescribe el onCreate
+
+AlertDialog.Builder builder = new alertDialog.Builder(super.getActivity())
+
+builder.setTitle("Nuevo mensaje")
+
+build.setMessage("Mensaje nuevo para el usuario")
+
+build.setPositiveButton("Ok", evento click) Lo unico que cambia con el 
+neutral y el negative es el lugar donde aparece, pero son completamente 
+programables los 3
+
+Para el evento hacer una clase aparte
+
+.show() Para que aparezca
+MiDialogo miDialogo = new MiDialogo()
+
+miDialogo.show(super.getSupportFragment, "Texto que sirve de etiqueta")
+
+propiedad which en onclick te dice que boton es -1 positivo, -2 negativo,
+-3 neutral
+Con esto puedo sacar que accion tomar dependiendo del boton
+
+Se puede usar un layout para que sea nuestro dialogo
+Probablemente tenga que hacer esto para agregar streamers
+a partir de 19:45
+
+
+Shared preferences para guardar info en el celu
+Cuando lo usemos se genera un archivo xml que solamente puede usar nuestra
+app.
+Puede almacenar dos tipos de datos, los primitivos y los strings
+Es parecido al puttextra
+
+Se puede crear un archivo asignandole un nombre que es para cualquiera,
+para un activity especifica o en el contexto
+
+Por lo general se usa el que tiene nombre para toda la app
+El modo son 3 posibles: private que solo esta app puede acceder,
+readable que cualquier app pueda leer esta info y writeable que cualquier
+app pueda leer y/o escribir
+
+SharedPReferences prefs = getSharedPreferences("miconfig", 
+Context.MODE_PRIVATE) Si no existe lo crea y si existe lo devuelve
+
+Se guarda la info con clave valor
+
+hay un put para cada tipo de datos
+
+el commit ejecuta todo
+
+En los gets se setea un valor por defecto asi si no tiene nada no devuelve
+null, sino que devuelve este valor que se le pasa
+
+Guardar streamers como json string porque sino no puedo hacer la cuenta
+
+
+

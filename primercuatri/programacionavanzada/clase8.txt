@@ -1,0 +1,100 @@
+Programa de java para interactuar con mysql lo que bajamos del profe
+Supuestamente con el phpmyadmin se puede usar para sql
+
+Cuando vimos generics quedo colgado metodo para recorrer todo tipo de listas
+usando los comodines o width card osea usando el ? que solamente se puede
+poner entre los <>
+resuelve los problemas que siempre tenemos cuando trabajamos con los tipos 
+de datos genericos
+
+ejemplo
+
+String palabra = "Hola";
+Integer numero = 1;
+
+mostrar(palabra);
+mostrar(numero);
+
+List<String> palabras = new ArrayList<>();
+List<Integer> numeros = new ArrayList<>();
+
+
+public void mostrar(Object s)
+{
+  system.out.println(s);
+}
+
+List<Object> no se puede usar para esto porque la lista no hereda de lista
+de strings. Te dice que el metodo recibe una lista de objects, no de strings
+public void mostarListas(List<?> lista)
+{
+  for(Object s: lista)
+  {
+    mostrar(s);
+  }
+
+}
+
+? es un tipo de datos generico pero especial, hereda de la clase object y se
+puede restringir: List<? extends Number> para que sea cualquier cosa que 
+herede de number, no esta solamente en java, cualquier lenguaje con tipo de
+dato generico lo usa aunque no con el mismo simbolo
+
+
+
+jdbc java database connectivity, hay frameworks que te lo hacen pero 
+nosotros vamos a ser el nuestro propio
+
+jdbc permite ejecutar una conexion entre el motor de java con cualquier 
+motor de base de datos osea basicamente es un puente entre java y sql
+
+si jdbc es una conexion directa es que escribimos el codigo en java y se la
+pasamos al motor de base de datos y este entiende el lenguaje java por
+ende se ejecuta dentro del motor
+Sino es una conexion indirecta, en jdbc se le pasa a un protocolo extra que
+traduzca el codigo al lenguaje que entiende el motor sql, por lo general C, 
+este protocolo se llama odbc Open database conectivity, por ejemplo sql 
+server. No deberiamos usar sql server justamente por este paso extra 
+
+Primer paso es levantar los dirvers
+Segundo es armar la ruta a la base de datos
+jdbc:subprotocolo:identificador
+ej jdbc:Mysql://localhost:3306/db
+
+Driver manager es el gestor de los drivers de cada motor de base de datos
+Se fija que drivers hay en la memoria ram y los usa para conectarse
+
+host es con el puerto
+
+class.forname levanta los drivers del motor de base de datos
+
+import com.mysql.jdbc.Driver
+
+Lo recomendables es tener una clase que se encarge de abrir y cerrar la 
+conexion
+
+Los imports deben ser de java.sql
+
+cada execute hace un commit automaticamente
+
+Una vez que se hace el next no se puede volver a atras, por eso es 
+recomendable guardar toda la info en una lista
+
+Generar una clase conexion con un metodo para abrir y uno para cerrar la 
+conexion, seria ideal que fuera un singleton
+un pojo en java que representa la tabla que tengamos osea Persona
+y despuesuna PersonaDao que es la capa de acceso a datos con 5 metodos: el
+insert con alta, baja, modificacion, obtener y obtener por id
+
+ej public void altaPersona(Persona p)
+{
+Conexion co
+Connection c =c.open();
+c.prepareCall("INSERT...... where id = " + p.getId())
+c.exit()
+}
+
+
+
+
+

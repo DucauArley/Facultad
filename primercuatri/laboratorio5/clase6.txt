@@ -1,0 +1,42 @@
+Parcial es un enunciado con todo el material, tipo 6/6:30 hasta 9/9:30 para
+entregarlo, entregarlo en un repo de github con un nombre que pida en el 
+enunciado
+Dia del parcial antes de las 10 mandarle un mail al profe con el link del
+parcial
+mramos88 en github
+
+Menus:
+Android provee un boton llamado menu
+Se puede crear uno en resource files
+item de menu es un boton o una opcion
+
+Hay que sobreescribir dos metodos en el main activity: el 
+onCreateOptionsMenu que indica cual es el xml menu que le corresponde y el
+onOptionItemSelected que es para que haga determinada cosa segun en que
+opcion se hizo click
+
+app:showsAsAction=always hace que este siempre visible el item del menu, 
+si le pones ifRoom es que si hay lugar aparece y sino se va a la toolbar
+Se le pueden poner iconos con el atributo icon y dentro de drawable estan
+los icons por defecto
+
+El boton de la izquierda que tiene la flecha para volver, esta por defecto
+oculto, se debe habilitar en el onCreate
+
+Con las start activity se van creando objetos activitys, por eso se hace un
+finish para que se cierren, sino se van acumulando
+
+Para que la activity este disponible se ejecura el onCreate, despues el 
+onStart y el onResume, ahi queda en running. Cuando lanzamos la activity 2 
+la 1 queda en onPause y en un onStop, cuando se hace un finish en la 2, 
+hace lo mismo pero pasa por el onDestroy y deja de existir el objeto
+Se puede frenar el hilo de las activitys en el onStop para que deje de
+gastar recursos cuando nadie la este viendo, cuando haga el onRestar, se
+puede volver a iniciar el hilo previamente frenado
+
+Con el intent put extra se puede pasar un json en formato string
+
+Se pueden hacer atributos estaticos en la clase main y llamarlo en el otro
+activity como main_activity.atributo
+
+

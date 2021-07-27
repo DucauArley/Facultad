@@ -1,0 +1,66 @@
+Atomic design, cualquier arquitectura que hagamos va a ser un derivado de
+esto
+
+Se aplica a cualquier tipo de componente, no solamente a react
+Plantea semejansas con las tablas quimicas y demas.
+Por ejemplo un atomo que es la unidad mas pequeña, seria un input, un boton
+, etc. No tienen logica, son componentes reutilizables.
+Interactuan para formar moleculas, ej un input + un boton. Tampoco tienen
+logica, ergo tampoco tienen estado.
+Estas se juntan para formar un organismo en donde se podria tener logica o
+algun estado
+Cuando se llega a los templates, que es una union de organismos, ahi se va
+a tener logica y estados
+Paginas son instancias especificas de uno o varios templates. Se tiene la 
+navegacion
+
+Librerias son atomos, moleculas o quizas organismos que son reutilizables
+
+Se guardan en carpetas los jsx con esos nombres, es decir un componente
+boton va a la carpeta atoms y asi
+
+Dentro de pages se crea una archivo index js para que sea mas prolijo e 
+importar todas las paginas y asi importar todo junto en app.js
+
+Basicamente hace que los results de los pokemones vienen por props en el
+constructor. Osea hay que adaptar pokemons para hacer eso
+
+Con defaultprops le podemos dar valores por defecto a las propiedades.
+ej Pokemons.defaultProps{results: []}
+
+PropsTypes: Permiten hacer una validacion mientras desarrollamos, por 
+ejemplo, se le puede decir que results tiene que ser si o si un array
+
+React router dom es el modulo que se va a encargar de hacer el ruteo y hay
+que hacerle un npm install para usarlo
+
+Todos los componentes de navegacion tienen que estar dentro del componente
+router. Por lo general se va a l archivo index y se importa el router y
+hacer un wrapper del componente app, asi toda la app esta a dentro del 
+router
+<Router>
+  <App>
+</Router>
+
+A traves del componente link se navega
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

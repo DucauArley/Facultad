@@ -1,0 +1,90 @@
+Cambiar todos los atributos por Wrappers en el TP
+Crear dentro del proyecto un archivo.properties donde se pueden guardar
+cosas por clave valor, por ejemplo se puede guardar
+user=root
+pass=
+dirver=com.mysql.Driver
+
+Y en la clase conexion se debe hacer
+
+public void abrir()
+{
+  ResourceBundel rs = ResourceBundel.getBundle("framework") 
+  rs.getString("user");
+  rs.getString("driver"); Para obtener los valores de las claves
+}
+
+La idea es que quede el archivo externo para configurarlo sin tocar el
+codigo. Configurarlo o cambiarlo
+
+
+El problema de concurrencia. Cuando dos hilos acceden a la misma info al
+mismo tiempo en diferentes nucleos
+Si hay un archivo tomado por un hilo, otro no puede tomarlo hasta que no se
+libere
+
+El sistema operativo resuelve esto dandole prioridad a un solo nucleo para
+tomar este archivo. Nunca van a ejecutarse en paralelo los dos hilos
+
+Para la sincronizacion de hilos se utiliza una variable cerrojo que esta en
+la clase object
+
+Esa variable hace que el primer hilo que entre a ese objeto, el objeto se
+bloquea hasta que sale el hilo, asi otros hilos no puedan entrar
+
+synchronized(objeto)
+{
+  Codigo que quiera sincronizar
+}
+
+si la variable cerrojo del objeto esta en true, esta abierto, lo cierra y 
+hace la ejecucion de adentro. No permitiendo que los hilos ejecuten el
+mismo codigo al mismo tiempo. Osea, no pueden acceder al mismo tiempo al
+objeto, pero si se usa otra variable si pueden acceder a esa a la vez
+
+Hay que saber como se sincroniza, y sincronizar solamente la parte critica
+para no sincronizar absolutamente todo y retrasar todo como si fuese un
+solo hilo el que maneja todo
+
+Sincronizacion se puede hacer por bloque de codigo o por metodo
+ej
+
+public synchronized void sumarAlContador()
+{
+  p.contador ++;
+}
+
+El metodo wait(), notify() y notifyAll() funcionan con hilos. Solamente
+funcionan dentro de bloques sincronizados. El que tiene que estar
+sincronizado es el objeto que llama a alguno de estos metodos 
+
+El Wait() bloquea o detiene la ejecucion de un hilo.
+Se van a despertar si alguien ejecuta el metodo notify
+El notifyAll despierta a todos los hilos parados
+
+
+Pool de thread es una manera de trabajar con un conjunto de hilos como si
+fuese uno solo
+
+Permite trabajar con un solo objeto pero teniendo muchos hilos dentro de
+ese objeto
+
+ExecutorService exec = Executors.newFixedThreadPool(5) 5 hilos maximos
+ejecutandose al mismo tiempo, por mas que tenga 100 hilos, solamente va a
+mantener 5 al mismo tiempo
+
+Se le puede poner cuando pase determinado tiempo, que se termine o que se
+terminen de ejecutar los hilos
+
+ExecutorService exec = Executors.newScheduledThreadPool(12, threadFactory)
+Permite activar ventanas de tiempo
+
+Mas practica la parte de reflextion y mas teorico lo de hilos
+
+
+Hacer ejercicio 20 y 21 de la guia que es sobre esto. El 21 es sobre el 20
+quiza tambien el 19 y 18
+
+Defensa del tp, hay que subir el tp a github, mandarle un mail al profe
+diciendole que esta para la defensa y ahi se fija y me llama, hasta el 4 de
+agosto hay tiempo

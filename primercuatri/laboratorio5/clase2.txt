@@ -1,0 +1,53 @@
+Eventos y Botones
+La clase button hereda de view
+Todos los elementos en el xml cuando pasan a java son objetos que heredan la
+clase view es decir que se pueden recuperar los objetos con los view
+Cuando se hace click en un boton, se le pasa por referencia al listener
+el boton al que se le hizo click en el view del onClick
+El id de los objetos, se guardan en valores enteros en vez de el texto que
+le escribimos
+Todo lo de la carpeta res termina en la clase R, queda como constante
+R es una clase java con muchos objetos con valores numericos
+
+Formularios widgets y layouts
+Layout manager: para representar los elementos en pantalla, en html serian
+los divs o los contenedores
+
+El image view es el contenedor de imagenes
+el src es la direccion en la que esta la imagen que le queremos setear,
+tiene que ser @ y una de las carpetas de res, por lo general se ponen en la
+carpeta drawable, no usar letras mayusculas porque tira error todo lo que 
+esta en la carpeta res se puede setear los valores del width y height con px
+El scaleType="centerCrop" setea la imagen en el centro. ="Fitcenter" manda
+la imagen en el medio pero la achica para que se vea toda, el otro no le
+importan los bordes ni nada
+Dentro del mipmap van todos los iconos de la app
+
+Hay varios layouts que te van acomodando los componentes, el linear layout
+tiene la propiedad horientation que puede ser vertical u horizontal, siempre
+se alinean los elementos, si esta horizontal no se va a poder usar 
+match_patent porque no se van a ver los elementos que le siguen ya que toma
+todo el lugar horizontal que hay, se le puede asignar que componentes van
+a tener linear layout horizontal y cuales vertical.
+Con el linear Layout no se puede usar la paleta para diseñar
+
+Con el layout_weight se le da un peso del 0 al 1, que dice el porcentaje que 
+sobra de pantalla a que elemento se lo voy a dar
+
+Propiedad gravity: Mueve el contenido de un elemento, si se lo pone a un
+text edittext, button, etc mueve el texto a algun lugar, ya sea izquierda, 
+centro, derecha, arriba, abajo, etc esto dentro del espacio que tenga para 
+moverse el texto, se le puede poner un | para combinar gravitys
+
+El layout gravity hace lo mismo que el layout pero con el elemento, no con
+el texto dentro, o lo que tenga dentro del elemento
+
+Esta el margin y el padding. El padding mueve el texto y el margin mueve el
+elemento en base a donde estan los demas elementos
+
+Existen los Tables tambien, pero son medio al pedo, son iguales que en html
+
+Ej: Copiar un diseño de un formulario Guardar todas las cosas en una clase
+persona con nombre, apellido, sexo, dni, cuando guardamos generemos un 
+objeto persona con todos los datos android.hint="Algo" es el placeholder
+Ej2 Hacer una calculadora

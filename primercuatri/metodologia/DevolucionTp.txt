@@ -1,0 +1,249 @@
+Viernes 17 por ahi es recuperatorio
+
+
+Tratar autorizaciones y demas cosas 
+Obra social y prepaga no son lo mismo, se tratan de formas diferentes
+Habia que tener una clase generica y de ahi heredar
+Puede haber gente que no tenga os o prep se debe pagar el tratamiento
+Bono no es forma de pago, tiene que ver con la os
+Autorizacion esta relacionada con las 2
+
+Turno puede estar relacionado con distintas consultas
+
+Tratamiento empieza cuando los derivan un especialista generico
+Consulta inicial, luego tratamiento
+
+Liberar a la clase turno de todo lo que tiene
+
+Manejarlo como consultas que pueden ser de unica vez o como parte de un
+tratamiento
+
+Poner cambiar estado en consultorio y laboratorio
+Estado es un enum	
+
+Gestor turno reemplaza a clinica, clinica igual debe existir como 
+todo parte de consultorios y laboratorio
+
+Todo crea a la parte se usan arrays para de uno a muchos
+
+Como se enlazan las relaciones entre los objetos
+
+Consulta es inicial, tratamiento es cuando hay mas consultas
+puede haber consultas dentro del contexto de un tratamiento
+tratamiento tiene array de consultas pero consultas no necesariamente tienen
+un tratamiento
+
+Insumos importante para consultas
+
+Consultas tiene atributo que indique si esta en tratamiento, un diagnostico
+o resumen de la consulta y se relaciona con paciente y turno
+
+Clase turno no le interesa el diagnostico ni demas, la hace mas generica,
+puede que se haya asisitido o no, la consulta ya asisitio
+Administra la info del turno: horario, paciente, profesional, si es 
+cancelado o no, etc. Es tipo para gestionar horarios de atencion
+
+Solicitudes de turno por diferentes medios, ahi hay un indicio para
+factorizacion
+
+Paciente no crea el turno, lo solicita
+
+En gestionar turno, no es generalizacion, hay que cambiar las flechas, lo
+incluye, lo primero que hay que hacer es incorporar el comportamiento del
+cronograma
+
+Para que existan los extends tiene que haber una clase base
+
+Colocar estereotipo de iniciador para saber que actor es el que inicia el
+caso de uso
+
+Hacer el comportamiento desde que detecto que un paciente pide el turno,
+hasta que le asigno el turno, osea en el medio hay que chequear todas las 
+condiciones para que se asigne el turno
+
+
+
+
+Todo lo que esta en crear turno pasarlo al diagrama de turnos, sacar la
+linea punteada de el principal, lo mismo con cancelar turno
+
+Paciente debe estar registrado en precondiciones, no debe existir un turno
+para ese cliente
+
+Primer paso que el paciente solicita un turno, sacar lo de esperar
+
+2º Cliente puede solicitar el turno desde la web, o mandar mail a la 
+recepcion o ir directamente, diferenciar las 3
+
+Paciente ingresa a la pag que permite solicitar un turno, hay que ser claro
+con que actor interactua
+
+Paciente ingresa datos
+Sistema valida los datos
+Sistema guarda los datos
+Sistema invoca caso de uso comprobar cronograma paciente enviandole la fecha
+y hora que eligio, para nosotros lo dejamos como esta
+Ese caso de uso me va a tener que devolver esa fecha, hay que especificar en
+la secuencia de acciones
+
+En calcular duracion hay que pasarle parametro para que sepa que 
+procedimiento se debe realizar, para asi hacer el calculo y devuelve la 
+info de la duracion
+
+El sistema le tiene que comunicar los datos del turno(fecha + duracion) al 
+paciente
+
+6º Sistema crea el objeto turno	
+
+Cuando el actor completa los datos requeridos para el turno, hay que poner
+que tratamiento solicita, presentandole diferentes opciones
+
+En el caso de uso de comprobar cronograma hay que describir todos los pasos
+que debe hacer para asignar el turno a tal especialista tal fecha a tal
+hora, etc
+
+Hay que indicar como y cuando comienza y como y cuando termina
+
+hay que agregar una viñeta que diga el caso de uso finaliza
+
+Paciente confirma el turno antes de que se cree el objeto
+
+Paciente rechaza la propuesta de turno
+
+5.2 Es al pedo, con 5.3 basta
+
+
+
+El objeto turno no debe existir para el paciente
+Precondicion paciente debe estar autenticado en el sitio
+Poner login como caso de uso
+caso de uso empieza cuando paciente selecciona la opcion de solicitar un 
+turno
+
+devuelve tratamientos posbiles junto con su duracion asi lo saco en el diag
+de casos de uso y poner consultar tratamientos
+
+Sacar que el sistema tiene acceso en caso de uso comprobar cronograma
+Sacar la parte de tratamiento valido cambiar por
+Recibiendo como parametro el tratamiento solicitado
+
+1. Profesionales que de acuerdo a su especialidad puedan atender el tratamiento
+
+3.Caso de uso finaliza cuando el sistema encuentra una fecha y horario 
+disponible para atender el tratamiento
+
+poscondicion: Caso de uso devuelve un objeto cronograma
+
+Modelar como todo parte cronograma - profesional en diag de clases
+
+Hacer clase tipo tratamiento con el tipo y la duracion y por ahi algo mas
+
+Calcular duracion cambiarlo por consultar duracion
+Hacer poscondicion igual que el otro y lo de cuando finaliza
+
+Sistema muestra la fecha y hora del turno junto con la duracion del mismo 
+para que el cliente confirme su aceptacion, el profesional tambien
+
+11 va a la poscondicion
+
+Guardar fecha y hora
+Sacar lo de paciente acepto la fecha y hora
+
+Poner cambio de estado de cronograma en esto
+poscondicion 	
+Caso de uso finaliza cuando se guarda el cronograma en el atributo 
+cronograma del profesional
+
+
+Diagrama de secuencia modelando el escenario tal desde que solicita el
+turno hasta que asistia
+
+Mensaje que sea autenticacion en este diagrama
+Objeto prototipico que sea del sistema, que media con la autenticacion y con
+el comprobar cronograma y demas, osea el que llama todos los metodos de
+crear turno
+
+Quiza haya que poner una clase gestor de turnos con obj paciente y recepcion
+que se conecte con turno, con operaciones como gestionarpedidoturno
+Cambiar en casos de uso todos los sistemas por gestorTurno
+Tendria que tener la clase tipotratamientos para que consulte el gestor
+Despues de la foto va nuestro diagrama
+Cuando trae los datos de tratamiento tambien tendria que traer la duracion
+Cuando asiste marcar asistencia
+
+Cambiar clase tratamientos por tratamientos pacientes
+
+Auto llamada en diag de secuencia para que confirme la fecha y hora
+Hacer lo de el diagrama de guardar fecha y hora
+
+En espera puede ser de espera de atencion
+
+diag de actividades poner sistema en vez de gestor, no hace falta que se
+llamen igual que los objetos
+
+poner flujo de objetos despues de alta turno y el estado que va a ser
+confirmado
+
+
+
+
+Especificacion diag caso de uso
+Recepcionista puede cancelar turno
+
+Modeando escenario cambiar por "Cuando se solicita por medio del sitio web
+
+Cambiar actor por paciente
+
+Primero consultar profesionales que atiendan especialidad, cuando los tiene
+hacer una accion que diga el sistema busca los profesionales aptos para
+el tratamiento, ahi recien busca en el cronograma de los profesionales
+Hay que poner comparar las fechas y que elije la primera libre
+aclarar siempre que es la fecha mas proxima
+
+
+En guardar que gestor de turno busque entre los objetos de cronograma y
+cuando comprueba que existe recien ahi cambia el estado
+
+Hacerle un retorno al identificarSolicitud()
+
+diag de secuencia
+Hacer operacion a paciente que sea para aceptar el cronograma
+
+Consultar a los profesionales del tratamiento en el bucle. Hacer un bucle
+dentro de otro. Asi se le asigna el profesional a gestor de turnos. Se
+puede usar profesional como una especie de base de datos.
+
+
+Primero hacer validaciones y despues hacer las demas cosas. No vale hacer
+que valide en los metodos
+
+Parcial
+diag de secuencia donde apunta a la flecha es donde tiene que estar
+definida la operacion
+ver la sintaxis del diagrama de estado usar el when y after
+
+
+Lo de diag de actividades ver bien los usos que son para modelar los obj
+
+Tiene que tener otra poscondicion
+9) analizar respuesta que devuelve guardar fecha y hora
+
+
+
+cdeU
+Recepcionista y profesional tienen que poder logearse
+
+EcdeU
+6)gestor Turno muestra junto al profesional los cronogramas mas disponibles
+
+Se pueden nombrar objetos, mas que nada en los de cronogramas
+
+Aclarar que se esta buscando en el objeto cronograma
+
+
+especificacion
+gestor Turnos busca la en la clase cronograma todos los cronogramas,
+despues hay que poner que se comparan los cronogramas de profesional con 
+los que trae el cronograma
+
+

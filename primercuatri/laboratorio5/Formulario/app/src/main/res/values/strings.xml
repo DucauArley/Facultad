@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Formulario</string>
+    <string name="textNom">Ingrese su nombre</string>
+    <string name="textAp">Ingrese su apellido</string>
+    <string name="textDni">DNI:</string>
+    <string name="textSex">Sexo:</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="guardar">Guardar</string>
+    <string name="hintNombre">Juan</string>
+    <string name="hintApellido">Perez</string>
+
+</resources>

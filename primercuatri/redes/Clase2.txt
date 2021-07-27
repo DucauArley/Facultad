@@ -1,0 +1,125 @@
+La capa 2 de enlace de datos se encarga de efectuar las comunicaciones,
+da la inteligencia, ordena paquetes pero se encarga de la comunicacion
+Transmiten datos de manera binaria
+
+Clasificacion de la Transmision: 
+
+Segun la cantidad de datos: 
+en paralelo: Se transmite una cantidad mayor a un bit al mismo tiempo, osea
+hay varias lineas para transmitirlos, es muy comun que se tranmite de 
+bytes, no tiene importancia como se transmiten los datos(duplex/half-duplex,
+etc), tiene una velocidad de transmision elevada, si es cableada se tiene 
+una linea por cada bit, osea 8 bits, se necesitan 8 lineas, a elevadas 
+velocidades, es muy probable que los bits no lleguen a tiempo y se pierde el
+sincronismo, por ende se recomienda su uso en distancias cortas(no mas de 4 
+metros)
+Se usa de manera digital, no para redes
+en los mothers, la velocidad de transmision de datos es 2/3 la de la luz,
+todas las lineas tienen que medir lo mismo que las demas
+
+en serie: Se transmite un solo bit a la vez, uno atras de otro, osea que va
+a tardar 8 veces mas, Hay 2 maneras de transmitir, Empezando del que vale
+128 o empezar del que vale 1, no hace falta esperar que llegue un bit para
+mandar el otro, ya que no se pueden desincronizar porque no hay otro cable
+al lado, el cableado se hace con 2 hilos haciendolo mas economico y practico
+que el paralelo, no tiene tanto ruido electrico, ya que si se mete un ruido,
+se mete en un solo bit
+
+Ruido electromacnetico: es el problema de una antena, las señales
+electromacneticas presentes en el aire, se meten en el cable como si fuesen
+una antena
+
+Segun la forma de contar el tiempo del bit en la transmision de datos:El 
+probelma es cuando se mandan varios ceros o unos consecutivos, se tienen que
+poner de acuerdo cuando tomar si es un numero o el otro
+
+Sincronica:El reloj lo maneja una de las partes, por lo general el que lo
+transmite, el te dice cuanto tiempo dura un bit, se transmiten los datos y
+el clock en 2 hilos independientes, se puede parar la transmision de datos
+con esto, al tener 2 hilos tiene el mismo problema de la transmision en
+paralelo, pseudoparalelo en realidad
+
+Asincronica: El receptor y el transmisor tienen su propio reloj y se ponen 
+de acuerdo para saber cual es el tiempo del bit ej: un bit por segundo,
+tienen que ser super precisos los dos, se la llama asincronica porque el
+sincronismo no se transmite, es decir, cada uno se tiene que preocupar que
+este sincronizado su reloj, habria que tener un reloj tan sincronizado que
+no se deberia atrazar o adelantar mas de 3 segundos por año. Por ende no se
+puede utilizar a grandes velocidades ergo no se puede usar para redes, se
+puede usar para el usb
+
+Transmision de datos en Ethernet: Codigo de Manchester creado en 1949 por
+Sir G.E Thomas, Consiste en hacer una señal mescla del clock y de los datos
+En el momento del flanco descendente del clock si el dato es un 1 desciende
+el codigo, si es un 0 asciende y si el flanco asciende, es al revez.
+Tambien permite reconocer coliciones o rudio electrico
+Clock es la mitad del tiempo de bit
+
+Codigo de Manchester diferencial: Si el dato es un 0 al inicio de la
+transmicion, va a ser baja la señal
+
+Hablar: Transmitir Escuchar: Estar preparado para recibir o recibiendo
+
+Tecnologia de ethernet: Las maquinas en una red hablan una a la vez.
+Para decidir quien de las maquinas habla primero se usa csma/cd(Carrier 
+Sense Multiple Access / Collition Detect), En este, todos los dispositivos 
+tienen acceso garantizado al medio, ningun dispositivo tiene prioridad sobre 
+otro en ningun momento, Si dos o mas dispositivos inician la comunicacion
+simultaneamente, se crea una colision y los equipos deben darse cuenta y 
+recuperarse para poder continuar, Todos los dispositivos que tienen
+intencion de hablar, primero debe escuchar el canal y comprobar que este en 
+silencio para poder empezar a transmitir, una vez hecha la transmision, este
+dispositivo debe estar permanentemente escuchando la red para darse cuenta
+de si hubo una colision, se dan cuenta si lo que escucho es lo que estoy
+diciendo, Si dos dispostivos transmiten al mismo tiempo, sus mensajes se 
+propagaran hasta que se encuentre y se mezclen.
+Cuando un dispositivo escucha, detecta una colision con un aumento de 
+amplitud por encima del nivel normal o tiempos no correspondientes, por ej
+con la amplitud en manchester se mandan +10 o -10 volts, si se juntan dan
+0 volts y eso no existe en manchester.
+Una vez detectada la colicion, todos los dispositivos transmisores 
+continuaran transmitiendo basura(Jam) para que todos los demas dispositivos 
+se den cuenta de que hubo una colicion y asi se descarta el mensaje completo
+Se invoca a el algoritmo de postergacion cuando se dan cuenta de la colision
+, este algoritmo hace que los dispositivos dejen de transmitir durante un
+periodo de tiempo aleatorio que se saca de la direccion mac de la maquina
+antes de volver al modo de escuchar antes de transmitir.
+Si la colision se produce 16 veces, el mensaje se descarta y se pierde
+
+Dominios de colision: Es una zona de la red en la que todos los nodos
+escuchan los mensajes, es el espacio de la red en el que pueden producirse
+colisiones
+Se utilizan hubs para transmitir los mensajes a las demas maquinas. 
+Los bridges se pensaron para separar los dominios de colision, si un equipo
+de un dominio de colision envia un mensaje a un equipo de otro dominio de 
+colision, el bridge se lo envia al hub de ese dominio de colision, si la 
+maquina le envia el mensaje a un equipo en su dominio de colision, el bridge
+evita el envio del mensaje a los otros dominios de colision, tiene una etapa
+de aprendisaje en la que se da cuenta de que equipos esta en que dominio de
+colision, y hace una tabla con los mensajes que se fueron generando de los 
+equipos y sus dominios de colision, tiene un tiempo tambien en su tabla asi
+si la llena, borra los registros mas viejos
+Switch: Es un bridge con montones de dominios de colision, y son muy chicos,
+practicamente entre el equipo y su switch
+
+Trama Ethernet: Arrancan con un preambulo de 7 bites, sin info util diciendo
+AA para transmitir bits al tiempo t, se mandan 28 unos y 28 ceros para
+sincronizar los relojes, se acaba cuando aparece AB que delimita la trama
+osea cuando recibo 2 unos seguidos quiere decir que va a empezar la 
+transmision, luego se recibe la mac de destino, es decir el nombre del 
+equipo, se envia esto para descartar mensajes que no son para mi, si es para
+mi, se recibe la mac de origen osea el nombre del emisor, luego viene la 
+longitud del mensaje expresada en 2 bytes, luego la carga que son desde 42
+minimo hasta 1500 bytes maximos y por ulitmo 4 bytes de comprobacion, para
+ver que el mensaje no tenga errores, luego un silencio que permite todo se
+recomponga para volver a transmitir
+
+Direccion mac: Direccion plana de 6 bytes, no tiene jerarquias, no existe el
+multicast, pero si existe el brodcast: Un mensaje que todos estan obligados
+a escuchar esta direccion es 48 unos, para asegurarse que no halla 2
+dispositivos con la misma direccion mac, le asigno 3 bytes al fabricante y
+los otros tres son de mi maquina
+El IEEE asignan estos 3 bytes a los fabricantes
+Se pueden clonar las macs pero se corre el riesgo que dos equipos tengan la
+misma direccion mac y que se generen coliciones si las dos estan en la misma
+red, produciendo fallas en la red

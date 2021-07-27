@@ -1,0 +1,82 @@
+Capítulo 16: Casos de uso. Capítulo 17: Diagramas de casos de uso.
+Capítulo 15: Interacciones. Capítulo 18: Diagramas de interacción.
+Capítulo 20: Eventos y señales. Capítulo 21: Máquinas de estados
+
+Plazo de entrega para el tp 22 de junio, sino no se puede rendir el parcial
+Con todos los diagramas, proxima clase se nos agregan 2 mas
+
+Los eventos se utilizan para modelar la aparicion de un estimulo que puede
+disparar una transicion de estado, Los eventos pueden incluir señales, 
+llamadas, el paso del tiempo o un cambio en un estado, esta relacionado con 
+el diagrama de transicion de estados y el flujo de control, que translada
+una señal, no datos
+
+Objetos pueden mandar mensajes y estos pueden ser llamadas a operaciones
+Un objeto cada vez que recibe un evento debe reaccionar de alguna manera
+
+Eventos pueden ser sincronicos o asincronicos
+Todos los que son excepciones son señales
+
+Evento es un acontesimiento significativo que ocupa un lugar en el tiempo
+y en el espacio
+
+Maquina de estados parece que es tipo el diagrama de transicion de estados
+
+Eventos externos: todos los que lleguen por fuera del sistema, como el
+presionar un boton o demas
+
+Eventos internos: Fluyen dentro del sistema, ej: Señal de desbordamiento
+(Overflow)
+
+Señales representan un objeto con nombre que es enviado asincronicamente por
+un objeto y recibido por otro
+
+En el tp no hace falta modelar señales, pero hay ciertas cosas que se pueden
+modelar sobre las señales que le llegan al sistema
+
+Señales tienen 2 ambitos de concurrencia
+
+Comportamiento que tienen las señales es cambibiar la transicion de estados
+
+Eventos de llamada a operaciones, dispara transicion de estados dentro de
+un objeto, tanto la recepcion de una señal como la de una llamada, estos
+son sincronicos osea que cuando un objeto invoca a una operacion del otro,
+el control pasa del emisor al receptor, una vez que se produce el evento se
+dispara la transicion
+
+No se puede distinguir señal de llamada, te das cuenta por el modelo, si
+se diagrama la transicion de estados, se esta hablando de una llamada
+
+Tipo de evento cambio es una condicion absoluta, se modela con la palabra
+when, osea when tal cosa, pasa otra
+
+Sincronica es que se bloquea el flujo de ejecucion y espera que le devuelvan
+algo, sino es asincronica
+
+Si no se especifica una respuesta, el evento se pierde
+
+Maquinas de estado se usan para modelar aspectos dinamicos, modelan la vida
+de las instancias de alguna clase
+
+Una vez que se produce un evento se produce una ejecucion no atomica
+
+Diagrama de actividades es lo que vemos la proxima clase
+
+Maquina de estados tiene estados finales, posibles estados por los que
+puede pasar, estado inicial, estados anidados
+
+Acciones tienen que empezar y terminar, actividades no. Por lo general las
+actividades se descomponen en acciones	
+
+Maquina de estados corresponde a un objeto en particular
+
+Transiciones internas nunca se sale del estado
+
+Condiciones de guarda, nose que es
+
+Transiciones son atomicas
+
+Modelar maquina de estados para el objeto turno
+Establecer el contexto de la maquina de estado
+
+

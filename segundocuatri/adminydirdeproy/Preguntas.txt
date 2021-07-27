@@ -1,0 +1,44 @@
+Porque no aparece el machine learning ni el diseñador de interfaces en el 
+organigrama?
+Porque 32 horas para un login edt?
+Para que sirve el registro que no es parte de un abm de usuarios edt?
+Porque estan detallados los casos de uso en el analisis de punto de caso de 
+uso y en el diagrama no?
+En acciones de los usuarios dice que es opcional el subir una receta 
+asociada a la compra
+
+Proyect Arley Ducau
+Casos de uso Juan narvaja
+Alcance
+estimacion por puntos de casos de uso Juan Narvaja
+EDT, organigrama y entrevistas Arley Ducau
+Pruebas de estres agregar al edt
+
+*porque piden receta para los lentes?
+Para evitar posibles quejas
+*Aclarar que existe el tipo de usuario no existente
+Habria que hacerlo
+*Como checkean que la receta es valida?
+Se resguardan con que la receta no es legal, guardan la imagen de la receta
+Se lo pasan a la obra social, ellos se desligan
+*Porque no aparece el machine learning ni el diseñador de interfaces en el 
+organigrama?
+Hay que agregarlo basicamente
+*La lista de requisitos hace referencia a medios de pagos y no explaya en 
+estos
+Se detalla que no iba a ser en efectivo, solamente medios electronicos,
+quiza mercado pago para las tarjetas
+*Calculo del envio por terceros
+Esta estimado en el edt y no se que mas
+*Porque 32 horas para un login edt?
+Estas cuestiones faciles se asigna un junior, por eso tarda tanto
+*Para que sirve el registro que no es parte de un abm de usuarios edt?
+Es para clientes, difiere de administradores y vendedores, es como una 
+pagina aparte para los clientes. Mas que nada porque son distintos tipos de
+datos
+*Diagrama de casos de uso porque se tomo la decision de agrupar en 
+administrar en vez de hacerlos mas atomicos
+Deberia hacerse de forma atomica para especificar 1 por 1
+
+
+

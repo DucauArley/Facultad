@@ -1,0 +1,43 @@
+Un proyecto surge ante la necesidad de algo
+Plantean alternativas de solucion y someterlas a un analisis de costo y
+beneficios
+
+Objetivo: que persigo con el proyecto
+Tarea: Las tareas que tenemos que realizar para resolver el objetivo. 
+Tecnologia: Ver con que tecnologia voy a resolver el proyecto
+Tiempo: Ver en cuanto tiempo puedo solucionar el proyecto
+Dinero: Cuanto va a costar desarrollar una solucion
+Personas: Cuantos trabajadores tengo para solucionar el proyecto
+
+Empresa esta dedicada a desarrollar actividades para proveer un producto o
+servicio que le de rentabilidad, cada operacion que realice esa empresa es
+un negocio. No solo ejecuta proyectos, sino que tambien tiene operaciones
+
+Software: programas, documentos y los datos que lo configuran
+Puede variar internamente y no cambia por fuera
+
+Un proyeco es un esfuerzo temporal que se lleva acabo para crear un
+producto o servicio unico de modo de alcanzar un objetivo, con
+restricciones de costo y tiempo
+Cuando le doy curso al proyecto, este pasa a ser una operacion
+
+Las cuatro p de del desarrollo proceso(plantilla), proyecto, personas
+(participantes) y producto(resultado)
+
+Herramientas: programas, compilador, editores de texto, etc. Contribuyen
+con la automatizacion del proceso
+
+Proceso: se centra sobre el que. En el desarrollo del proceso se centra en
+el como. En el mantenimiento se centra en el cambio (correccion de errores,
+adaptaciones del entorno, cambios en los requisitos)
+
+Los requisitos no son estaticos
+
+cliente no necesariamente pone el dinero, sponsor si
+
+pm es el proyect manager
+
+Gestion de la integracion, alcance, tiempo, costos, calidad, recursos 
+humanos, comunicaciones, riesgos y adquisiciones del proyecto
+
+Tiempo costo y alcance para la calidad

@@ -1,0 +1,138 @@
+Fechas de finales son del 27 al 8 de agosto, en programacion y laboratorio
+son solamente recuperatorios de los parciales, no va a haber finales, creo
+que de las demas tampoco osea que tengo que si o si aprobar los segundos
+parciales de matematica y metodologia
+
+Segundo parcial va a ser igual que el primero
+
+Tp va a ser con camara y microfono
+
+Para anotarse al cuatrimestre que viene, algun profe nos pasa un link para
+anotarnos
+
+Sysacad, 10 y 11 de agosto va a haber soporte
+
+24 de agosto arranca la segunda cursada
+
+Poniendo ? ? los signos de pregunta son parametros que despues se pueden
+setear para poner en el prepared statement, el indice es igual que en el
+resultset arranca en 1
+
+ps.setString(1, "Matias");
+ps.setString(2, "Ramos");
+
+
+Reflexion es lo que te permite hacer mas cosas configurables, se trabaja al
+mas bajo nivel, trabajamos en tiempo de ejecucion, es ultra generico
+Esta materia deberia ser solo de esto
+
+Es la capacidad que tiene un programa para observar y opcionalmente 
+modificar su estructura de alto nivel, osea se puede modificar la config
+de como trabajan las clases, los tipos, etc. Te podes meter en el elemento
+en memoria ram y modificar su estructura
+
+Permite descubrir y modificar construcciones de codigo fuente, osea codigo,
+clases, metodos, etc. Todas cosas en tiempo de ejecucion
+Basicamente si un atributo es privado en tiempo de ejecucion, lo puedo 
+hacer publico
+
+Convertir un string en una clase o funcion e invocarla
+
+Evaluar una cadena como si fuera una sentencia de codigo fuente en tiempo
+de ejecucion
+
+Para usarlo, hay una api que tiene dos clases, la field y la method y Class
+pero no es de esta api, es de java plano. Las dos primeras se consultan a 
+traves de la clase Class
+
+Class c = Persona.class;
+Persona p = new Persona();
+Class c = p.getClass();
+Class c = Class.forName("clase2.Persona);
+Estas 3 son equivalentes, recuperas la instancia
+
+Por cada archivo de extencion .java existe una unica instancia que lo
+representa
+
+Lo que hace esto es poner en memoria ram la clase Class, por ejemplo se
+puede hacer un for para acceder a todos los atributos de la clase Class
+
+for(Field f: c.getFields()) Get fields no te trae los atributos privados
+{
+ system.out.println(f.getName) nombre del atributo
+ system.out.println(f.getType) tipo del atributo
+ system.out.println(f.isAccessible) si es accesible desde donde lo llamo
+ system.out.println(f.getModifiers) el tipo de accesibilidad en numeros,
+ejemplo 2 es privado
+}
+
+Para acceder a todos los atributos usamos getDeclaredFields(), pero solo
+trae los que estan declarados en la clase, el otro trae los publicos de las
+clases que herede esta clase
+
+Se podria barrer toda la memoria ram para saber de que clase son todos los
+objetos en memoria
+
+c.getName() Para saber el nombre de la clase
+c.getSimpleName()*******
+
+for(Method m :c.getMethods())
+{
+ System.out.println(m.getName()) Lo mismo que con file
+ System.out.println(m.getParametersCount()) cantidad de parametros que tiene
+ System.out.println(m.getparameterType()) el tipo de parametros que tiene
+ System.out.println(m.getReturnType()) el tipo de retorno que tiene
+}
+
+Tambien se puede usar el getDeclaredMethods()
+
+Ademas de tener esta informacion, puedo ejecutar estos metodos
+
+m.invoke(instancia de la clase, array de objetos con el mismo orden en que
+los recibe ese metodo)
+if(c.getParameterCount == 0) Ejecuto los metodos sin parametros
+{
+  m.invoke(p, new Object[0]) Asi va si no tiene parametros el metodo
+}
+IllegalAccessException tira si el metodo es privado
+
+Si el objeto tiene todos los atributos en nulo puede explotar,
+
+Con reflexion no hay errores en compilacion, son todos en ejecucion
+
+Dentro de una clase no tendriamos que tener tipos de datos primitivos
+
+Se pueden crear objetos a traves de reflexion
+
+c.getConstructors() devuelve una lista de los constructores
+
+for(Constructor con : c.getConstructors())
+{
+ if(con.getParameterCount()==0)
+ {
+  p = con.newinstance();
+ }
+}
+
+
+Se puede ejecutar set para setear un valor a un atributo y un get para que 
+devuelva el valor del atributo, solamente funca para los atributos publicos
+f.set(objeto, "Nombre del atributo");
+f.get(objeto, "Nombre del atributo");
+
+Pero si uso f.setAccessible(true) vuelvo ese atributo publico
+
+
+Para la proxima clase hacer el Trabajo practico de reflexion que esta en
+el apunte, Lo vamos a hacer hasta el punto 5 por el momento, Hacer el
+punto 1
+
+Hacer un proyecto nuevo con paquetes que tienen que ir en minuscula
+
+
+
+
+
+
+
+

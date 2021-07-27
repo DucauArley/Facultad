@@ -1,0 +1,17 @@
+Para el proyect tenemos que poner 1 solo recurso por tarea y asignar los
+predecesores poniendo creo que 7;8;9 etc
+
+Revision tecnica formal es un proceso de aseguramiento de la calidad
+Es necesario para esto: que lo que yo tengo que entregar, lo pueda cumplir
+Garantizarnos o tener la certeza de haber hecho el proceso de planificacion
+lo mejor posible
+
+Entregar tp a videojuegos, revisar optica
+
+Plantear dudas en el tp de ellos
+Es un tp individual
+
+Productores son los que hacen el proyecto, creo que esta definido en quien
+produce cada artefacto
+
+30 min de revision aprox

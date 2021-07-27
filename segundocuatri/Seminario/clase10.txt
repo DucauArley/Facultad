@@ -1,0 +1,24 @@
+Martes 10 parcial de seminario. Hay que hacer realizacion de analisis y de
+diseño
+
+Tenemos que definir en que lenguaje hacemos las cosas
+Hacer diagrama de actividades
+
+Diagrama de bd solamente intervienen las clases entidades
+
+Flujo de trabajo: Hay que meterse en el negocio y que parte de este quiero
+modelar. Por eso el desde-hasta
+
+Incorporar a un workflow el flujo de objetos, Indica en que actividad voy
+incorporando el flujo de objetos
+
+18:54************************ Dice los desde-hasta
+
+Desde que el cliente formula una reserva hasta que se le entregan los
+volquetes en el domicilio
+
+Desde el retiro del volquete del ceamse hasta que se pone en la playa
+
+El nuestro
+Desde que se genera la solicitud de compra hasta que el proveedor entrega 
+la mercaderia

@@ -1,0 +1,77 @@
+Clase de node
+Tiene unos cuantos modulos para operar con las bases, tienen addons que son
+modulos en los que podemos encapsular codigo de c o c++ para usarlo en
+node
+
+Para ejecutar un archivo de node se escribe en la consola node index.js
+index.js puede tener cualquier nombre
+
+process es como el window en el navegador que tiene el objeto global
+
+Cuando ejecutamos node, va a ir hacia arriba buscando donde hay carpetas
+node_module
+
+require siempre va a buscar el paquete fs dentro de node_modules
+
+Una vez que carga el require, no lo vuelve a cargar ya que queda en memoria
+y te da esa misma instancia, es tipo un singleton
+
+const fs = require('fs')
+
+fs sirve para manipular archivos, ej fs.writeFile("readme.md", "hola")
+
+fs.writeFile("readme.md","Hola2", error=>
+{
+  if(error)
+  {
+    return console.log(error)
+  }
+
+  console.log("exito")
+}
+
+Para incluir un modulo, este tiene que tener un archivo
+
+Por lo general se pone un index.js que haga de main para los modulos. Para
+incluir si no se especifica un archivo, por defecto busca un index.js
+
+module.exports=()=>{
+console.log('funcion');
+}
+Parar exportar una funcion completa
+
+Para hacer una funcion, hay que recibir por argumento un callback
+
+return callback("no se puede hacer tal cosa")
+o
+callback(null, n1 + n2)
+
+Se puede hacer con async y await y con promesas
+
+Cada vez que tengamos que hacer una aplicacion, hay que crear un servidor
+
+const http require('http')
+
+const server = http.createServer((req, res)=>
+{
+  res.write("Hola HTTP Server") Escribe algo en el html
+  res.end() envia la respuesta
+})
+Createserver genera el servidor
+
+server.listen(3333,()=>
+{
+  console.log("Servidor escuchando en puerto 3333")
+}
+
+Hacer un servidor en el que vamos a manejar dos metodos http, post y get,
+Manejamos un solo path que va a ser /logs. Cuando vamos por post
+escribimos la hora y fecha actual y cuando ejecutamos el get nos lo 
+devuelve.
+
+
+
+
+
+
+
